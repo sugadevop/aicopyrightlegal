@@ -50,7 +50,7 @@ export async function onRequest(context) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/_astro/BaseLayout.Cjohwvep.css">
+  <link rel="stylesheet" href="/styles.css">
   <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
