@@ -11,3 +11,57 @@
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
+
+/* Prevent horizontal overflow on mobile */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Tables in prose - scrollable on mobile */
+.prose table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+.prose table th,
+.prose table td {
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .prose table th,
+  .prose table td {
+    white-space: normal;
+  }
+}
+
+/* Pre/code blocks - scrollable */
+.prose pre {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.prose code {
+  word-break: break-all;
+}
+
+.prose pre code {
+  word-break: normal;
+}
+
+/* Images never overflow */
+.prose img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Long words/URLs break */
+.prose p,
+.prose li,
+.prose blockquote {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}

@@ -121,12 +121,14 @@ const wordCount = (article.content || '').split(/\s+/).length;
     )}
 
     <!-- Article Content -->
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 md:py-10">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 md:py-10 overflow-hidden">
       <div
         class="
           prose prose-slate
           prose-lg
           max-w-none
+          overflow-x-hidden
+          break-words
 
           /* Typography - readable line length & spacing */
           prose-p:text-[1.0625rem]
@@ -188,7 +190,7 @@ const wordCount = (article.content || '').split(/\s+/).length;
           prose-blockquote:text-slate-700
           prose-blockquote:my-8
 
-          /* Code blocks */
+          /* Code blocks - prevent overflow */
           prose-code:text-sm
           prose-code:bg-slate-100
           prose-code:px-1.5
@@ -197,25 +199,41 @@ const wordCount = (article.content || '').split(/\s+/).length;
           prose-code:font-mono
           prose-code:before:content-none
           prose-code:after:content-none
+          prose-code:break-all
 
           prose-pre:bg-slate-900
           prose-pre:rounded-xl
           prose-pre:shadow-sm
           prose-pre:my-8
+          prose-pre:overflow-x-auto
+          prose-pre:max-w-full
 
-          /* Tables - accessible */
+          /* Tables - prevent overflow on mobile */
           prose-table:my-8
+          prose-table:block
+          prose-table:overflow-x-auto
+          prose-table:max-w-full
+          prose-table:whitespace-nowrap
+          prose-table:sm:whitespace-normal
           prose-th:bg-slate-50
           prose-th:text-left
           prose-th:font-semibold
           prose-th:text-slate-700
+          prose-th:text-sm
+          prose-th:px-3
+          prose-th:py-2
           prose-td:text-slate-600
+          prose-td:text-sm
+          prose-td:px-3
+          prose-td:py-2
 
-          /* Images */
+          /* Images - prevent overflow */
           prose-img:rounded-xl
           prose-img:shadow-sm
           prose-img:border
           prose-img:border-slate-200
+          prose-img:max-w-full
+          prose-img:h-auto
 
           /* HR */
           prose-hr:my-10

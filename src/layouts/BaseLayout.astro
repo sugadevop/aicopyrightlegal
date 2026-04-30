@@ -61,7 +61,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
       @import '../styles/global.css';
     </style>
   </head>
-  <body class="bg-white text-text font-sans antialiased">
+  <body class="bg-white text-text font-sans antialiased overflow-x-hidden">
     <slot name="header">
       <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200">
         <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
