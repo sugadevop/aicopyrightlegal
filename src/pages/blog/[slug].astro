@@ -17,15 +17,8 @@ if (!article) {
   return Astro.redirect('/blog');
 }
 
-// Configure marked for better output
-marked.setOptions({
-  breaks: false,
-  gfm: true,
-});
-
+marked.setOptions({ breaks: false, gfm: true });
 const htmlContent = marked(article.content || '');
-
-// Calculate word count for schema
 const wordCount = (article.content || '').split(/\s+/).length;
 ---
 
@@ -36,7 +29,7 @@ const wordCount = (article.content || '').split(/\s+/).length;
   type="article"
   publishedDate={article.published_at}
 >
-  <!-- Article Schema.org structured data -->
+  <!-- Schema.org -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
@@ -45,248 +38,509 @@ const wordCount = (article.content || '').split(/\s+/).length;
     "datePublished": article.published_at,
     "dateModified": article.updated_at || article.published_at,
     "wordCount": wordCount,
-    "publisher": {
-      "@type": "Organization",
-      "name": "AI Copyright Legal",
-      "url": "https://aicopyrightlegal.com"
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://aicopyrightlegal.com/blog/${article.slug}`
-    }
+    "publisher": { "@type": "Organization", "name": "AI Copyright Legal", "url": "https://aicopyrightlegal.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `https://aicopyrightlegal.com/blog/${article.slug}` }
   })} />
 
-  <article class="min-h-screen">
-    <!-- Article Header -->
-    <header class="bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-10 md:py-14">
-        <!-- Breadcrumb (WCAG: nav landmark with aria-label) -->
-        <nav aria-label="Breadcrumb" class="mb-6">
-          <ol class="flex items-center gap-2 text-sm text-text-muted" role="list">
-            <li><a href="/" class="hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 rounded">Home</a></li>
-            <li aria-hidden="true" class="text-slate-300">›</li>
-            <li><a href="/blog" class="hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 rounded">News</a></li>
-            <li aria-hidden="true" class="text-slate-300">›</li>
-            <li aria-current="page" class="text-text font-medium truncate max-w-[200px] sm:max-w-none">{article.title}</li>
-          </ol>
+  <article class="acl-article">
+    <!-- Header -->
+    <header class="acl-article-header">
+      <div class="acl-container">
+        <nav aria-label="Breadcrumb" class="acl-breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">{article.title}</span>
         </nav>
 
-        <!-- Meta info -->
-        <div class="flex flex-wrap items-center gap-3 mb-5">
-          <span class={`px-2.5 py-1 rounded-md text-xs font-semibold ${
-            article.category === 'Court Ruling' ? 'bg-red-100 text-red-800' :
-            article.category === 'Regulation' ? 'bg-purple-100 text-purple-800' :
-            article.category === 'Settlement' ? 'bg-amber-100 text-amber-800' :
-            article.category === 'Guide' ? 'bg-green-100 text-green-800' :
-            'bg-blue-100 text-blue-800'
-          }`} role="doc-subtitle">{article.category}</span>
-          <time datetime={article.published_at} class="text-sm text-text-muted">
+        <div class="acl-meta">
+          <span class={`acl-category acl-category--${article.category?.toLowerCase().replace(/\s+/g, '-')}`}>
+            {article.category}
+          </span>
+          <time datetime={article.published_at}>
             {new Date(article.published_at || article.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
           </time>
-          {article.read_time && (
-            <span class="text-sm text-text-muted flex items-center gap-1">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              {article.read_time} read
-            </span>
-          )}
+          {article.read_time && <span class="acl-read-time">{article.read_time} read</span>}
         </div>
 
-        <!-- Title -->
-        <h1 class="font-heading text-3xl sm:text-4xl md:text-[2.75rem] font-extrabold text-text leading-[1.2] tracking-tight">
-          {article.title}
-        </h1>
+        <h1 class="acl-title">{article.title}</h1>
 
-        <!-- Excerpt -->
         {article.excerpt && (
-          <p class="mt-5 text-lg sm:text-xl text-text-muted leading-relaxed font-normal">
-            {article.excerpt}
-          </p>
+          <p class="acl-excerpt">{article.excerpt}</p>
         )}
       </div>
     </header>
 
     <!-- Featured Image -->
     {article.featured_image && (
-      <figure class="max-w-4xl mx-auto px-4 sm:px-6 -mt-2 mb-10">
-        <img
-          src={article.featured_image}
-          alt={`Featured image for: ${article.title}`}
-          class="w-full rounded-xl border border-slate-200 shadow-sm"
-          loading="eager"
-          decoding="async"
-        />
+      <figure class="acl-featured-image">
+        <img src={article.featured_image} alt={article.title} loading="eager" />
       </figure>
     )}
 
-    <!-- Article Content -->
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 md:py-10 overflow-hidden">
-      <div
-        class="
-          prose prose-slate
-          prose-lg
-          max-w-none
-          overflow-x-hidden
-          break-words
-
-          /* Typography - readable line length & spacing */
-          prose-p:text-[1.0625rem]
-          prose-p:leading-[1.8]
-          prose-p:text-slate-700
-          prose-p:mb-6
-
-          /* Headings - clear hierarchy */
-          prose-headings:font-heading
-          prose-headings:font-bold
-          prose-headings:text-text
-          prose-headings:scroll-mt-20
-
-          prose-h2:text-2xl
-          prose-h2:sm:text-[1.75rem]
-          prose-h2:mt-12
-          prose-h2:mb-5
-          prose-h2:pb-3
-          prose-h2:border-b
-          prose-h2:border-slate-200
-
-          prose-h3:text-xl
-          prose-h3:mt-8
-          prose-h3:mb-4
-
-          prose-h4:text-lg
-          prose-h4:mt-6
-          prose-h4:mb-3
-
-          /* Links - accessible contrast */
-          prose-a:text-primary
-          prose-a:font-medium
-          prose-a:underline
-          prose-a:underline-offset-2
-          prose-a:decoration-primary/40
-          hover:prose-a:decoration-primary
-
-          /* Lists - readable spacing */
-          prose-li:text-[1.0625rem]
-          prose-li:leading-[1.8]
-          prose-li:text-slate-700
-          prose-li:mb-2
-
-          prose-ul:my-6
-          prose-ol:my-6
-
-          /* Strong/Bold */
-          prose-strong:text-slate-900
-          prose-strong:font-semibold
-
-          /* Blockquotes - visually distinct */
-          prose-blockquote:border-l-4
-          prose-blockquote:border-primary
-          prose-blockquote:bg-blue-50/60
-          prose-blockquote:rounded-r-lg
-          prose-blockquote:py-3
-          prose-blockquote:px-5
-          prose-blockquote:not-italic
-          prose-blockquote:text-slate-700
-          prose-blockquote:my-8
-
-          /* Code blocks - prevent overflow */
-          prose-code:text-sm
-          prose-code:bg-slate-100
-          prose-code:px-1.5
-          prose-code:py-0.5
-          prose-code:rounded
-          prose-code:font-mono
-          prose-code:before:content-none
-          prose-code:after:content-none
-          prose-code:break-all
-
-          prose-pre:bg-slate-900
-          prose-pre:rounded-xl
-          prose-pre:shadow-sm
-          prose-pre:my-8
-          prose-pre:overflow-x-auto
-          prose-pre:max-w-full
-
-          /* Tables - prevent overflow on mobile */
-          prose-table:my-8
-          prose-table:block
-          prose-table:overflow-x-auto
-          prose-table:max-w-full
-          prose-table:whitespace-nowrap
-          prose-table:sm:whitespace-normal
-          prose-th:bg-slate-50
-          prose-th:text-left
-          prose-th:font-semibold
-          prose-th:text-slate-700
-          prose-th:text-sm
-          prose-th:px-3
-          prose-th:py-2
-          prose-td:text-slate-600
-          prose-td:text-sm
-          prose-td:px-3
-          prose-td:py-2
-
-          /* Images - prevent overflow */
-          prose-img:rounded-xl
-          prose-img:shadow-sm
-          prose-img:border
-          prose-img:border-slate-200
-          prose-img:max-w-full
-          prose-img:h-auto
-
-          /* HR */
-          prose-hr:my-10
-          prose-hr:border-slate-200
-        "
-        set:html={htmlContent}
-      />
+    <!-- Content -->
+    <div class="acl-container">
+      <div class="acl-content" set:html={htmlContent} />
     </div>
 
-    <!-- Article Footer -->
-    <footer class="max-w-3xl mx-auto px-4 sm:px-6 pb-16">
-      <!-- Disclaimer -->
-      <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8" role="note" aria-label="Legal disclaimer">
-        <p class="text-sm text-text-muted leading-relaxed">
-          <strong class="text-slate-700">Disclaimer:</strong> This article is for informational purposes only and does not constitute legal advice. For guidance on your specific situation, consult a qualified attorney.
-        </p>
+    <!-- Footer -->
+    <footer class="acl-container acl-article-footer">
+      <div class="acl-disclaimer">
+        <p><strong>Disclaimer:</strong> This article is for informational purposes only and does not constitute legal advice. Consult a qualified attorney for guidance on your specific situation.</p>
       </div>
 
-      <!-- Share & Navigation -->
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 py-6 border-t border-slate-200">
-        <a href="/blog" class="inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline focus:outline-none focus:ring-2 focus:ring-primary/50 rounded">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-          </svg>
-          Back to All Articles
-        </a>
-        <div class="text-xs text-text-muted">
-          Last updated: {new Date(article.updated_at || article.published_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-        </div>
+      <div class="acl-nav-footer">
+        <a href="/blog">← All Articles</a>
+        <span class="acl-updated">Updated {new Date(article.updated_at || article.published_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
       </div>
 
-      <!-- Newsletter CTA -->
-      <div class="bg-gradient-to-br from-primary/5 to-blue-50 rounded-2xl p-6 sm:p-8 mt-8 border border-primary/10">
-        <div class="text-center">
-          <h2 class="font-heading font-bold text-xl text-text mb-2">Stay Updated on AI Copyright Law</h2>
-          <p class="text-sm text-text-muted mb-5 max-w-md mx-auto">Get weekly analysis of new rulings, regulations, and practical guidance delivered to your inbox.</p>
-          <form class="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
-            <label for="newsletter-email" class="sr-only">Email address</label>
-            <input
-              id="newsletter-email"
-              type="email"
-              placeholder="your@email.com"
-              required
-              aria-required="true"
-              class="flex-1 px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-            />
-            <button type="submit" class="px-5 py-2.5 bg-primary text-white font-semibold rounded-lg text-sm hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-              Subscribe
-            </button>
-          </form>
-          <p class="text-xs text-text-muted mt-3">No spam. Unsubscribe anytime.</p>
-        </div>
+      <div class="acl-newsletter-cta">
+        <h2>Stay Updated on AI Copyright Law</h2>
+        <p>Weekly analysis of new rulings, regulations, and practical guidance.</p>
+        <form>
+          <label for="email-cta" class="sr-only">Email address</label>
+          <input id="email-cta" type="email" placeholder="your@email.com" required />
+          <button type="submit">Subscribe</button>
+        </form>
       </div>
     </footer>
   </article>
 </BaseLayout>
+
+<style is:global>
+/* ============================================
+   AI Copyright Legal — Article Styles
+   WordPress-inspired editorial typography
+   ============================================ */
+
+.acl-article {
+  --content-width: 680px;
+  --wide-width: 1080px;
+  --font-body: 'Georgia', 'Times New Roman', serif;
+  --font-heading: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-ui: 'Inter', -apple-system, sans-serif;
+  --color-body: #1a1a1a;
+  --color-muted: #555;
+  --color-light: #767676;
+  --color-border: #e0e0e0;
+  --color-bg-soft: #f7f7f7;
+  --color-accent: #0056b3;
+}
+
+/* Container */
+.acl-container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+.acl-article-header {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 2.5rem;
+}
+
+.acl-breadcrumb {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  color: var(--color-light);
+  margin-bottom: 1.5rem;
+}
+.acl-breadcrumb a {
+  color: var(--color-light);
+  text-decoration: none;
+}
+.acl-breadcrumb a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+.acl-breadcrumb span[aria-hidden] {
+  margin: 0 0.4rem;
+  color: #ccc;
+}
+.acl-breadcrumb [aria-current] {
+  color: var(--color-muted);
+}
+
+.acl-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  color: var(--color-light);
+}
+
+.acl-category {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: #eef4ff;
+  color: #1a56db;
+}
+.acl-category--court-ruling { background: #fef2f2; color: #b91c1c; }
+.acl-category--regulation { background: #f3e8ff; color: #7c3aed; }
+.acl-category--settlement { background: #fffbeb; color: #b45309; }
+.acl-category--guide { background: #ecfdf5; color: #047857; }
+
+.acl-read-time::before {
+  content: "·";
+  margin-right: 0.75rem;
+}
+
+.acl-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-body);
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.acl-excerpt {
+  font-family: var(--font-body);
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+/* Featured Image */
+.acl-featured-image {
+  max-width: var(--wide-width);
+  margin: 0 auto 2.5rem;
+  padding: 0 1.25rem;
+}
+.acl-featured-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ============================================
+   Content — WordPress-style editorial
+   ============================================ */
+.acl-content {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-body);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Paragraphs */
+.acl-content p {
+  margin: 0 0 1.5em;
+}
+
+/* Headings */
+.acl-content h1,
+.acl-content h2,
+.acl-content h3,
+.acl-content h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-body);
+  letter-spacing: -0.01em;
+}
+
+.acl-content h2 {
+  font-size: 1.625rem;
+  margin: 2.5em 0 0.75em;
+}
+
+.acl-content h3 {
+  font-size: 1.3125rem;
+  margin: 2em 0 0.6em;
+}
+
+.acl-content h4 {
+  font-size: 1.125rem;
+  margin: 1.5em 0 0.5em;
+}
+
+/* First heading after header needs less top margin */
+.acl-content > h2:first-child {
+  margin-top: 0;
+}
+
+/* Links */
+.acl-content a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.acl-content a:hover {
+  color: #003d80;
+}
+
+/* Lists */
+.acl-content ul,
+.acl-content ol {
+  margin: 0 0 1.5em;
+  padding-left: 1.5em;
+}
+
+.acl-content li {
+  margin-bottom: 0.4em;
+}
+
+.acl-content li > ul,
+.acl-content li > ol {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+/* Bold */
+.acl-content strong {
+  font-weight: 700;
+  color: var(--color-body);
+}
+
+/* Emphasis */
+.acl-content em {
+  font-style: italic;
+}
+
+/* Blockquotes — subtle, editorial */
+.acl-content blockquote {
+  margin: 1.75em 0;
+  padding: 1em 1.5em;
+  border-left: 4px solid var(--color-accent);
+  background: var(--color-bg-soft);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+.acl-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Code — inline */
+.acl-content code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.875em;
+  background: #f0f0f0;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  word-break: break-all;
+}
+
+/* Code — blocks */
+.acl-content pre {
+  margin: 1.75em 0;
+  padding: 1.25em 1.5em;
+  background: #1e293b;
+  border-radius: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+.acl-content pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  word-break: normal;
+}
+
+/* Tables — scrollable on mobile */
+.acl-content table {
+  width: 100%;
+  margin: 1.75em 0;
+  border-collapse: collapse;
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.acl-content thead {
+  border-bottom: 2px solid var(--color-border);
+}
+
+.acl-content th {
+  text-align: left;
+  padding: 0.6em 1em;
+  font-weight: 600;
+  color: var(--color-body);
+  white-space: nowrap;
+}
+
+.acl-content td {
+  padding: 0.6em 1em;
+  border-bottom: 1px solid #f0f0f0;
+  color: var(--color-muted);
+}
+
+.acl-content tr:last-child td {
+  border-bottom: none;
+}
+
+/* Images */
+.acl-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 1.5em 0;
+}
+
+/* Horizontal rule */
+.acl-content hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 2.5em 0;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.acl-article-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.acl-disclaimer {
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+}
+.acl-disclaimer p {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.acl-nav-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 2rem;
+}
+.acl-nav-footer a {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.acl-nav-footer a:hover { text-decoration: underline; }
+.acl-updated {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--color-light);
+}
+
+/* Newsletter CTA */
+.acl-newsletter-cta {
+  background: linear-gradient(135deg, #f0f7ff 0%, #f8f9fa 100%);
+  border: 1px solid #e0ecff;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.acl-newsletter-cta h2 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-body);
+  margin: 0 0 0.5rem;
+}
+.acl-newsletter-cta p {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin: 0 0 1.25rem;
+}
+.acl-newsletter-cta form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 360px;
+  margin: 0 auto;
+}
+.acl-newsletter-cta input {
+  flex: 1;
+  padding: 0.6rem 0.875rem;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-family: var(--font-ui);
+}
+.acl-newsletter-cta input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+.acl-newsletter-cta button {
+  padding: 0.6rem 1.25rem;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.acl-newsletter-cta button:hover {
+  background: #003d80;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .acl-newsletter-cta form {
+    flex-direction: column;
+  }
+  .acl-content {
+    font-size: 1.0625rem;
+  }
+  .acl-content h2 {
+    font-size: 1.375rem;
+  }
+  .acl-content h3 {
+    font-size: 1.1875rem;
+  }
+  .acl-title {
+    font-size: 1.625rem;
+  }
+  .acl-excerpt {
+    font-size: 1.0625rem;
+  }
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+</style>
