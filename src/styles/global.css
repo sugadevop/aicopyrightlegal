@@ -65,3 +65,68 @@ html, body {
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
+
+/* ============================================
+   Legal pages (Privacy, Terms, About)
+   ============================================ */
+.acl-legal {
+  padding: 3rem 0;
+}
+.acl-legal-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #374151;
+}
+.acl-legal h1 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+.acl-legal-updated {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8125rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+.acl-legal h2 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+}
+.acl-legal h3 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 1.5rem 0 0.5rem;
+}
+.acl-legal p {
+  margin: 0 0 1.25rem;
+}
+.acl-legal ul, .acl-legal ol {
+  margin: 0 0 1.25rem;
+  padding-left: 1.5rem;
+}
+.acl-legal li {
+  margin-bottom: 0.4rem;
+}
+.acl-legal a {
+  color: #0056b3;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.acl-legal a:hover {
+  color: #003d80;
+}
+.acl-legal strong {
+  color: #111827;
+  font-weight: 700;
+}

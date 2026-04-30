@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="How to Protect Your Content From AI Scraping | Technical & Legal Guide" description="A complete guide to stopping AI bots from scraping your website content. Learn how to use robots.txt, meta tags, and legal strategies to protect your IP.">
+  <article class="acl-article">
+    <header class="acl-article-header">
+      <div class="acl-container">
+        <nav aria-label="Breadcrumb" class="acl-breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/learn">Learn</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Protect Your Content From AI Scraping</span>
+        </nav>
+        <div class="acl-meta">
+          <span class="acl-category acl-category--guide">Guide</span>
+          <span>8 min read</span>
+        </div>
+        <h1 class="acl-title">How to Protect Your Content From AI Scraping</h1>
+        <p class="acl-excerpt">Are AI companies using your articles, art, or code to train their models without permission? Learn the technical methods and legal strategies to block scrapers and opt out of AI training datasets.</p>
+      </div>
+    </header>
+    <div class="acl-container">
+      <div class="acl-content">
+        <p>Generative AI models like ChatGPT (OpenAI), Claude (Anthropic), and Gemini (Google) require massive amounts of data to function. To gather this data, these companies deploy automated "crawlers" or "spiders" that silently scrape the public internet, copying text, images, and code.</p>
+        
+        <p>If you run a blog, a portfolio, a news site, or an e-commerce store, your data has likely already been ingested. However, you are not powerless. This guide outlines the most effective technical and legal methods to stop AI scrapers from harvesting your content.</p>
+        
+        <h2>Method 1: The Technical Approach (robots.txt)</h2>
+        <p>The standard way to tell web crawlers not to access your site is the <code>robots.txt</code> file. This is a simple text file placed at the root of your website (e.g., <code>yoursite.com/robots.txt</code>) that issues instructions to visiting bots.</p>
+        
+        <p>While <code>robots.txt</code> relies on the "honor system" (bots can technically ignore it), major AI companies currently respect these directives to avoid bad PR and potential legal liability.</p>
+        
+        <h3>Blocking Major AI Crawlers</h3>
+        <p>To block the most prominent AI scrapers, add the following lines to your <code>robots.txt</code> file:</p>
+        
+        <pre><code># Block OpenAI (ChatGPT)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+# Block Anthropic (Claude)
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Block Google AI (Gemini/Bard)
+User-agent: Google-Extended
+Disallow: /
+
+# Block Common Crawl (Major dataset provider)
+User-agent: CCBot
+Disallow: /
+
+# Block Perplexity AI
+User-agent: PerplexityBot
+Disallow: /
+</code></pre>
+        
+        <p><em>Need a custom robots.txt file? Use our free <a href="/tools/ai-scraper-blocker">AI Scraper Blocker Tool</a> to generate the code instantly.</em></p>
+        
+        <h2>Method 2: Meta Tags and HTTP Headers</h2>
+        <p>If you don't have access to your site's root directory, or if you want granular control over specific pages rather than the whole site, you can use HTML meta tags.</p>
+        
+        <h3>The "Noai" Meta Tag</h3>
+        <p>While not an official web standard yet, many AI companies respect specific meta tags indicating that content should not be used for training.</p>
+        <p>Add this to the <code>&lt;head&gt;</code> section of your HTML pages:</p>
+        <pre><code>&lt;meta name="robots" content="noai, noimageai"&gt;</code></pre>
+        
+        <h3>X-Robots-Tag HTTP Header</h3>
+        <p>For non-HTML files (like PDFs, images, or JSON data), you can send an HTTP header from your server. For example, in Apache's <code>.htaccess</code>:</p>
+        <pre><code>Header set X-Robots-Tag "noai, noimageai"</code></pre>
+        
+        <h2>Method 3: Platform-Specific Opt-Outs</h2>
+        <p>If you host your content on third-party platforms, you cannot edit the <code>robots.txt</code> file. However, many major platforms now offer built-in toggles to protect your work.</p>
+        
+        <ul>
+            <li><strong>Substack:</strong> Go to Settings &gt; Publication Details &gt; "Block AI training" and toggle it on.</li>
+            <li><strong>Medium:</strong> Medium automatically blocks AI crawlers across its entire network via its robots.txt file.</li>
+            <li><strong>DeviantArt:</strong> Offers a "NoAI" tag for uploaded artworks, signaling that the creator does not consent to AI scraping.</li>
+            <li><strong>WordPress:</strong> Depending on your host (like WordPress.com), there are privacy settings or plugins available to block AI bots.</li>
+        </ul>
+        
+        <h2>Method 4: The Legal Approach (Terms of Service)</h2>
+        <p>Technical blocks like <code>robots.txt</code> are fragile. A more robust defense involves updating your website's legal documentation.</p>
+        
+        <h3>Update Your Terms of Service (TOS)</h3>
+        <p>You should explicitly prohibit the scraping of your content for machine learning or AI training purposes in your site's TOS. This creates a legal contract between you and anyone accessing your site (including bots).</p>
+        
+        <p><strong>Example language to include:</strong></p>
+        <blockquote>
+            "You are expressly prohibited from using any automated systems, spiders, robots, or scrapers to access, copy, or extract data from this website for the purpose of developing, training, or fine-tuning any artificial intelligence, machine learning model, or large language model (LLM), without prior written consent."
+        </blockquote>
+        <p>If an AI company ignores your <code>robots.txt</code> and scrapes your site anyway, having this clause in your TOS gives you a legal foundation to sue for "Breach of Contract," which is often easier to prove than copyright infringement.</p>
+        
+        <h2>The "Data Poisoning" Alternative (Nightshade/Glaze)</h2>
+        <p>For visual artists, technical blocks are often circumvented by bad actors. In response, computer scientists have developed tools designed to actively disrupt AI training.</p>
+        
+        <ul>
+            <li><strong>Glaze:</strong> Applies subtle, invisible noise to an image that confuses AI models about the <em>style</em> of the artwork, making it harder for AI to mimic a specific artist.</li>
+            <li><strong>Nightshade:</strong> A more aggressive tool that "poisons" the data. It subtly alters an image so that it looks like a dog to a human, but looks like a cat to an AI model. If an AI scrapes enough Nightshaded images, its internal logic breaks down.</li>
+        </ul>
+        <p>These tools represent a shift from passive defense to active sabotage against unauthorized scraping.</p>
+        
+        <h2>Conclusion</h2>
+        <p>Protecting your content from AI is an ongoing arms race. AI companies frequently deploy new, unannounced crawlers to bypass known blocklists. To maintain protection, you must implement a multi-layered approach: strict technical blocks (robots.txt), explicit legal prohibitions (TOS updates), and platform-level opt-outs.</p>
+        
+        <p><em>For a deeper understanding of why AI companies believe scraping is legal, read our guide on <a href="/learn/ai-training-fair-use">AI Training & Fair Use</a>.</em></p>
+      </div>
+    </div>
+    <footer class="acl-container acl-article-footer">
+      <div class="acl-disclaimer">
+        <p><strong>Disclaimer:</strong> This guide is for informational purposes only and does not constitute legal advice. Consult a qualified attorney for guidance on your specific situation.</p>
+      </div>
+      <div class="acl-nav-footer">
+        <a href="/learn">← All Guides</a>
+        <span class="acl-updated">Updated April 2026</span>
+      </div>
+      <div class="acl-newsletter-cta">
+        <h2>Stay Updated on AI Copyright Law</h2>
+        <p>Weekly analysis of new rulings, regulations, and practical guidance.</p>
+        <form>
+          <label for="email-cta" class="sr-only">Email address</label>
+          <input id="email-cta" type="email" placeholder="your@email.com" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>

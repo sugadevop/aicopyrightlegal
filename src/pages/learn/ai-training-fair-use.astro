@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="AI Training & Fair Use | What the Law Actually Says" description="Understand the complex intersection of AI training data and fair use doctrine. We break down the four fair use factors applied to AI and major ongoing lawsuits.">
+  <article class="acl-article">
+    <header class="acl-article-header">
+      <div class="acl-container">
+        <nav aria-label="Breadcrumb" class="acl-breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/learn">Learn</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">AI Training & Fair Use</span>
+        </nav>
+        <div class="acl-meta">
+          <span class="acl-category acl-category--guide">Guide</span>
+          <span>9 min read</span>
+        </div>
+        <h1 class="acl-title">AI Training & Fair Use — What the Law Actually Says</h1>
+        <p class="acl-excerpt">How do AI companies ingest billions of copyrighted images and texts without permission? The answer lies in the highly debated doctrine of "Fair Use." We break down the legal arguments on both sides.</p>
+      </div>
+    </header>
+    <div class="acl-container">
+      <div class="acl-content">
+        <p>The most consequential legal battle in the history of artificial intelligence isn't about the output—it's about the input. Companies like OpenAI, Anthropic, Midjourney, and Stability AI have trained their massive models by scraping billions of words and images from the internet, often without the permission of or compensation to the original creators.</p>
+        
+        <p>When sued for copyright infringement by authors, artists, and publishers, these AI companies rely almost entirely on one legal defense: <strong>Fair Use</strong>.</p>
+        
+        <h2>What is Fair Use?</h2>
+        <p>Fair use is a doctrine in United States copyright law (Section 107 of the Copyright Act) that permits limited use of copyrighted material without having to first acquire permission from the copyright holder. It is a critical defense that protects freedom of expression, allowing for commentary, criticism, news reporting, research, and parody.</p>
+        
+        <p>Fair use is not a hard-and-fast rule; it is a flexible standard determined on a case-by-case basis. Judges evaluate claims based on four statutory factors.</p>
+        
+        <h2>The Four Fair Use Factors Applied to AI</h2>
+        <p>When courts analyze whether scraping data to train an AI model constitutes fair use, they weigh the following four factors. Here is how both sides are arguing them.</p>
+        
+        <h3>Factor 1: The Purpose and Character of the Use</h3>
+        <p>This is arguably the most critical factor. Courts ask whether the new use is "transformative." Does it add something new, with a further purpose or different character, rather than merely substituting for the original?</p>
+        <ul>
+            <li><strong>The AI Companies' Argument:</strong> The use is highly transformative. They argue they are not reproducing the original works for human consumption. Instead, they are analyzing the <em>statistical relationships</em> between words or pixels to build a new tool (the AI model). This is functionally similar to data mining, which courts have previously ruled as transformative (e.g., Google Books).</li>
+            <li><strong>The Creators' Argument:</strong> The use is highly commercial, not for public research. Furthermore, the resulting models directly compete with the creators. If an AI can generate "a story in the style of George R.R. Martin," it serves the exact same purpose as the original author's work.</li>
+        </ul>
+        
+        <h3>Factor 2: The Nature of the Copyrighted Work</h3>
+        <p>This factor considers whether the original work is factual/informational or highly creative/expressive. Creative works receive stronger protection.</p>
+        <ul>
+            <li><strong>The AI Companies' Argument:</strong> While acknowledging that many scraped works are creative, they argue that the AI is only extracting unprotected facts—the mathematical patterns and statistical structures—not the protected expressive elements.</li>
+            <li><strong>The Creators' Argument:</strong> The datasets (like LAION-5B or Books3) are filled with highly expressive, creative works—novels, paintings, and poems. Training on these works strikes at the core of what copyright is meant to protect.</li>
+        </ul>
+        
+        <h3>Factor 3: The Amount and Substantiality of the Portion Used</h3>
+        <p>Courts look at how much of the original work was copied, and whether it was the "heart" of the work.</p>
+        <ul>
+            <li><strong>The AI Companies' Argument:</strong> While they copy entire works to train the model, they argue this is necessary. They point to the <em>Authors Guild v. Google</em> case, where copying entire books to create a searchable database was deemed fair use because the <em>output</em> only showed snippets.</li>
+            <li><strong>The Creators' Argument:</strong> AI companies make exact copies of millions of works in their entirety. Furthermore, models can sometimes "memorize" and regurgitate exact chunks of the training data, proving that the copies are substantial and retained.</li>
+        </ul>
+        
+        <h3>Factor 4: The Effect of the Use on the Potential Market</h3>
+        <p>Does the new use harm the existing or potential market for the original work?</p>
+        <ul>
+            <li><strong>The AI Companies' Argument:</strong> AI models don't serve as direct substitutes for specific training works. No one uses ChatGPT specifically to avoid buying a copy of a Stephen King novel.</li>
+            <li><strong>The Creators' Argument:</strong> This is where creators are most vocal. Generative AI tools directly undercut their markets. Illustrators are losing jobs to Midjourney; copywriters are being replaced by ChatGPT. The AI companies have essentially created a massive, competing product using the creators' own labor for free.</li>
+        </ul>
+        
+        <h2>The U.S. Copyright Office "Part 3" Inquiry</h2>
+        <p>The USCO has been conducting a massive, multi-part study on copyright and AI. A major upcoming component (often referred to as Part 3) focuses entirely on the legality of training datasets. The Office has collected tens of thousands of public comments and is expected to release a comprehensive report advising Congress on whether new legislation or licensing regimes are required.</p>
+        
+        <h2>Major Lawsuits Shaping the Future</h2>
+        <p>The theoretical arguments over fair use are currently being tested in high-stakes federal litigation. The outcomes of these cases will likely dictate the future of the AI industry.</p>
+        
+        <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-bottom: 2em;">
+            <thead>
+                <tr>
+                    <th scope="col">Case Name</th>
+                    <th scope="col">Plaintiffs</th>
+                    <th scope="col">Defendant</th>
+                    <th scope="col">Core Issue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong><a href="/cases/nytimes-v-openai">The New York Times v. OpenAI & Microsoft</a></strong></td>
+                    <td>The New York Times</td>
+                    <td>OpenAI, Microsoft</td>
+                    <td>NYT alleges that ChatGPT was trained on millions of its articles and now acts as a direct substitute, even regurgitating paywalled articles verbatim when prompted.</td>
+                </tr>
+                <tr>
+                    <td><strong>Andersen v. Stability AI</strong></td>
+                    <td>Sarah Andersen, Kelly McKernan, Karla Ortiz</td>
+                    <td>Stability AI, Midjourney, DeviantArt</td>
+                    <td>Class action by visual artists alleging that image generators unlawfully scraped their portfolios and can now generate competing artworks "in the style of" the plaintiffs.</td>
+                </tr>
+                <tr>
+                    <td><strong>Getty Images v. Stability AI</strong></td>
+                    <td>Getty Images</td>
+                    <td>Stability AI</td>
+                    <td>Getty alleges Stability scraped millions of images, including its proprietary watermarks, which occasionally appear distorted in Stable Diffusion outputs.</td>
+                </tr>
+                <tr>
+                    <td><strong>Authors Guild v. OpenAI</strong></td>
+                    <td>George R.R. Martin, John Grisham, Jodi Picoult, et al.</td>
+                    <td>OpenAI</td>
+                    <td>Prominent authors allege their pirated books (via the "Books3" dataset) were used to train language models that can now generate unauthorized sequels and derivatives.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>Potential Outcomes and Alternatives</h2>
+        <p>If courts rule that training AI on copyrighted works without permission is <strong>not</strong> fair use, the industry will face a massive reckoning. Potential alternatives include:</p>
+        
+        <ul>
+            <li><strong>Opt-in / Opt-out Systems:</strong> A standardized technical protocol (more robust than robots.txt) allowing creators to flag their content as off-limits for AI scraping. Check our guide on <a href="/learn/protect-content-from-ai">How to Protect Your Content From AI Scraping</a>.</li>
+            <li><strong>Collective Licensing:</strong> Similar to how radio stations pay ASCAP or BMI to play music, AI companies might pay into a central fund that distributes royalties to creators whose works are used in training datasets.</li>
+            <li><strong>Clean Data Models:</strong> A shift toward AI models trained exclusively on public domain works, properly licensed content (like Adobe Firefly), or synthetic data.</li>
+        </ul>
+        
+        <h2>Conclusion</h2>
+        <p>The fair use defense is the legal shield protecting the current generative AI boom. Whether that shield holds up against the unified pushback from the creative industries and news media is the defining legal question of this technological era.</p>
+      </div>
+    </div>
+    <footer class="acl-container acl-article-footer">
+      <div class="acl-disclaimer">
+        <p><strong>Disclaimer:</strong> This guide is for informational purposes only and does not constitute legal advice. Consult a qualified attorney for guidance on your specific situation.</p>
+      </div>
+      <div class="acl-nav-footer">
+        <a href="/learn">← All Guides</a>
+        <span class="acl-updated">Updated April 2026</span>
+      </div>
+      <div class="acl-newsletter-cta">
+        <h2>Stay Updated on AI Copyright Law</h2>
+        <p>Weekly analysis of new rulings, regulations, and practical guidance.</p>
+        <form>
+          <label for="email-cta" class="sr-only">Email address</label>
+          <input id="email-cta" type="email" placeholder="your@email.com" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>
