@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "description": "Inter-agent task queue for aicopyrightlegal.com SEO team",
+  "tasks": [
+    {
+      "id": "task-001",
+      "created": "2026-05-01T05:47:00Z",
+      "from": "main",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "completed",
+      "task": "Setup Google Search Console and Google Analytics for aicopyrightlegal.com. Verify domain, submit sitemap, create GA4 property, get measurement ID.",
+      "context": {
+        "domain": "aicopyrightlegal.com",
+        "email": "agusharyanto1290@gmail.com",
+        "sitemap": "https://aicopyrightlegal.com/sitemap-index.xml",
+        "cloudflare_zone": "b44a42d981e11d12548bb33de89a885d"
+      },
+      "output_to": "reports/gsc-ga-setup.json"
+    },
+    {
+      "id": "task-002",
+      "created": "2026-05-01T05:47:00Z",
+      "from": "main",
+      "for": "researcher",
+      "priority": "high",
+      "status": "completed",
+      "task": "Conduct initial keyword research for aicopyrightlegal.com. Find 30-50 target keywords across all clusters. Create first monthly content plan (May 2026).",
+      "context": {
+        "target": "10,000 UV/month in 6-9 months",
+        "current_pages": 36,
+        "niche": "AI copyright law",
+        "competitors": ["aicopyright.com"]
+      },
+      "output_to": "keywords/2026-05-01.json"
+    },
+    {
+      "id": "task-003",
+      "created": "2026-05-01T05:55:00Z",
+      "from": "researcher",
+      "for": "writer",
+      "priority": "high",
+      "status": "pending",
+      "task": "Write article: The Ultimate 2026 AI Copyright Lawsuit Tracker: OpenAI, Anthropic, & More. Target keyword: ai copyright lawsuit 2026. See content-plans/2026-05.json#article-1 for full brief.",
+      "data": "content-plans/2026-05.json"
+    },
+    {
+      "id": "task-004",
+      "created": "2026-05-01T05:55:00Z",
+      "from": "researcher",
+      "for": "writer",
+      "priority": "high",
+      "status": "pending",
+      "task": "Write article: How to Protect Your Content From AI Scraping in 2026 (Technical & Legal Guide). Target keyword: protect content from ai scraping. See content-plans/2026-05.json#article-2 for full brief.",
+      "data": "content-plans/2026-05.json"
+    },
+    {
+      "id": "task-005",
+      "created": "2026-05-01T05:55:00Z",
+      "from": "researcher",
+      "for": "writer",
+      "priority": "high",
+      "status": "pending",
+      "task": "Write article: AI Copyright Compliance: The 2026 Survival Guide for Businesses. Target keyword: ai copyright guidelines for businesses. See content-plans/2026-05.json#article-3 for full brief.",
+      "data": "content-plans/2026-05.json"
+    },
+    {
+      "id": "task-006",
+      "created": "2026-05-01T05:55:00Z",
+      "from": "researcher",
+      "for": "writer",
+      "priority": "medium",
+      "status": "pending",
+      "task": "Write article: Can You Copyright AI-Assisted Content? 2026 Registration Guide. Target keyword: how to register ai assisted work copyright. See content-plans/2026-05.json#article-4 for full brief.",
+      "data": "content-plans/2026-05.json"
+    },
+    {
+      "id": "task-007",
+      "created": "2026-05-01T05:55:00Z",
+      "from": "researcher",
+      "for": "writer",
+      "priority": "medium",
+      "status": "pending",
+      "task": "Write article: Sora 2 and Voice Cloning: The Next Wave of AI Copyright Battles. Target keyword: sora 2 copyright issues. See content-plans/2026-05.json#article-5 for full brief.",
+      "data": "content-plans/2026-05.json"
+    },
+    {
+      "id": "task-008",
+      "created": "2026-05-01T05:55:00Z",
+      "from": "researcher",
+      "for": "writer",
+      "priority": "medium",
+      "status": "pending",
+      "task": "Write article: 7 Real-World Examples of AI Copyright Infringement in 2026. Target keyword: ai copyright infringement examples. See content-plans/2026-05.json#article-6 for full brief.",
+      "data": "content-plans/2026-05.json"
+    },
+    {
+      "id": "task-009",
+      "created": "2026-05-01T05:55:00Z",
+      "from": "researcher",
+      "for": "writer",
+      "priority": "low",
+      "status": "pending",
+      "task": "Write article: Is AI Training Fair Use? How Global Copyright Laws Are Evolving in 2026. Target keyword: ai training data copyright laws. See content-plans/2026-05.json#article-7 for full brief.",
+      "data": "content-plans/2026-05.json"
+    },
+    {
+      "id": "task-010",
+      "created": "2026-05-01T05:55:00Z",
+      "from": "researcher",
+      "for": "writer",
+      "priority": "low",
+      "status": "pending",
+      "task": "Write article: How to Find an AI Copyright Attorney for Your Case (2026). Target keyword: ai copyright attorney near me. See content-plans/2026-05.json#article-8 for full brief.",
+      "data": "content-plans/2026-05.json"
+    }
+  ]
+}

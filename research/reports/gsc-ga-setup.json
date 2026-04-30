@@ -1,0 +1,14 @@
+{
+  "site": "aicopyrightlegal.com",
+  "google_search_console": {
+    "status": "completed",
+    "property_type": "domain",
+    "verification_method": "DNS TXT",
+    "sitemap_submitted": true
+  },
+  "google_analytics": {
+    "status": "completed",
+    "property_name": "aicopyrightlegal.com",
+    "measurement_id": "G-D84Y8W74XV"
+  }
+}

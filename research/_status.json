@@ -1,0 +1,9 @@
+{
+  "last_updated": "2026-05-01T06:15:00Z",
+  "status": "idle",
+  "current_task": null,
+  "completed_tasks": ["task-002", "task-001"],
+  "site-owner": {
+    "status": "completed-setup"
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "month": "2026-05",
+  "articles": [
+    {
+      "id": "article-1",
+      "target_keyword": "ai copyright lawsuit 2026",
+      "secondary_keywords": [
+        "openai copyright case",
+        "nyt v openai summary judgment 2026",
+        "openai sued for copyright infringement",
+        "midjourney copyright lawsuit status",
+        "thomson reuters v ross intelligence update"
+      ],
+      "search_intent": "informational",
+      "title_suggestion": "The Ultimate 2026 AI Copyright Lawsuit Tracker: OpenAI, Anthropic, & More",
+      "word_count": 2500,
+      "category": "News/Resources",
+      "internal_links": [
+        "/cases",
+        "/blog/anthropic-settlement-authors",
+        "/learn/ai-training-fair-use"
+      ],
+      "external_links": [
+        "https://www.courtlistener.com/",
+        "https://www.copyright.gov/ai/"
+      ],
+      "priority": 1,
+      "notes": "Consolidate multiple lawsuit queries into one mega-post/tracker update. Highly linkable asset."
+    },
+    {
+      "id": "article-2",
+      "target_keyword": "protect content from ai scraping",
+      "secondary_keywords": [
+        "how to block ai scrapers",
+        "prevent ai training on my website",
+        "ai scraping vs web scraping legal",
+        "opt out of ai training meta"
+      ],
+      "search_intent": "informational/navigational",
+      "title_suggestion": "How to Protect Your Content From AI Scraping in 2026 (Technical & Legal Guide)",
+      "word_count": 1800,
+      "category": "Guides",
+      "internal_links": [
+        "/learn/protect-content-from-ai",
+        "/learn/ai-training-fair-use",
+        "/blog/protect-content-from-ai-scraping"
+      ],
+      "external_links": [
+        "https://www.cloudflare.com/learning/ai/how-to-prevent-web-scraping/",
+        "https://www.copyright.gov/ai/"
+      ],
+      "priority": 1,
+      "notes": "Actionable guide. High demand from creators/businesses wanting to opt-out. Gaps identified on competitor sites."
+    },
+    {
+      "id": "article-3",
+      "target_keyword": "ai copyright guidelines for businesses",
+      "secondary_keywords": [
+        "ai copyright compliance",
+        "eu ai act copyright transparency",
+        "ai training data copyright laws"
+      ],
+      "search_intent": "informational",
+      "title_suggestion": "AI Copyright Compliance: The 2026 Survival Guide for Businesses",
+      "word_count": 2000,
+      "category": "Guides",
+      "internal_links": [
+        "/learn/ai-copyright-compliance-business",
+        "/laws/united-states",
+        "/learn/ai-copyright-basics"
+      ],
+      "external_links": [
+        "https://eur-lex.europa.eu/",
+        "https://www.copyright.gov/ai/"
+      ],
+      "priority": 1,
+      "notes": "Target B2B traffic. Cover the newly enforced EU AI Act transparency rules."
+    },
+    {
+      "id": "article-4",
+      "target_keyword": "how to register ai assisted work copyright",
+      "secondary_keywords": [
+        "can you copyright ai generated content",
+        "is ai art copyrightable 2026",
+        "is chatgpt output copyrighted",
+        "us copyright office ai report part 3"
+      ],
+      "search_intent": "informational/transactional",
+      "title_suggestion": "Can You Copyright AI-Assisted Content? 2026 Registration Guide",
+      "word_count": 1500,
+      "category": "Guides",
+      "internal_links": [
+        "/learn/can-you-copyright-ai-content",
+        "/learn/who-owns-ai-generated-art",
+        "/blog/copyright-office-part-3"
+      ],
+      "external_links": [
+        "https://www.copyright.gov/ai/",
+        "https://www.wipo.int/en/web/wipo-magazine/articles/us-copyright-office-on-ai"
+      ],
+      "priority": 2,
+      "notes": "Direct, actionable answer to the most common question. Focus on the human authorship requirement."
+    },
+    {
+      "id": "article-5",
+      "target_keyword": "sora 2 copyright issues",
+      "secondary_keywords": [
+        "ai voice cloning copyright law",
+        "ai generated content legal",
+        "ai art copyright"
+      ],
+      "search_intent": "informational",
+      "title_suggestion": "Sora 2 and Voice Cloning: The Next Wave of AI Copyright Battles",
+      "word_count": 1200,
+      "category": "News",
+      "internal_links": [
+        "/learn/who-owns-ai-generated-art",
+        "/blog/ai-art-copyright-2026-guide"
+      ],
+      "external_links": [
+        "https://www.copyright.gov/ai/"
+      ],
+      "priority": 2,
+      "notes": "Capitalize on trending topic from competitor's blog (Sora 2). Good for fresh traffic."
+    },
+    {
+      "id": "article-6",
+      "target_keyword": "ai copyright infringement examples",
+      "secondary_keywords": [
+        "openai sued for copyright infringement",
+        "thomson reuters v ross intelligence update",
+        "ai copyright law"
+      ],
+      "search_intent": "informational",
+      "title_suggestion": "7 Real-World Examples of AI Copyright Infringement in 2026",
+      "word_count": 1400,
+      "category": "Guides",
+      "internal_links": [
+        "/cases",
+        "/learn/ai-training-fair-use",
+        "/blog/supreme-court-denies-ai-copyright-challenge"
+      ],
+      "external_links": [
+        "https://www.courtlistener.com/"
+      ],
+      "priority": 2,
+      "notes": "Educational listicle breaking down the technical legal concepts into easy-to-understand examples."
+    },
+    {
+      "id": "article-7",
+      "target_keyword": "ai training data copyright laws",
+      "secondary_keywords": [
+        "ai training fair use",
+        "can ai code be copyrighted",
+        "copyright office ai"
+      ],
+      "search_intent": "informational",
+      "title_suggestion": "Is AI Training Fair Use? How Global Copyright Laws Are Evolving in 2026",
+      "word_count": 1600,
+      "category": "Guides",
+      "internal_links": [
+        "/learn/ai-training-fair-use",
+        "/laws/united-states",
+        "/blog/ai-training-fair-use-law-2026"
+      ],
+      "external_links": [
+        "https://www.wipo.int/",
+        "https://www.copyright.gov/ai/"
+      ],
+      "priority": 3,
+      "notes": "Deep dive into the fair use defense. Link heavily to our /laws hub."
+    },
+    {
+      "id": "article-8",
+      "target_keyword": "ai copyright attorney near me",
+      "secondary_keywords": [
+        "openai copyright case",
+        "ai generated content legal"
+      ],
+      "search_intent": "transactional",
+      "title_suggestion": "How to Find an AI Copyright Attorney for Your Case (2026)",
+      "word_count": 1000,
+      "category": "Guides",
+      "internal_links": [
+        "/learn/ai-copyright-basics",
+        "/cases"
+      ],
+      "external_links": [],
+      "priority": 3,
+      "notes": "Bottom-of-funnel content aimed at those looking for legal representation."
+    }
+  ]
+}

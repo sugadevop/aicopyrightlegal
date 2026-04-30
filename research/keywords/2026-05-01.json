@@ -1,0 +1,294 @@
+{
+  "date": "2026-05-01",
+  "domain": "aicopyrightlegal.com",
+  "keywords": [
+    {
+      "keyword": "ai copyright lawsuit 2026",
+      "volume": "high",
+      "difficulty": "medium",
+      "intent": "informational",
+      "coverage_needed": "update or new",
+      "priority": 1,
+      "cluster": "news"
+    },
+    {
+      "keyword": "can you copyright ai generated content",
+      "volume": "high",
+      "difficulty": "high",
+      "intent": "informational",
+      "coverage_needed": "update",
+      "priority": 2,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "ai training fair use",
+      "volume": "high",
+      "difficulty": "high",
+      "intent": "informational",
+      "coverage_needed": "update",
+      "priority": 2,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "protect content from ai scraping",
+      "volume": "medium",
+      "difficulty": "medium",
+      "intent": "informational/navigational",
+      "coverage_needed": "update",
+      "priority": 1,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "ai copyright compliance",
+      "volume": "medium",
+      "difficulty": "medium",
+      "intent": "informational",
+      "coverage_needed": "update",
+      "priority": 2,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "openai copyright case",
+      "volume": "high",
+      "difficulty": "high",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 1,
+      "cluster": "news"
+    },
+    {
+      "keyword": "ai generated content legal",
+      "volume": "medium",
+      "difficulty": "high",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 3,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "copyright office ai",
+      "volume": "medium",
+      "difficulty": "high",
+      "intent": "informational/navigational",
+      "coverage_needed": "update",
+      "priority": 3,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "ai art copyright",
+      "volume": "high",
+      "difficulty": "high",
+      "intent": "informational",
+      "coverage_needed": "update",
+      "priority": 4,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "ai copyright law",
+      "volume": "high",
+      "difficulty": "high",
+      "intent": "informational",
+      "coverage_needed": "update",
+      "priority": 4,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "how to block ai scrapers",
+      "volume": "medium",
+      "difficulty": "low",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 1,
+      "cluster": "tools/resources"
+    },
+    {
+      "keyword": "ai copyright guidelines for businesses",
+      "volume": "medium",
+      "difficulty": "medium",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 1,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "is ai art copyrightable 2026",
+      "volume": "low",
+      "difficulty": "low",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 1,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "ai copyright cases tracker",
+      "volume": "medium",
+      "difficulty": "low",
+      "intent": "informational/navigational",
+      "coverage_needed": "update",
+      "priority": 1,
+      "cluster": "tools/resources"
+    },
+    {
+      "keyword": "eu ai act copyright transparency",
+      "volume": "medium",
+      "difficulty": "medium",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 2,
+      "cluster": "news/guides"
+    },
+    {
+      "keyword": "prevent ai training on my website",
+      "volume": "medium",
+      "difficulty": "low",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 2,
+      "cluster": "tools/resources"
+    },
+    {
+      "keyword": "openai sued for copyright infringement",
+      "volume": "high",
+      "difficulty": "medium",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 2,
+      "cluster": "news"
+    },
+    {
+      "keyword": "anthropic copyright settlement authors",
+      "volume": "low",
+      "difficulty": "low",
+      "intent": "informational",
+      "coverage_needed": "update",
+      "priority": 2,
+      "cluster": "news"
+    },
+    {
+      "keyword": "ai training data copyright laws",
+      "volume": "medium",
+      "difficulty": "medium",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 3,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "can ai code be copyrighted",
+      "volume": "medium",
+      "difficulty": "medium",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 3,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "ai copyright attorney near me",
+      "volume": "low",
+      "difficulty": "medium",
+      "intent": "transactional",
+      "coverage_needed": "new",
+      "priority": 3,
+      "cluster": "navigational"
+    },
+    {
+      "keyword": "sora 2 copyright issues",
+      "volume": "low",
+      "difficulty": "low",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 1,
+      "cluster": "news"
+    },
+    {
+      "keyword": "us copyright office ai report part 3",
+      "volume": "low",
+      "difficulty": "low",
+      "intent": "informational",
+      "coverage_needed": "update",
+      "priority": 3,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "thomson reuters v ross intelligence update",
+      "volume": "low",
+      "difficulty": "low",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 3,
+      "cluster": "news"
+    },
+    {
+      "keyword": "ai scraping vs web scraping legal",
+      "volume": "low",
+      "difficulty": "low",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 3,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "how to register ai assisted work copyright",
+      "volume": "medium",
+      "difficulty": "medium",
+      "intent": "informational/transactional",
+      "coverage_needed": "new",
+      "priority": 2,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "ai copyright infringement examples",
+      "volume": "medium",
+      "difficulty": "low",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 2,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "is chatgpt output copyrighted",
+      "volume": "high",
+      "difficulty": "high",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 3,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "midjourney copyright lawsuit status",
+      "volume": "medium",
+      "difficulty": "medium",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 3,
+      "cluster": "news"
+    },
+    {
+      "keyword": "opt out of ai training meta",
+      "volume": "medium",
+      "difficulty": "low",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 1,
+      "cluster": "tools/resources"
+    },
+    {
+      "keyword": "ai voice cloning copyright law",
+      "volume": "low",
+      "difficulty": "low",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 3,
+      "cluster": "guides"
+    },
+    {
+      "keyword": "nyt v openai summary judgment 2026",
+      "volume": "low",
+      "difficulty": "low",
+      "intent": "informational",
+      "coverage_needed": "new",
+      "priority": 1,
+      "cluster": "news"
+    }
+  ]
+}

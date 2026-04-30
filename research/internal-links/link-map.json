@@ -1,0 +1,86 @@
+{
+  "description": "Internal Linking Map for aicopyrightlegal.com",
+  "strategy": "Hub and Spoke",
+  "map": [
+    {
+      "source": "/blog/ai-copyright-lawsuit-2026-tracker",
+      "target": "/cases",
+      "anchor_text": "AI copyright case tracker"
+    },
+    {
+      "source": "/blog/ai-copyright-lawsuit-2026-tracker",
+      "target": "/learn/ai-training-fair-use",
+      "anchor_text": "fair use in AI training"
+    },
+    {
+      "source": "/blog/protect-content-from-ai-scraping-2026",
+      "target": "/learn/protect-content-from-ai",
+      "anchor_text": "protect your content from AI"
+    },
+    {
+      "source": "/blog/protect-content-from-ai-scraping-2026",
+      "target": "/learn/ai-training-fair-use",
+      "anchor_text": "AI scraping and fair use"
+    },
+    {
+      "source": "/blog/ai-copyright-compliance-business-2026",
+      "target": "/learn/ai-copyright-compliance-business",
+      "anchor_text": "corporate AI copyright compliance"
+    },
+    {
+      "source": "/blog/ai-copyright-compliance-business-2026",
+      "target": "/laws/united-states",
+      "anchor_text": "US AI copyright laws"
+    },
+    {
+      "source": "/blog/register-ai-assisted-work-copyright",
+      "target": "/learn/can-you-copyright-ai-content",
+      "anchor_text": "copyrighting AI generated content"
+    },
+    {
+      "source": "/blog/register-ai-assisted-work-copyright",
+      "target": "/learn/who-owns-ai-generated-art",
+      "anchor_text": "ownership of AI art"
+    },
+    {
+      "source": "/blog/sora-2-voice-cloning-copyright",
+      "target": "/learn/who-owns-ai-generated-art",
+      "anchor_text": "AI generated video ownership"
+    },
+    {
+      "source": "/blog/ai-copyright-infringement-examples",
+      "target": "/cases",
+      "anchor_text": "real AI infringement cases"
+    },
+    {
+      "source": "/blog/ai-copyright-infringement-examples",
+      "target": "/learn/ai-training-fair-use",
+      "anchor_text": "when AI training isn't fair use"
+    },
+    {
+      "source": "/blog/ai-training-fair-use-laws-2026",
+      "target": "/learn/ai-training-fair-use",
+      "anchor_text": "understanding AI and fair use"
+    },
+    {
+      "source": "/blog/ai-training-fair-use-laws-2026",
+      "target": "/laws/united-states",
+      "anchor_text": "US copyright law for AI"
+    },
+    {
+      "source": "/learn/protect-content-from-ai",
+      "target": "/blog/protect-content-from-ai-scraping-2026",
+      "anchor_text": "latest technical methods to block AI scrapers"
+    },
+    {
+      "source": "/learn/ai-training-fair-use",
+      "target": "/blog/ai-training-fair-use-laws-2026",
+      "anchor_text": "recent global developments in fair use"
+    },
+    {
+      "source": "/cases",
+      "target": "/blog/ai-copyright-lawsuit-2026-tracker",
+      "anchor_text": "detailed 2026 lawsuit updates"
+    }
+  ]
+}

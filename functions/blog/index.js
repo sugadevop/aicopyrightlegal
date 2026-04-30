@@ -86,6 +86,8 @@ export async function onRequest(context) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D84Y8W74XV"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-D84Y8W74XV");</script>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="bg-white text-text font-sans antialiased overflow-x-hidden">
