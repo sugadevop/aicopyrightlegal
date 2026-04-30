@@ -1,52 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPublishedArticles, getPublicCases } from '../lib/api.js';
 
-// Latest news articles (will come from content collection later)
-const latestNews = [
-  {
-    title: 'Supreme Court Denies AI Copyright Challenge — Human Authorship Now Settled Law',
-    slug: 'supreme-court-denies-ai-copyright-challenge',
-    date: '2026-03-02',
-    category: 'Court Ruling',
-    excerpt: 'The U.S. Supreme Court has denied certiorari in Thaler v. Perlmutter, definitively confirming that AI cannot hold copyrights under U.S. law.',
-  },
-  {
-    title: 'Anthropic Offers $1.5 Billion Settlement to Authors Over Training Data',
-    slug: 'anthropic-1-5-billion-settlement-authors',
-    date: '2026-02-15',
-    category: 'Settlement',
-    excerpt: 'In what would be the largest copyright infringement payout in U.S. history, Anthropic has offered to settle claims from 500,000 affected authors.',
-  },
-  {
-    title: 'Copyright Office Part 3: AI Training Is Not Always Fair Use',
-    slug: 'copyright-office-part-3-ai-training-fair-use',
-    date: '2025-05-09',
-    category: 'Regulation',
-    excerpt: 'The U.S. Copyright Office concludes that AI developers who train models to generate content competing with originals go beyond fair use.',
-  },
-  {
-    title: 'Meta Wins Summary Judgment in Authors\' AI Copyright Case',
-    slug: 'meta-wins-summary-judgment-authors-ai-case',
-    date: '2025-06-20',
-    category: 'Court Ruling',
-    excerpt: 'Judge Chhabria rules in Meta\'s favor based on lack of demonstrated harm, but emphasizes ruling is narrow and case-specific.',
-  },
-  {
-    title: 'First AI-Only Artwork Registered for Copyright as Composite Work',
-    slug: 'first-ai-artwork-copyright-registered',
-    date: '2025-01-15',
-    category: 'Registration',
-    excerpt: '"A Single Piece of American Cheese" becomes the first visual artwork composed solely of AI outputs to receive copyright registration.',
-  },
-];
+// Fetch from API at build time
+const articles = await getPublishedArticles();
+const cases = await getPublicCases();
 
-const caseTracker = [
-  { name: 'Thaler v. Perlmutter', status: 'Closed', party: 'vs. Copyright Office', outcome: 'AI cannot be author' },
-  { name: 'NYT v. OpenAI', status: 'Active', party: 'New York Times', outcome: 'Pending' },
-  { name: 'Authors v. Anthropic', status: 'Settlement', party: '500K+ Authors', outcome: '$1.5B offered' },
-  { name: 'Authors v. Meta', status: 'Partial Ruling', party: 'Multiple Authors', outcome: 'Fair use (narrow)' },
-  { name: 'Thomson Reuters v. Ross', status: 'Decided', party: 'Thomson Reuters', outcome: 'Infringement found' },
-];
+// Map to template format
+const latestNews = articles.map(a => ({
+  title: a.title,
+  slug: a.slug,
+  date: a.published_at || a.created_at,
+  category: a.category,
+  excerpt: a.excerpt,
+}));
+
+const caseTracker = cases.map(c => ({
+  name: c.name,
+  status: c.status_label || c.status,
+  party: c.parties,
+  outcome: c.summary?.substring(0, 50) || '',
+}));
 ---
 
 <BaseLayout title="AI Copyright Legal — Navigate AI Copyright Law">

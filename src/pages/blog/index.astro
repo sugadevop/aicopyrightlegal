@@ -1,56 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedArticles } from '../../lib/api.js';
 
-const articles = [
-  {
-    title: 'Supreme Court Denies AI Copyright Challenge — Human Authorship Now Settled Law',
-    slug: 'supreme-court-denies-ai-copyright-challenge',
-    date: '2026-03-02',
-    category: 'Court Ruling',
-    excerpt: 'The U.S. Supreme Court has denied certiorari in Thaler v. Perlmutter, definitively confirming that AI cannot hold copyrights under U.S. law. This closes all avenues of appeal.',
-    readTime: '5 min',
-  },
-  {
-    title: 'Anthropic Offers $1.5 Billion Settlement to Authors Over Training Data',
-    slug: 'anthropic-1-5-billion-settlement-authors',
-    date: '2026-02-15',
-    category: 'Settlement',
-    excerpt: 'In what would be the largest copyright infringement payout in U.S. history, Anthropic has offered to settle claims from 500,000 affected authors at roughly $3,000 each.',
-    readTime: '7 min',
-  },
-  {
-    title: 'Copyright Office Part 3: AI Training Is Not Always Fair Use',
-    slug: 'copyright-office-part-3-ai-training-fair-use',
-    date: '2025-05-09',
-    category: 'Regulation',
-    excerpt: 'The U.S. Copyright Office concludes that AI developers who use copyrighted works to train models generating competing content go beyond fair use.',
-    readTime: '8 min',
-  },
-  {
-    title: 'Meta Wins Summary Judgment in Authors\' AI Copyright Case',
-    slug: 'meta-wins-summary-judgment-authors-ai-case',
-    date: '2025-06-20',
-    category: 'Court Ruling',
-    excerpt: 'Judge Chhabria rules in Meta\'s favor based on lack of demonstrated harm, but emphasizes the ruling is narrow and does not broadly validate AI training practices.',
-    readTime: '6 min',
-  },
-  {
-    title: 'First AI-Only Artwork Registered for Copyright as Composite Work',
-    slug: 'first-ai-artwork-copyright-registered',
-    date: '2025-01-15',
-    category: 'Registration',
-    excerpt: '"A Single Piece of American Cheese" becomes the first visual artwork composed solely of AI outputs to receive copyright registration based on human selection and arrangement.',
-    readTime: '4 min',
-  },
-  {
-    title: 'Copyright Office January 2025: AI-Assisted Works Can Be Copyrighted',
-    slug: 'copyright-office-ai-assisted-works-copyrightable',
-    date: '2025-01-29',
-    category: 'Regulation',
-    excerpt: 'The Copyright Office clarifies that works where human creative expression remains evident can be copyrighted, even when AI tools were used in creation.',
-    readTime: '6 min',
-  },
-];
+const articles = await getPublishedArticles();
 ---
 
 <BaseLayout
@@ -69,10 +21,15 @@ const articles = [
       <button class="px-4 py-2 bg-slate-100 text-text-muted text-sm font-medium rounded-lg hover:bg-slate-200 transition-colors">Court Rulings</button>
       <button class="px-4 py-2 bg-slate-100 text-text-muted text-sm font-medium rounded-lg hover:bg-slate-200 transition-colors">Regulation</button>
       <button class="px-4 py-2 bg-slate-100 text-text-muted text-sm font-medium rounded-lg hover:bg-slate-200 transition-colors">Settlements</button>
-      <button class="px-4 py-2 bg-slate-100 text-text-muted text-sm font-medium rounded-lg hover:bg-slate-200 transition-colors">Analysis</button>
     </div>
 
-    <!-- Articles grid -->
+    {articles.length === 0 && (
+      <div class="text-center py-12 text-text-muted">
+        <p>No articles published yet. Check back soon!</p>
+      </div>
+    )}
+
+    <!-- Articles list -->
     <div class="space-y-6">
       {articles.map((article) => (
         <article class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow group">
@@ -85,8 +42,8 @@ const articles = [
                   article.category === 'Settlement' ? 'bg-amber-50 text-amber-700' :
                   'bg-blue-50 text-blue-700'
                 }`}>{article.category}</span>
-                <span class="text-xs text-text-muted">{new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                <span class="text-xs text-text-muted">· {article.readTime} read</span>
+                <span class="text-xs text-text-muted">{new Date(article.published_at || article.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                {article.read_time && <span class="text-xs text-text-muted">· {article.read_time} read</span>}
               </div>
               <h2 class="font-heading font-bold text-xl text-text group-hover:text-primary transition-colors mb-2">
                 <a href={`/blog/${article.slug}`}>{article.title}</a>
