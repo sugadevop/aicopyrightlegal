@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="AI Copyright Law in China (2026 Guide)" description="Comprehensive guide to AI copyright law in China: the Beijing Internet Court ruling, intellectual achievement standards, and deep synthesis regulations.">
+  <article class="acl-article">
+    <header class="acl-article-header">
+      <div class="acl-container">
+        <nav aria-label="Breadcrumb" class="acl-breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/laws">Laws</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">China</span>
+        </nav>
+        <div class="acl-meta">
+          <span class="acl-category acl-category--regulation">Law</span>
+          <span>Updated April 2026</span>
+        </div>
+        <h1 class="acl-title">China — AI Copyright Law</h1>
+        <p class="acl-excerpt">China has taken a rapid, pragmatic approach to AI regulation, notably becoming the first major jurisdiction to recognize copyright protection for certain AI-generated images based on human prompt engineering.</p>
+      </div>
+    </header>
+    
+    <div class="acl-container">
+      <div class="acl-content">
+        <h2>A Pragmatic Departure: Copyrighting AI Outputs</h2>
+        <p>While the <a href="/laws/united-states">United States</a> has staunchly refused to grant copyright to works containing significant AI-generated elements, China's judicial system has taken a markedly different, more pragmatic path designed to encourage the domestic AI industry.</p>
+
+        <h3>The Landmark Ruling: Li v. Liu (Beijing Internet Court, 2023)</h3>
+        <p>In November 2023, the Beijing Internet Court issued a globally significant ruling in the case of <em>Li v. Liu</em>. The plaintiff, Li, used the AI image generator Stable Diffusion to create an image of a young woman, which the defendant, Liu, later used without permission on a blog.</p>
+        <p>Unlike the US Copyright Office's rejection of similar works (e.g., the Kashtanova Midjourney case), the Chinese court ruled that the AI-generated image <strong>was protected by copyright</strong> and that Li was the author.</p>
+
+        <h3>The "Intellectual Achievement" Standard</h3>
+        <p>The court's reasoning hinged on the concept of "intellectual achievement." The judge determined that Li did not merely press a button. Instead, he:</p>
+        <ol>
+          <li>Selected the specific AI model.</li>
+          <li>Crafted complex positive and negative prompts.</li>
+          <li>Set specific parameters (seed, steps, guidance scale).</li>
+          <li>Iteratively refined the generation process to achieve his desired artistic vision.</li>
+        </ol>
+        <p>The court concluded that this iterative prompt engineering and parameter tuning constituted an "original intellectual achievement" reflecting the human's aesthetic choices and personalized expression. The AI was viewed as a tool, akin to a camera, rather than a co-author.</p>
+        <p>This ruling established a lower threshold for human authorship in AI works compared to the US, making China a highly attractive environment for prompt engineers and AI-assisted digital artists. You can review the full implications in our <a href="/cases">Case Tracker</a>.</p>
+
+        <h2>Generative AI and Deep Synthesis Regulations</h2>
+        <p>Alongside its accommodating stance on copyright for outputs, China has implemented some of the world's most stringent administrative regulations regarding the operation of generative AI services.</p>
+
+        <h3>The 2023 Generative AI Measures</h3>
+        <p>The Cyberspace Administration of China (CAC) enacted the "Interim Measures for the Management of Generative Artificial Intelligence Services" in August 2023. These measures impose strict requirements on AI providers, significantly impacting how they handle copyright.</p>
+        <ul>
+          <li><strong>Lawful Training Data:</strong> Providers must ensure that their training data is obtained lawfully. They must not infringe upon the intellectual property rights of others. This is a higher statutory bar than the US "fair use" defense.</li>
+          <li><strong>Respecting Opt-Outs:</strong> If copyright holders request that their works not be used, AI providers must possess mechanisms to honor these requests, aligning somewhat with the <a href="/laws/european-union">EU's approach</a>.</li>
+          <li><strong>Content Moderation:</strong> Generated content must reflect "core socialist values" and must not contain false information or infringe on individual rights.</li>
+        </ul>
+
+        <h3>Deep Synthesis Regulations</h3>
+        <p>China also enforces specific rules for "deep synthesis" technologies (deepfakes, voice cloning, and avatar generation). Providers must clearly label deep synthesis content to prevent public deception, a rule that heavily influences the commercial deployment of AI avatars and synthetic media.</p>
+
+        <h2>AI Training: A Stricter Environment?</h2>
+        <p>Paradoxically, while China is lenient on granting copyright to AI <em>outputs</em>, its regulatory framework implies a stricter stance on AI <em>inputs</em> compared to <a href="/laws/japan">Japan</a> or the US.</p>
+        <p>The explicit requirement in the Generative AI Measures that training data must not infringe IP rights suggests that unauthorized web scraping of copyrighted Chinese works for commercial AI training carries significant regulatory risk. Chinese AI companies often rely heavily on licensed data, open-source datasets, or state-sanctioned data pools to ensure compliance.</p>
+
+        <h2>Implications for International Companies</h2>
+        <p>The Chinese AI legal landscape presents a complex duality for international businesses:</p>
+        <ul>
+          <li><strong>Output Commercialization:</strong> It is easier to secure IP protection for AI-generated assets in China than in Western jurisdictions, provided you can document the human prompt engineering and iterative process.</li>
+          <li><strong>Model Deployment:</strong> Deploying a Western-trained LLM or image generator in China is extremely difficult due to the strict CAC licensing requirements, content moderation rules, and the burden of proving that the underlying training data respects Chinese copyright norms.</li>
+          <li><strong>Data Localization:</strong> Foreign companies operating in China must adhere strictly to data localization laws, meaning AI training on Chinese data generally must occur within China's borders.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <footer class="acl-container acl-article-footer">
+      <div class="acl-disclaimer">
+        <p><strong>Disclaimer:</strong> This overview is for informational purposes only. Laws change frequently. Consult a qualified attorney in the relevant jurisdiction for current legal advice.</p>
+      </div>
+      <div class="acl-nav-footer">
+        <a href="/laws">← All Countries</a>
+        <span class="acl-updated">Updated April 2026</span>
+      </div>
+      <div class="acl-newsletter-cta">
+        <h2>Stay Updated on AI Copyright Law</h2>
+        <p>Weekly analysis of new rulings and regulations worldwide.</p>
+        <form>
+          <label for="email-cta" class="sr-only">Email address</label>
+          <input id="email-cta" type="email" placeholder="your@email.com" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>

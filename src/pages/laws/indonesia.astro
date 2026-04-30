@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="AI Copyright Law in Indonesia (2026 Guide)" description="Overview of AI copyright law in Indonesia: current framework under Law No. 28/2014, Kominfo regulations, and the ASEAN context.">
+  <article class="acl-article">
+    <header class="acl-article-header">
+      <div class="acl-container">
+        <nav aria-label="Breadcrumb" class="acl-breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/laws">Laws</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Indonesia</span>
+        </nav>
+        <div class="acl-meta">
+          <span class="acl-category acl-category--regulation">Law</span>
+          <span>Updated April 2026</span>
+        </div>
+        <h1 class="acl-title">Indonesia — AI Copyright Law</h1>
+        <p class="acl-excerpt">Indonesia's copyright framework is currently adapting to the rapid adoption of AI, relying heavily on traditional human authorship requirements while developing new digital economy guidelines.</p>
+      </div>
+    </header>
+    
+    <div class="acl-container">
+      <div class="acl-content">
+        <h2>The Current Framework: Copyright Law No. 28 of 2014</h2>
+        <p>Like many developing digital economies, Indonesia does not currently have specific, dedicated clauses in its primary copyright legislation addressing artificial intelligence. The governing statute is <strong>Law No. 28 of 2014 concerning Copyright</strong>.</p>
+
+        <h3>The Strict Requirement of Human Authorship</h3>
+        <p>Article 1, paragraph 2 of the Indonesian Copyright Law defines an "Author" (Pencipta) as <em>"a person or several persons who individually or jointly produce a creation that is unique and personal."</em></p>
+        <p>Paragraph 3 defines a "Creation" (Ciptaan) as <em>"any result of an Author's work in the fields of science, art, and literature, which is produced based on inspiration, ability, thought, imagination, dexterity, skill, or expertise expressed in a tangible form."</em></p>
+        <p>The Directorate General of Intellectual Property (DGIP) under the Ministry of Law and Human Rights interprets these definitions strictly. A "person" refers specifically to a human being or a recognized legal entity (representing humans). Therefore, under the current interpretation, a purely AI-generated work lacks a legal author and cannot be copyrighted in Indonesia.</p>
+
+        <h3>AI-Assisted Works</h3>
+        <p>Similar to the <a href="/laws/united-states">United States</a>, if a human uses AI as a tool—providing significant "thought, imagination, and skill" in arranging and modifying the output—the resulting work may be copyrightable. However, the burden of proving that the human contribution is substantial enough to warrant protection lies with the creator during the registration process.</p>
+
+        <h2>Regulatory Responses and Ministry Guidelines</h2>
+        <p>While the primary law remains unchanged, the Indonesian government is actively addressing the broader implications of AI through ministerial regulations and circulars.</p>
+
+        <h3>Ministry of Communication and Informatics (Kominfo)</h3>
+        <p>In late 2023, Kominfo issued a <strong>Circular on Artificial Intelligence Ethics</strong> (Surat Edaran Menkominfo No. 9 Tahun 2023). This circular serves as an ethical guideline rather than binding law, but it sets the tone for future regulation.</p>
+        <p>Crucially regarding copyright, the circular emphasizes that developers and users of AI must:</p>
+        <ul>
+          <li>Respect existing intellectual property rights.</li>
+          <li>Ensure transparency regarding the use of AI in generating content.</li>
+          <li>Prevent the generation of content that facilitates copyright infringement or deepfakes intended to deceive.</li>
+        </ul>
+        <p>While this circular does not resolve the debate over training data (like the EU's <a href="/laws/european-union">TDM exception</a>), it signals that the government expects AI companies operating in Indonesia to respect the IP of local creators.</p>
+
+        <h2>AI Training Data: The Legal Void</h2>
+        <p>Indonesia currently lacks specific provisions regarding Text and Data Mining (TDM) or fair use exceptions explicitly tailored for machine learning.</p>
+        <p>Article 44 of the Copyright Law provides limitations on copyright (similar to fair use), allowing reproduction for educational, research, and non-commercial purposes provided the source is mentioned and it does not prejudice the reasonable interests of the creator. However, utilizing this article to justify massive, commercial data scraping for AI training is highly legally risky and untested in Indonesian courts.</p>
+        <p>Unlike <a href="/laws/japan">Japan</a>, commercial AI developers cannot rely on a broad statutory exception. Consequently, developers training models specifically on Indonesian datasets often resort to licensing agreements or using public domain/government data to mitigate risk.</p>
+
+        <h2>The ASEAN Context</h2>
+        <p>Indonesia's approach is highly influential within the Association of Southeast Asian Nations (ASEAN). In early 2024, ASEAN released its "Guide on AI Governance and Ethics."</p>
+        <p>This regional guide, championed by Singapore and Indonesia, focuses heavily on responsible innovation, risk management, and IP protection. It encourages member states to develop frameworks that balance AI growth with creator rights, leaning toward a more regulated, licensing-based approach for training data rather than the open-scraping model.</p>
+
+        <h2>Comparison with Regional Neighbors</h2>
+        <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; margin-bottom: 2rem;">
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>AI Authorship Recognized?</th>
+              <th>Specific AI Training Exception?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Indonesia</strong></td>
+              <td>No (Requires human "person")</td>
+              <td>No (Relies on general limitations)</td>
+            </tr>
+            <tr>
+              <td><strong>Singapore</strong></td>
+              <td>No</td>
+              <td>Yes (Broad TDM exception introduced in 2021)</td>
+            </tr>
+            <tr>
+              <td><strong>Malaysia</strong></td>
+              <td>No</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td><strong>China</strong></td>
+              <td>Yes (Under certain prompt engineering conditions)</td>
+              <td>Strict requirements for lawful data under 2023 measures</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Practical Takeaways for Businesses and Creators</h2>
+        <ul>
+          <li><strong>For Local Creators:</strong> Do not rely solely on AI if you intend to commercialize and protect your work in Indonesia. Ensure substantial, demonstrable human modification of any AI outputs.</li>
+          <li><strong>For AI Developers:</strong> If you are scraping Indonesian websites for training data, you operate in a legal gray area with a high risk of infringement claims under Law No. 28/2014. Seek explicit licenses where possible.</li>
+          <li><strong>For Businesses:</strong> The ethical guidelines from Kominfo require transparency. If your business uses AI to generate content for the Indonesian market, it is advisable to clearly label it as such to comply with emerging consumer protection and ethical standards.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <footer class="acl-container acl-article-footer">
+      <div class="acl-disclaimer">
+        <p><strong>Disclaimer:</strong> This overview is for informational purposes only. Laws change frequently. Consult a qualified attorney in the relevant jurisdiction for current legal advice.</p>
+      </div>
+      <div class="acl-nav-footer">
+        <a href="/laws">← All Countries</a>
+        <span class="acl-updated">Updated April 2026</span>
+      </div>
+      <div class="acl-newsletter-cta">
+        <h2>Stay Updated on AI Copyright Law</h2>
+        <p>Weekly analysis of new rulings and regulations worldwide.</p>
+        <form>
+          <label for="email-cta" class="sr-only">Email address</label>
+          <input id="email-cta" type="email" placeholder="your@email.com" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>

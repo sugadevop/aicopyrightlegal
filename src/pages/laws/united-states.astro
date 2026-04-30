@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="AI Copyright Law in the United States (2026 Guide)" description="Comprehensive guide to AI copyright law in the US: human authorship requirements, USCO guidance, fair use in training, and major court rulings.">
+  <article class="acl-article">
+    <header class="acl-article-header">
+      <div class="acl-container">
+        <nav aria-label="Breadcrumb" class="acl-breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/laws">Laws</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">United States</span>
+        </nav>
+        <div class="acl-meta">
+          <span class="acl-category acl-category--regulation">Law</span>
+          <span>Updated April 2026</span>
+        </div>
+        <h1 class="acl-title">United States — AI Copyright Law</h1>
+        <p class="acl-excerpt">The US strictly requires human authorship for copyright protection, while heavily litigating the boundaries of fair use for AI training data.</p>
+      </div>
+    </header>
+    
+    <div class="acl-container">
+      <div class="acl-content">
+        <h2>The Foundation: The Human Authorship Requirement</h2>
+        <p>The United States legal framework for copyright is fundamentally anthropocentric. Under the Copyright Act of 1976, copyright protection subsists in "original works of authorship fixed in any tangible medium of expression." Through centuries of jurisprudence, "authorship" has been interpreted strictly as human authorship.</p>
+        
+        <h3>The SCOTUS Ruling: Thaler v. Perlmutter (2026)</h3>
+        <p>The landmark Supreme Court decision in <em>Thaler v. Perlmutter</em> cemented the human authorship requirement. Stephen Thaler sought copyright registration for an artwork titled "A Recent Entrance to Paradise," explicitly naming his AI system, the "Creativity Machine," as the sole author.</p>
+        <p>The Supreme Court affirmed lower court rulings and the US Copyright Office's (USCO) refusal to register the work. The Court unequivocally stated that "human authorship is an essential part of a valid copyright claim." This ruling clarified that an AI system cannot be recognized as an author, and works generated entirely autonomously by machines are thrust immediately into the public domain.</p>
+        <p>For tracking ongoing developments, visit our <a href="/cases">Comprehensive Case Tracker</a>.</p>
+
+        <h2>US Copyright Office (USCO) Guidance on AI</h2>
+        <p>Following the surge in generative AI tools, the USCO issued a multi-part guidance framework to clarify the registration of works containing AI-generated elements.</p>
+
+        <h3>AI-Assisted vs. AI-Generated Distinction</h3>
+        <p>The USCO distinguishes between works created with AI as a tool (AI-assisted) and works where the AI conceives the traditional elements of authorship (AI-generated).</p>
+        <ul>
+          <li><strong>AI-Assisted Works:</strong> If a human uses AI like a camera or Photoshop—exerting significant creative control over the final output—the resulting work may be copyrightable. The human must contribute sufficient original expression.</li>
+          <li><strong>AI-Generated Works:</strong> If a user merely provides a prompt and the AI determines the expressive elements, the resulting material is not protected. The prompt is considered an "idea" or "instruction," while the AI provides the "expression," which is uncopyrightable without a human author.</li>
+        </ul>
+
+        <h3>How to Register AI-Assisted Works</h3>
+        <p>If you are a creator incorporating AI into your workflow, the USCO requires strict disclosure during the registration process:</p>
+        <ol>
+          <li>Identify the AI-generated material in the work.</li>
+          <li>Explicitly disclaim the AI-generated elements in the "Limitation of Claim" section of the application.</li>
+          <li>Provide a brief description of the human author's original contribution (e.g., "Human author selected, arranged, and modified AI-generated text").</li>
+        </ol>
+        <p>Failure to disclose AI involvement can result in the cancellation of the registration. We have built tools to help creators format these disclosures properly in our <a href="/tools/registration-helper">Registration Helper</a>.</p>
+
+        <h2>Fair Use and AI Training Data</h2>
+        <p>While the output of AI models faces the human authorship hurdle, the inputs—the massive datasets used to train Large Language Models (LLMs) and image generators—are the subject of intense litigation surrounding the <strong>Fair Use</strong> doctrine (17 U.S.C. § 107).</p>
+        <p>AI companies argue that ingesting copyrighted works to extract statistical patterns and train models constitutes highly transformative fair use. Rights holders argue it is massive, unauthorized copying that substitutes for the original works.</p>
+
+        <h3>The Four Factors of Fair Use in the Context of AI</h3>
+        <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; margin-bottom: 2rem;">
+          <thead>
+            <tr>
+              <th>Fair Use Factor</th>
+              <th>AI Developer Argument</th>
+              <th>Rights Holder Argument</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Purpose and Character of Use</strong></td>
+              <td>Highly transformative; creates new statistical associations rather than expressing the original content.</td>
+              <td>Commercial, for-profit exploitation of scraped creative labor without compensation.</td>
+            </tr>
+            <tr>
+              <td><strong>2. Nature of the Copyrighted Work</strong></td>
+              <td>Factual extraction (patterns, syntax) rather than expressive extraction.</td>
+              <td>The works are highly creative and expressive (novels, code, art, journalism).</td>
+            </tr>
+            <tr>
+              <td><strong>3. Amount and Substantiality</strong></td>
+              <td>Necessary to copy the whole work to understand the underlying statistical structure.</td>
+              <td>Wholesale copying of the entire work, sometimes allowing the model to regurgitate it exactly.</td>
+            </tr>
+            <tr>
+              <td><strong>4. Effect on the Market</strong></td>
+              <td>Models do not directly substitute for the original works; they create new markets.</td>
+              <td>Models directly compete with original creators, driving down prices for human art/writing.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Key Ongoing Litigation</h2>
+        <p>The application of fair use to AI training is currently being decided in several high-stakes lawsuits:</p>
+        <ul>
+          <li><strong>The New York Times v. OpenAI & Microsoft:</strong> NYT alleges OpenAI unlawfully copied millions of articles to train ChatGPT, demonstrating instances where the model verbatim regurgitated paywalled content. This case heavily tests the "market substitution" factor of fair use.</li>
+          <li><strong>Authors Guild v. Anthropic / OpenAI:</strong> Class-action lawsuits led by prominent authors claiming their copyrighted books were included in pirated datasets (like "Books3") used to train LLMs.</li>
+          <li><strong>Getty Images v. Stability AI:</strong> Getty alleges Stability copied millions of images and metadata to train Stable Diffusion. Notably, the AI frequently reproduces the Getty watermark in its outputs, strengthening the infringement claim. Read our full analysis on the <a href="/blog/getty-v-stability-implications">Getty case implications</a>.</li>
+          <li><strong>Andersen v. Stability AI:</strong> A class action by visual artists arguing generative image models are effectively "21st-century collage tools" that infringe on their exclusive right to prepare derivative works.</li>
+        </ul>
+
+        <h2>Comparing the US Approach</h2>
+        <p>Unlike <a href="/laws/japan">Japan</a>, which has explicitly legislated broad exceptions for AI training, or the <a href="/laws/european-union">European Union</a>, which provides specific opt-out mechanisms under the DSM Directive, the United States relies on the flexible but unpredictable common-law doctrine of fair use. This creates significant uncertainty for both AI developers and creators.</p>
+        <p>Furthermore, the US maintains a rigid stance on human authorship compared to the <a href="/laws/united-kingdom">United Kingdom</a>, which offers limited protection for "computer-generated works."</p>
+
+        <h2>Practical Takeaways for Businesses and Creators</h2>
+        <ul>
+          <li><strong>For Creators:</strong> Keep detailed records of your creative process. Document your prompts, your iterative editing, and your final modifications to prove human authorship. Use the USCO's disclosure rules diligently.</li>
+          <li><strong>For AI Startups:</strong> Relying on fair use for training data carries massive litigation risk. Consider licensing agreements or utilizing explicitly public domain or opt-in datasets to mitigate exposure.</li>
+          <li><strong>For Enterprises:</strong> Output generated by employees using standard AI tools cannot be copyrighted. If your business model relies on protecting proprietary content (e.g., code, marketing copy), human authors must heavily modify the AI drafts.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <footer class="acl-container acl-article-footer">
+      <div class="acl-disclaimer">
+        <p><strong>Disclaimer:</strong> This overview is for informational purposes only. Laws change frequently. Consult a qualified attorney in the relevant jurisdiction for current legal advice.</p>
+      </div>
+      <div class="acl-nav-footer">
+        <a href="/laws">← All Countries</a>
+        <span class="acl-updated">Updated April 2026</span>
+      </div>
+      <div class="acl-newsletter-cta">
+        <h2>Stay Updated on AI Copyright Law</h2>
+        <p>Weekly analysis of new rulings and regulations worldwide.</p>
+        <form>
+          <label for="email-cta" class="sr-only">Email address</label>
+          <input id="email-cta" type="email" placeholder="your@email.com" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>

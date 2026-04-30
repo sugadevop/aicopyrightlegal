@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="AI Copyright Law in Japan (2026 Guide)" description="Comprehensive guide to AI copyright law in Japan: Article 30-4, the non-enjoyment exception, and Japan's pro-AI stance.">
+  <article class="acl-article">
+    <header class="acl-article-header">
+      <div class="acl-container">
+        <nav aria-label="Breadcrumb" class="acl-breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/laws">Laws</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Japan</span>
+        </nav>
+        <div class="acl-meta">
+          <span class="acl-category acl-category--regulation">Law</span>
+          <span>Updated April 2026</span>
+        </div>
+        <h1 class="acl-title">Japan — AI Copyright Law</h1>
+        <p class="acl-excerpt">Japan has intentionally positioned itself as a global AI haven by enacting the world's most permissible copyright exceptions for machine learning and AI training data.</p>
+      </div>
+    </header>
+    
+    <div class="acl-container">
+      <div class="acl-content">
+        <h2>The Pro-Innovation Stance</h2>
+        <p>While the <a href="/laws/united-states">US</a> relies on messy fair use litigation and the <a href="/laws/european-union">EU</a> implements complex opt-out structures, Japan has taken a radically different, legislation-first approach designed specifically to attract AI development.</p>
+        <p>In 2018, Japan amended its Copyright Act, recognizing that machine learning processes fundamentally differ from traditional human copying. The government concluded that requiring licenses for every piece of training data would stifle innovation and render domestic AI development impossible.</p>
+
+        <h2>The Cornerstone: Article 30-4 of the Copyright Act</h2>
+        <p>The core of Japan's AI copyright framework is <strong>Article 30-4</strong>. This provision establishes a remarkably broad exception that allows the exploitation of copyrighted works for the purpose of "information analysis" (which encompasses AI training).</p>
+
+        <h3>The "Non-Enjoyment Purpose" Concept</h3>
+        <p>The exception hinges on the concept of "non-enjoyment." Article 30-4 allows copying and using works in any way and to the extent considered necessary, provided the purpose is <em>not</em> to personally enjoy or cause another person to enjoy the thoughts or sentiments expressed in the work.</p>
+        <p>Because an AI model does not "enjoy" a painting's beauty or a novel's plot—it only analyzes the pixel distribution or syntactic patterns—training an AI is considered a non-enjoyment purpose.</p>
+
+        <h3>Key Features of the Article 30-4 Exception:</h3>
+        <ul>
+          <li><strong>No Distinction Between Commercial and Non-Commercial:</strong> Unlike the UK's limited exception, Japan allows commercial AI developers to scrape and train on data freely.</li>
+          <li><strong>No Opt-Out Mechanism:</strong> Unlike the EU's DSM Directive, Japanese law does not provide a statutory mechanism for creators to opt out of having their works used for AI training if the use falls under Article 30-4.</li>
+          <li><strong>Applies Regardless of Data Origin:</strong> The exception applies to data accessed globally, provided the training activity occurs within Japanese jurisdiction.</li>
+        </ul>
+
+        <h2>The "Unreasonably Prejudice" Caveat</h2>
+        <p>Article 30-4 is not absolute. It contains a crucial proviso: the exception does not apply if the action would <strong>"unreasonably prejudice the interests of the copyright owner."</strong></p>
+        <p>The interpretation of this proviso is currently the most actively debated area of Japanese AI law. The Agency for Cultural Affairs (ACA) has issued draft guidelines to clarify this boundary.</p>
+
+        <h3>When is Prejudice "Unreasonable"?</h3>
+        <p>According to emerging interpretations, training an AI might unreasonably prejudice the owner if:</p>
+        <ol>
+          <li><strong>The dataset itself is a commercial product:</strong> If an AI company scrapes a database that is specifically sold for machine learning purposes, rather than paying for it, this is likely an infringement.</li>
+          <li><strong>Overfitting and Memorization:</strong> If a model is trained so narrowly on specific works that it can consistently reproduce them (overfitting), the training process might cross the line from statistical analysis to creating substitute goods, prejudicing the owner's market.</li>
+        </ol>
+
+        <h2>Output: Generating Content in Japan</h2>
+        <p>While Japan is highly permissive regarding AI <em>inputs</em> (training), its approach to AI <em>outputs</em> aligns more closely with traditional international norms.</p>
+
+        <h3>Authorship and Infringement</h3>
+        <ul>
+          <li><strong>No AI Authorship:</strong> Like the US, Japan requires human creativity for a work to receive copyright protection. Purely AI-generated outputs are not protected.</li>
+          <li><strong>Infringement via Generation:</strong> If a user generates an image that is substantially similar to an existing copyrighted work, and the AI was trained on that work (establishing "access"), the output can be considered an infringement, and the user (or potentially the AI provider) could be liable.</li>
+        </ul>
+        <p>The ACA emphasizes that the leniency for training under Article 30-4 does not extend to generating infringing outputs. Read more about mitigating these risks in our guide on <a href="/tools/generation-liability">Managing AI Output Liability</a>.</p>
+
+        <h2>Global Comparison</h2>
+        <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; margin-bottom: 2rem;">
+          <thead>
+            <tr>
+              <th>Jurisdiction</th>
+              <th>Commercial AI Training Exception?</th>
+              <th>Creator Opt-Out Right?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Japan</strong></td>
+              <td>Yes (Broad, explicit statutory exception)</td>
+              <td>No statutory opt-out (unless it causes "unreasonable prejudice")</td>
+            </tr>
+            <tr>
+              <td><strong>United States</strong></td>
+              <td>Debated (Relies on Fair Use defense in court)</td>
+              <td>No statutory opt-out (robots.txt is tested in court)</td>
+            </tr>
+            <tr>
+              <td><strong>European Union</strong></td>
+              <td>Yes (Under Art 4 of DSM Directive)</td>
+              <td>Yes (Explicitly required via machine-readable means)</td>
+            </tr>
+            <tr>
+              <td><strong>United Kingdom</strong></td>
+              <td>No (Non-commercial research only)</td>
+              <td>N/A (Commercial use requires licenses anyway)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Practical Takeaways for Businesses</h2>
+        <ul>
+          <li><strong>For AI Developers:</strong> Japan offers arguably the safest legal harbor in the world for establishing training operations. If your servers and training processes are physically located in Japan, you benefit from the Article 30-4 exception, drastically reducing legal exposure compared to operating in the US or UK.</li>
+          <li><strong>For Content Creators:</strong> Your works, even if hosted on US or EU servers, can likely be legally scraped and used by AI companies operating under Japanese jurisdiction. Technical barriers (like paywalls) are currently your best defense, rather than legal declarations.</li>
+          <li><strong>For Global Enterprises:</strong> Consider the geographic location of your foundational model training. "Jurisdiction shopping" is becoming a reality in the AI sector, with Japan aggressively marketing its legal framework as a competitive advantage.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <footer class="acl-container acl-article-footer">
+      <div class="acl-disclaimer">
+        <p><strong>Disclaimer:</strong> This overview is for informational purposes only. Laws change frequently. Consult a qualified attorney in the relevant jurisdiction for current legal advice.</p>
+      </div>
+      <div class="acl-nav-footer">
+        <a href="/laws">← All Countries</a>
+        <span class="acl-updated">Updated April 2026</span>
+      </div>
+      <div class="acl-newsletter-cta">
+        <h2>Stay Updated on AI Copyright Law</h2>
+        <p>Weekly analysis of new rulings and regulations worldwide.</p>
+        <form>
+          <label for="email-cta" class="sr-only">Email address</label>
+          <input id="email-cta" type="email" placeholder="your@email.com" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>

@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="AI Copyright Law in the European Union (2026 Guide)" description="Comprehensive guide to AI copyright law in the EU: the AI Act, TDM exceptions, opt-out rights, and GDPR intersection.">
+  <article class="acl-article">
+    <header class="acl-article-header">
+      <div class="acl-container">
+        <nav aria-label="Breadcrumb" class="acl-breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/laws">Laws</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">European Union</span>
+        </nav>
+        <div class="acl-meta">
+          <span class="acl-category acl-category--regulation">Law</span>
+          <span>Updated April 2026</span>
+        </div>
+        <h1 class="acl-title">European Union — AI Copyright Law</h1>
+        <p class="acl-excerpt">The EU balances AI innovation with creator rights through the AI Act's transparency mandates and the DSM Directive's structured Text and Data Mining (TDM) exceptions.</p>
+      </div>
+    </header>
+    
+    <div class="acl-container">
+      <div class="acl-content">
+        <h2>The Regulatory Landscape: The EU AI Act</h2>
+        <p>The European Union has taken a fundamentally different approach to AI regulation than the <a href="/laws/united-states">United States</a>. Instead of relying primarily on post-hoc litigation, the EU has enacted comprehensive, proactive legislation: the <strong>EU AI Act</strong>.</p>
+        <p>While the AI Act is primarily a product safety and fundamental rights framework, it explicitly addresses copyright issues, particularly for providers of General-Purpose AI (GPAI) models.</p>
+
+        <h3>Transparency and Copyright Compliance under the AI Act</h3>
+        <p>Under the AI Act, providers of GPAI models (like the creators of GPT-4, Claude, or Mistral) face strict copyright-related obligations:</p>
+        <ol>
+          <li><strong>Respect for EU Copyright Law:</strong> GPAI providers must establish policies to comply with EU copyright law, specifically regarding the identification of and adherence to creator opt-outs.</li>
+          <li><strong>Detailed Summaries of Training Data:</strong> Providers must draw up and make publicly available a sufficiently detailed summary of the content used for training the GPAI model. This aims to give rights holders the necessary information to determine if their works were used.</li>
+        </ol>
+        <p>Failure to comply can result in severe fines, emphasizing that in the EU, copyright compliance is an ex-ante regulatory requirement, not just an ex-post litigation risk. For a deep dive into the AI Act's phased implementation, see our <a href="/blog/eu-ai-act-timeline">AI Act Timeline Breakdown</a>.</p>
+
+        <h2>Training AI: The Text and Data Mining (TDM) Exception</h2>
+        <p>In the EU, the legality of ingesting copyrighted works to train AI models revolves around the <strong>Directive on Copyright in the Digital Single Market (DSM Directive)</strong>, specifically Articles 3 and 4 regarding Text and Data Mining (TDM).</p>
+        <p>TDM is defined as "any automated analytical technique aimed at analyzing text and data in digital form in order to generate information." The EU treats AI training as a form of TDM.</p>
+
+        <h3>Article 3: Non-Commercial Research</h3>
+        <p>Article 3 provides a mandatory exception allowing research organizations and cultural heritage institutions to conduct TDM on works to which they have lawful access, strictly for the purposes of non-commercial scientific research. Rights holders cannot override this exception via contract.</p>
+
+        <h3>Article 4: Commercial TDM and the Opt-Out Right</h3>
+        <p>Article 4 is the critical provision for commercial AI developers. It permits TDM for <em>any</em> purpose (including commercial AI training) provided the developer has lawful access to the data.</p>
+        <p><strong>The Crucial Catch: The Opt-Out Mechanism.</strong> Article 4 contains an explicit reservation of rights mechanism. The exception applies <em>unless</em> the rights holder has expressly reserved their rights (an "opt-out") in an appropriate manner, such as machine-readable means for content made publicly available online.</p>
+        
+        <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; margin-bottom: 2rem;">
+          <thead>
+            <tr>
+              <th>Status of Content</th>
+              <th>Can AI Companies Use It?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lawful access, no opt-out declared</td>
+              <td>Yes (Allowed under Art 4 TDM Exception)</td>
+            </tr>
+            <tr>
+              <td>Lawful access, explicit machine-readable opt-out (e.g., robots.txt)</td>
+              <td>No (Requires explicit licensing agreement)</td>
+            </tr>
+            <tr>
+              <td>Unlawful access (e.g., pirated datasets, bypassed paywalls)</td>
+              <td>No (TDM exception requires lawful access)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>This creates a structured system: AI companies can scrape the open web by default, but creators have a defined legal mechanism to stop them. This contrasts sharply with the US, where "opt-outs" (like robots.txt) are often treated as mere requests rather than legally binding reservations of copyright under fair use arguments.</p>
+
+        <h2>Authorship of AI-Generated Works</h2>
+        <p>Unlike the US, where the Supreme Court has definitively ruled out AI authorship, or the <a href="/laws/united-kingdom">UK</a>, which has specific legislation for computer-generated works, the EU currently lacks a fully harmonized rule on the copyrightability of AI-generated works.</p>
+
+        <h3>The "Author's Own Intellectual Creation" Standard</h3>
+        <p>Under the EU's <em>Infopaq</em> standard, copyright applies only to works that are the "author's own intellectual creation." The Court of Justice of the European Union (CJEU) has historically interpreted this to require human intervention that reflects the author's personality and free, creative choices.</p>
+        <p>Therefore, fully autonomous AI outputs are generally considered uncopyrightable across member states. However, the degree of human input required for "AI-assisted" works to qualify for protection remains a subject of debate and is largely left to the national courts of individual member states to interpret.</p>
+
+        <h2>The Intersection: GDPR and AI Training</h2>
+        <p>In the EU, copyright is not the only hurdle for AI training; data privacy is equally critical. The General Data Protection Regulation (GDPR) restricts the processing of personal data.</p>
+        <p>Because generative AI models are trained on massive scrapes of the internet, they inevitably ingest personal data (names, addresses, photos). Authorities in several EU countries (notably Italy) have temporarily banned or investigated major AI models for lacking a lawful basis under GDPR to process this data for training purposes.</p>
+        <p>This intersection creates complex compliance requirements: an AI developer must ensure they have both copyright clearance (or rely on the TDM exception without opt-outs) AND a lawful basis under GDPR to process any personal data contained within that copyrighted material.</p>
+
+        <h2>Practical Implications for Businesses and Creators</h2>
+        <ul>
+          <li><strong>For EU Creators:</strong> Utilize machine-readable opt-outs (like the `<meta name="robots" content="noai, noimageai">` tags or configured `robots.txt`) aggressively on your websites. The EU legal framework gives these technical signals teeth. Read our <a href="/tools/opt-out-guide">Guide on Implementing Machine-Readable Opt-Outs</a>.</li>
+          <li><strong>For Global AI Companies:</strong> If you offer your model in the EU market, you must comply with the AI Act's transparency requirements and respect Article 4 opt-outs, regardless of where your company is headquartered. You cannot simply rely on US fair use arguments when operating in Europe.</li>
+          <li><strong>For Enterprises:</strong> When adopting AI tools, demand transparency from vendors regarding their compliance with EU TDM opt-outs and GDPR to mitigate downstream liability.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <footer class="acl-container acl-article-footer">
+      <div class="acl-disclaimer">
+        <p><strong>Disclaimer:</strong> This overview is for informational purposes only. Laws change frequently. Consult a qualified attorney in the relevant jurisdiction for current legal advice.</p>
+      </div>
+      <div class="acl-nav-footer">
+        <a href="/laws">← All Countries</a>
+        <span class="acl-updated">Updated April 2026</span>
+      </div>
+      <div class="acl-newsletter-cta">
+        <h2>Stay Updated on AI Copyright Law</h2>
+        <p>Weekly analysis of new rulings and regulations worldwide.</p>
+        <form>
+          <label for="email-cta" class="sr-only">Email address</label>
+          <input id="email-cta" type="email" placeholder="your@email.com" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>
