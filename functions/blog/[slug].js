@@ -1,25 +1,41 @@
 // Cloudflare Pages Function — Dynamic blog article rendering
-// Handles /blog/[slug] at the edge, no rebuild needed
+// Handles /blog/[slug] at the edge with related posts
 
 const API_BASE = 'https://api.aicopyrightlegal.com';
 
 export async function onRequest(context) {
   const slug = context.params.slug;
-  
-  // Fetch article from D1 via Workers API
-  let article;
+
+  // Fetch article + all published articles (for related posts)
+  let article, allArticles = [];
   try {
-    const res = await fetch(`${API_BASE}/api/articles/slug/${slug}`);
-    if (!res.ok) return notFound(context);
-    const data = await res.json();
-    article = data.article;
+    const [articleRes, allRes] = await Promise.all([
+      fetch(`${API_BASE}/api/articles/slug/${slug}`),
+      fetch(`${API_BASE}/api/articles/published`),
+    ]);
+    if (!articleRes.ok) return notFound(context);
+    const articleData = await articleRes.json();
+    article = articleData.article;
+    const allData = await allRes.json();
+    allArticles = allData.articles || [];
   } catch (e) {
     return notFound(context);
   }
 
   if (!article) return notFound(context);
 
-  // Simple markdown to HTML (basic conversion for edge)
+  // Find related posts: same category, exclude current, max 3
+  const related = allArticles
+    .filter(a => a.slug !== slug)
+    .sort((a, b) => {
+      // Priority: same category first, then by date
+      const aMatch = a.category === article.category ? 1 : 0;
+      const bMatch = b.category === article.category ? 1 : 0;
+      if (bMatch !== aMatch) return bMatch - aMatch;
+      return new Date(b.published_at || b.created_at) - new Date(a.published_at || a.created_at);
+    })
+    .slice(0, 3);
+
   const htmlContent = markdownToHtml(article.content || '');
   const displayDate = new Date(article.published_at || article.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   const updatedDate = new Date(article.updated_at || article.published_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
@@ -30,6 +46,22 @@ export async function onRequest(context) {
     'Settlement': 'acl-category--settlement',
     'Guide': 'acl-category--guide',
   };
+
+  // Related posts HTML
+  const relatedHtml = related.length > 0 ? `
+    <section style="margin-top:3rem;padding-top:2rem;border-top:1px solid #e0e0e0;">
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.375rem;font-weight:700;color:#1a1a1a;margin:0 0 1.25rem;">Related Articles</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;">
+        ${related.map(r => `
+          <a href="/blog/${escHtml(r.slug)}" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:8px;text-decoration:none;transition:box-shadow 0.2s;">
+            <span style="display:inline-block;padding:0.15rem 0.5rem;border-radius:3px;font-size:0.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:0.03em;background:#eef4ff;color:#1a56db;margin-bottom:0.5rem;">${escHtml(r.category || 'News')}</span>
+            <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;font-weight:600;color:#1a1a1a;line-height:1.4;margin:0.25rem 0 0.5rem;">${escHtml(r.title)}</h3>
+            <p style="font-family:'Inter',sans-serif;font-size:0.8125rem;color:#6b7280;line-height:1.5;margin:0;">${escHtml((r.excerpt || '').substring(0, 100))}${(r.excerpt || '').length > 100 ? '...' : ''}</p>
+          </a>
+        `).join('')}
+      </div>
+    </section>
+  ` : '';
 
   const html = `<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -58,12 +90,11 @@ export async function onRequest(context) {
     "description": article.excerpt,
     "datePublished": article.published_at,
     "dateModified": article.updated_at || article.published_at,
-    "publisher": { "@type": "Organization", "name": "AI Copyright Legal" },
+    "publisher": { "@type": "Organization", "name": "AI Copyright Legal", "url": "https://aicopyrightlegal.com" },
     "mainEntityOfPage": { "@type": "WebPage", "@id": `https://aicopyrightlegal.com/blog/${slug}` }
   })}</script>
 </head>
 <body class="bg-white text-text font-sans antialiased overflow-x-hidden">
-  <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200">
     <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2 font-heading font-bold text-xl text-primary">
@@ -71,11 +102,11 @@ export async function onRequest(context) {
         <span>AI Copyright <span class="text-accent">Legal</span></span>
       </a>
       <div class="hidden md:flex items-center gap-6 text-sm font-medium text-text-muted">
-        <a href="/blog" class="hover:text-primary transition-colors">News</a>
-        <a href="/cases" class="hover:text-primary transition-colors">Cases</a>
-        <a href="/laws" class="hover:text-primary transition-colors">Laws</a>
-        <a href="/learn" class="hover:text-primary transition-colors">Learn</a>
-        <a href="/tools" class="hover:text-primary transition-colors">Tools</a>
+        <a href="/blog" class="hover:text-primary">News</a>
+        <a href="/cases" class="hover:text-primary">Cases</a>
+        <a href="/laws" class="hover:text-primary">Laws</a>
+        <a href="/learn" class="hover:text-primary">Learn</a>
+        <a href="/tools" class="hover:text-primary">Tools</a>
       </div>
     </nav>
   </header>
@@ -103,6 +134,7 @@ export async function onRequest(context) {
 
       <div class="acl-container">
         <div class="acl-content">${htmlContent}</div>
+        ${relatedHtml}
       </div>
 
       <footer class="acl-container acl-article-footer">
@@ -154,30 +186,20 @@ function escHtml(str) {
 
 function markdownToHtml(md) {
   let html = md;
-  // Headers
   html = html.replace(/^### (.*$)/gm, '<h3>$1</h3>');
   html = html.replace(/^## (.*$)/gm, '<h2>$1</h2>');
   html = html.replace(/^# (.*$)/gm, '<h2>$1</h2>');
-  // Bold & italic
   html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-  // Code blocks
   html = html.replace(/```(\w*)\n([\s\S]*?)```/g, '<pre><code>$2</code></pre>');
-  // Inline code
   html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-  // Blockquotes
   html = html.replace(/^> (.*$)/gm, '<blockquote><p>$1</p></blockquote>');
-  // Unordered lists
   html = html.replace(/^- (.*$)/gm, '<li>$1</li>');
   html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
-  // Horizontal rules
   html = html.replace(/^---$/gm, '<hr>');
-  // Links
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-  // Paragraphs
   html = html.replace(/^(?!<[hupblo]|<\/|<li|<hr)(.*\S.*)$/gm, '<p>$1</p>');
-  // Clean up empty paragraphs
   html = html.replace(/<p>\s*<\/p>/g, '');
   return html;
 }
