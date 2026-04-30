@@ -1,0 +1,232 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="AI Disclosure Generator — Create AI Use Disclosure Statements"
+  description="Generate legally-sound AI use disclosure statements for your website, blog, or business. Customizable for different use cases and jurisdictions."
+>
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <div class="mb-8">
+      <h1 class="font-heading text-3xl md:text-4xl font-bold text-text mb-3">AI Disclosure Generator</h1>
+      <p class="text-text-muted text-lg">Generate a clear, professional AI use disclosure for your website or content. Customize based on how you use AI.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- Left: Form -->
+      <div class="space-y-5">
+        <h2 class="font-heading font-bold text-lg text-text">Configure Your Disclosure</h2>
+
+        <!-- Type of content -->
+        <div>
+          <label class="block text-sm font-medium text-text mb-2">What type of content do you create?</label>
+          <div class="space-y-2" id="content-types">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="content-type rounded" value="written" checked /> 
+              <span class="text-sm text-text">Written content (articles, blog posts)</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="content-type rounded" value="images" /> 
+              <span class="text-sm text-text">Images and graphics</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="content-type rounded" value="code" /> 
+              <span class="text-sm text-text">Code and software</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="content-type rounded" value="video" /> 
+              <span class="text-sm text-text">Video and multimedia</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="content-type rounded" value="marketing" /> 
+              <span class="text-sm text-text">Marketing and advertising</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- AI role -->
+        <div>
+          <label class="block text-sm font-medium text-text mb-2">How do you use AI?</label>
+          <select id="ai-role" class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20">
+            <option value="assist">AI assists — humans create and review all content</option>
+            <option value="draft">AI generates drafts — humans substantially edit</option>
+            <option value="generate">AI generates content — humans review and approve</option>
+            <option value="mixed">Mixed — some content is AI-generated, some human-created</option>
+          </select>
+        </div>
+
+        <!-- AI tools used -->
+        <div>
+          <label class="block text-sm font-medium text-text mb-2">Which AI tools do you use? (optional)</label>
+          <input id="ai-tools" type="text" placeholder="e.g., ChatGPT, Midjourney, GitHub Copilot" class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20" />
+        </div>
+
+        <!-- Company/site name -->
+        <div>
+          <label class="block text-sm font-medium text-text mb-2">Your website or company name</label>
+          <input id="site-name" type="text" placeholder="e.g., My Blog, Acme Corp" class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20" />
+        </div>
+
+        <!-- Tone -->
+        <div>
+          <label class="block text-sm font-medium text-text mb-2">Tone</label>
+          <select id="tone" class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20">
+            <option value="professional">Professional / Corporate</option>
+            <option value="friendly">Friendly / Casual</option>
+            <option value="legal">Formal / Legal</option>
+          </select>
+        </div>
+
+        <!-- Human oversight -->
+        <div>
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" id="human-oversight" class="rounded" checked />
+            <span class="text-sm text-text">Include human oversight statement</span>
+          </label>
+        </div>
+
+        <button id="generate-btn" class="w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+          Generate Disclosure
+        </button>
+      </div>
+
+      <!-- Right: Output -->
+      <div>
+        <div class="sticky top-20">
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="font-heading font-bold text-lg text-text">Your Disclosure</h2>
+            <button id="copy-btn" class="px-3 py-1.5 bg-primary text-white text-sm font-medium rounded-lg hover:bg-blue-700">
+              📋 Copy
+            </button>
+          </div>
+          <div class="bg-white border border-slate-200 rounded-xl p-6 min-h-[300px]">
+            <div id="disclosure-output" class="text-sm text-text leading-relaxed whitespace-pre-wrap"></div>
+          </div>
+
+          <div class="mt-4 bg-blue-50 border border-blue-200 rounded-xl p-4">
+            <h3 class="font-semibold text-sm text-blue-800 mb-2">How to use:</h3>
+            <ol class="text-sm text-blue-700 space-y-1 list-decimal list-inside">
+              <li>Customize the options on the left</li>
+              <li>Click "Generate Disclosure"</li>
+              <li>Copy and add to your website footer, about page, or content policy</li>
+              <li>Update whenever your AI usage changes</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function generateDisclosure() {
+      const types = Array.from(document.querySelectorAll('.content-type:checked')).map(el => el.value);
+      const role = document.getElementById('ai-role').value;
+      const tools = document.getElementById('ai-tools').value.trim();
+      const siteName = document.getElementById('site-name').value.trim() || '[Your Website]';
+      const tone = document.getElementById('tone').value;
+      const humanOversight = document.getElementById('human-oversight').checked;
+
+      const typeMap = { written: 'written content', images: 'images and graphics', code: 'code and software', video: 'video and multimedia', marketing: 'marketing materials' };
+      const typeList = types.map(t => typeMap[t]).join(', ');
+
+      let text = '';
+
+      if (tone === 'professional') {
+        text += `AI Disclosure Statement\n\n`;
+        text += `${siteName} is committed to transparency about our use of artificial intelligence technology.\n\n`;
+
+        if (role === 'assist') {
+          text += `We use AI tools to assist in the creation of ${typeList || 'our content'}. All content is created, reviewed, and approved by our human team. AI serves as a productivity tool to support our creative process, not as a replacement for human judgment and expertise.\n\n`;
+        } else if (role === 'draft') {
+          text += `We use AI tools to generate initial drafts of ${typeList || 'our content'}. All AI-generated drafts are substantially edited, fact-checked, and refined by our human team before publication.\n\n`;
+        } else if (role === 'generate') {
+          text += `Some of our ${typeList || 'content'} is generated with the assistance of AI tools. All AI-generated content is reviewed and approved by our human team before publication.\n\n`;
+        } else {
+          text += `${siteName} uses a combination of human-created and AI-assisted content. Some ${typeList || 'content'} may be generated or enhanced using AI tools, while other content is created entirely by our human team.\n\n`;
+        }
+
+        if (tools) {
+          text += `AI tools we use include: ${tools}.\n\n`;
+        }
+
+        if (humanOversight) {
+          text += `Human Oversight: All content published on ${siteName} undergoes human review. We take responsibility for the accuracy and quality of all published content, regardless of whether AI tools were used in its creation.\n\n`;
+        }
+
+        text += `This disclosure was last updated on ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}.\n\n`;
+        text += `If you have questions about our use of AI, please contact us.`;
+
+      } else if (tone === 'friendly') {
+        text += `🤖 About Our Use of AI\n\n`;
+        text += `Hey! We believe in being upfront about how we create content at ${siteName}.\n\n`;
+
+        if (role === 'assist') {
+          text += `We sometimes use AI tools to help us with ${typeList || 'our content'} — think of it like a really smart assistant. But every piece of content is created, checked, and polished by real humans on our team.\n\n`;
+        } else if (role === 'draft') {
+          text += `We use AI to help us draft ${typeList || 'content'}, but we always put our human touch on everything before it goes live. Think of AI as our first draft buddy — we do all the real editing and fact-checking.\n\n`;
+        } else {
+          text += `Some of our ${typeList || 'content'} gets a boost from AI tools. We always have real humans review everything before it goes live, because we care about quality and accuracy.\n\n`;
+        }
+
+        if (tools) {
+          text += `Tools we use: ${tools}\n\n`;
+        }
+
+        if (humanOversight) {
+          text += `Bottom line: Real humans are always in the loop. We stand behind everything we publish. 👍\n\n`;
+        }
+
+        text += `Questions? We're happy to chat about our process!`;
+
+      } else {
+        text += `ARTIFICIAL INTELLIGENCE DISCLOSURE\n\n`;
+        text += `Effective Date: ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}\n\n`;
+        text += `This disclosure is provided in accordance with emerging best practices regarding the use of artificial intelligence ("AI") in content creation.\n\n`;
+        text += `1. USE OF AI TECHNOLOGY\n`;
+        text += `${siteName} ("we," "us," or "our") utilizes artificial intelligence tools in the creation and/or enhancement of ${typeList || 'certain content'} published on this website.\n\n`;
+
+        if (role === 'assist') {
+          text += `2. NATURE OF AI USE\nAI technology is used in an assistive capacity only. All content is originated, directed, and finalized by human authors and editors. AI tools serve as productivity aids and do not independently generate published content.\n\n`;
+        } else if (role === 'draft') {
+          text += `2. NATURE OF AI USE\nAI technology may be used to generate preliminary drafts of content. All such drafts are subject to substantial human review, editing, and modification prior to publication.\n\n`;
+        } else {
+          text += `2. NATURE OF AI USE\nCertain content on this website may be generated or substantially assisted by AI technology. All content, whether AI-generated or human-created, is subject to human editorial review prior to publication.\n\n`;
+        }
+
+        if (tools) {
+          text += `3. AI TOOLS\nAI tools utilized may include, but are not limited to: ${tools}.\n\n`;
+        }
+
+        if (humanOversight) {
+          text += `${tools ? '4' : '3'}. HUMAN OVERSIGHT\nAll content published on this website is reviewed by qualified human editors. We assume full responsibility for the accuracy, completeness, and appropriateness of all published content.\n\n`;
+        }
+
+        text += `${tools ? (humanOversight ? '5' : '4') : (humanOversight ? '4' : '3')}. CONTACT\nFor questions regarding this disclosure or our use of AI technology, please contact us.\n\n`;
+        text += `This disclosure may be updated from time to time. The effective date above reflects the most recent revision.`;
+      }
+
+      document.getElementById('disclosure-output').textContent = text;
+    }
+
+    // Generate on load
+    generateDisclosure();
+
+    // Generate on button click
+    document.getElementById('generate-btn').addEventListener('click', generateDisclosure);
+
+    // Auto-regenerate on any change
+    document.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('change', generateDisclosure);
+      el.addEventListener('input', generateDisclosure);
+    });
+
+    // Copy
+    document.getElementById('copy-btn').addEventListener('click', () => {
+      const text = document.getElementById('disclosure-output').textContent;
+      navigator.clipboard.writeText(text);
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✅ Copied!';
+      setTimeout(() => { btn.textContent = '📋 Copy'; }, 2000);
+    });
+  </script>
+</BaseLayout>
