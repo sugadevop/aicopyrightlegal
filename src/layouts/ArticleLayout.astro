@@ -1,0 +1,150 @@
+---
+/**
+ * ArticleLayout — Single source of truth for article/guide/legal page styling
+ * Used by: /blog/[slug], /learn/*, /privacy, /terms, /about
+ */
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  category?: string;
+  categoryStyle?: string;
+  date?: string;
+  readTime?: string;
+  excerpt?: string;
+  featuredImage?: string;
+  breadcrumbs?: { label: string; href?: string }[];
+  showNewsletter?: boolean;
+  showDisclaimer?: boolean;
+  disclaimerText?: string;
+  backLink?: { label: string; href: string };
+  updatedDate?: string;
+  seoTitle?: string;
+  ogImage?: string;
+  publishedDate?: string;
+  schema?: object;
+}
+
+const {
+  title,
+  description,
+  category,
+  categoryStyle = 'guide',
+  date,
+  readTime,
+  excerpt,
+  featuredImage,
+  breadcrumbs = [{ label: 'Home', href: '/' }],
+  showNewsletter = true,
+  showDisclaimer = true,
+  disclaimerText = 'This content is for informational purposes only and does not constitute legal advice. Consult a qualified attorney for guidance on your specific situation.',
+  backLink = { label: '← Back', href: '/' },
+  updatedDate,
+  seoTitle,
+  ogImage,
+  publishedDate,
+  schema,
+} = Astro.props;
+
+const categoryClasses: Record<string, string> = {
+  'court-ruling': 'acl-category--court-ruling',
+  'regulation': 'acl-category--regulation',
+  'settlement': 'acl-category--settlement',
+  'guide': 'acl-category--guide',
+  'news': '',
+  'analysis': '',
+  'registration': '',
+};
+
+const catClass = categoryClasses[categoryStyle] || '';
+const displayDate = date ? new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : null;
+const displayUpdated = updatedDate ? new Date(updatedDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : (displayDate || 'April 2026');
+---
+
+<BaseLayout
+  title={seoTitle || title}
+  description={description || excerpt}
+  ogImage={ogImage || featuredImage || '/og-default.png'}
+  type="article"
+  publishedDate={publishedDate}
+>
+  {schema && (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  )}
+
+  <article class="acl-article">
+    <header class="acl-article-header">
+      <div class="acl-container">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="acl-breadcrumb">
+          {breadcrumbs.map((crumb, i) => (
+            <>
+              {crumb.href ? (
+                <a href={crumb.href}>{crumb.label}</a>
+              ) : (
+                <span aria-current="page">{crumb.label}</span>
+              )}
+              {i < breadcrumbs.length - 1 && <span aria-hidden="true">/</span>}
+            </>
+          ))}
+        </nav>
+
+        <!-- Meta -->
+        <div class="acl-meta">
+          {category && (
+            <span class={`acl-category ${catClass}`}>{category}</span>
+          )}
+          {displayDate && <time datetime={date}>{displayDate}</time>}
+          {readTime && (
+            <span class="acl-read-time">{readTime} read</span>
+          )}
+        </div>
+
+        <h1 class="acl-title">{title}</h1>
+
+        {excerpt && <p class="acl-excerpt">{excerpt}</p>}
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    {featuredImage && (
+      <figure class="acl-featured-image">
+        <img src={featuredImage} alt={title} loading="eager" />
+      </figure>
+    )}
+
+    <!-- Content (slot) -->
+    <div class="acl-container">
+      <div class="acl-content">
+        <slot />
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="acl-container acl-article-footer">
+      {showDisclaimer && (
+        <div class="acl-disclaimer">
+          <p><strong>Disclaimer:</strong> {disclaimerText}</p>
+        </div>
+      )}
+
+      <div class="acl-nav-footer">
+        <a href={backLink.href}>{backLink.label}</a>
+        <span class="acl-updated">Updated {displayUpdated}</span>
+      </div>
+
+      {showNewsletter && (
+        <div class="acl-newsletter-cta">
+          <h2>Stay Updated on AI Copyright Law</h2>
+          <p>Weekly analysis of new rulings, regulations, and practical guidance.</p>
+          <form>
+            <label for="email-cta" class="sr-only">Email address</label>
+            <input id="email-cta" type="email" placeholder="your@email.com" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      )}
+    </footer>
+  </article>
+</BaseLayout>

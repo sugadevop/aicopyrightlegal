@@ -6,9 +6,9 @@ import mdx from '@astrojs/mdx';
 
 export default defineConfig({
   site: 'https://aicopyrightlegal.com',
+  output: 'static',
   integrations: [sitemap(), mdx()],
   vite: {
     plugins: [tailwindcss()],
   },
-  output: 'static',
 });

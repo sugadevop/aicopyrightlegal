@@ -7,20 +7,12 @@ const articles = await getPublishedArticles();
 
 <BaseLayout
   title="AI Copyright News & Analysis"
-  description="Latest news, court rulings, and analysis on AI copyright law. Stay updated on lawsuits, regulations, and policy changes affecting creators and businesses."
+  description="Latest news, court rulings, and analysis on AI copyright law."
 >
   <section class="max-w-6xl mx-auto px-4 py-12">
     <div class="mb-10">
       <h1 class="font-heading text-3xl md:text-4xl font-bold text-text mb-3">AI Copyright News</h1>
       <p class="text-text-muted text-lg">Latest rulings, regulations, and developments in AI copyright law.</p>
-    </div>
-
-    <!-- Filter tabs -->
-    <div class="flex flex-wrap gap-2 mb-8">
-      <button class="px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg">All</button>
-      <button class="px-4 py-2 bg-slate-100 text-text-muted text-sm font-medium rounded-lg hover:bg-slate-200 transition-colors">Court Rulings</button>
-      <button class="px-4 py-2 bg-slate-100 text-text-muted text-sm font-medium rounded-lg hover:bg-slate-200 transition-colors">Regulation</button>
-      <button class="px-4 py-2 bg-slate-100 text-text-muted text-sm font-medium rounded-lg hover:bg-slate-200 transition-colors">Settlements</button>
     </div>
 
     {articles.length === 0 && (
@@ -29,9 +21,8 @@ const articles = await getPublishedArticles();
       </div>
     )}
 
-    <!-- Articles list -->
     <div class="space-y-6">
-      {articles.map((article) => (
+      {articles.map((article: any) => (
         <article class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow group">
           <div class="flex flex-col md:flex-row md:items-start gap-4">
             <div class="flex-1">
@@ -40,6 +31,7 @@ const articles = await getPublishedArticles();
                   article.category === 'Court Ruling' ? 'bg-red-50 text-red-700' :
                   article.category === 'Regulation' ? 'bg-purple-50 text-purple-700' :
                   article.category === 'Settlement' ? 'bg-amber-50 text-amber-700' :
+                  article.category === 'Guide' ? 'bg-green-50 text-green-700' :
                   'bg-blue-50 text-blue-700'
                 }`}>{article.category}</span>
                 <span class="text-xs text-text-muted">{new Date(article.published_at || article.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
