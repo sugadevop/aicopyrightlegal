@@ -136,8 +136,15 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
             </form>
           </div>
         </div>
-        <div class="border-t border-slate-800 mt-8 pt-8 text-sm text-center">
-          <p>&copy; {new Date().getFullYear()} AI Copyright Legal. For informational purposes only — not legal advice.</p>
+        <div class="border-t border-slate-800 mt-8 pt-8 text-sm">
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; {new Date().getFullYear()} AI Copyright Legal. For informational purposes only — not legal advice.</p>
+            <div class="flex gap-4 text-slate-500">
+              <a href="/privacy" class="hover:text-white transition-colors">Privacy</a>
+              <a href="/terms" class="hover:text-white transition-colors">Terms</a>
+              <a href="/about" class="hover:text-white transition-colors">About</a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
