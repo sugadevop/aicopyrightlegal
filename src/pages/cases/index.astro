@@ -58,9 +58,12 @@ const statusColors = {
                   <span class="px-2 py-0.5 bg-red-50 text-red-700 rounded text-xs font-semibold">⭐ Landmark</span>
                 )}
               </div>
-              <h2 class="font-heading font-bold text-lg text-text mb-1">{c.name}</h2>
+              <h2 class="font-heading font-bold text-lg text-text mb-1">
+                {c.slug ? <a href={`/cases/${c.slug}`} class="hover:text-primary transition-colors">{c.name}</a> : c.name}
+              </h2>
               <p class="text-xs text-text-muted mb-2">{c.parties} · Filed {c.filed}</p>
               <p class="text-sm text-text-muted leading-relaxed">{c.summary}</p>
+              {c.slug && <a href={`/cases/${c.slug}`} class="inline-block mt-2 text-primary text-xs font-semibold hover:underline">View Full Case Details →</a>}
             </div>
             <div class="text-right shrink-0">
               <div class="text-xs text-text-muted">Updated</div>
