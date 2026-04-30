@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const cases = [
+  {
+    name: 'Thaler v. Perlmutter',
+    parties: 'Stephen Thaler vs. U.S. Copyright Office',
+    filed: '2022',
+    status: 'closed',
+    statusLabel: 'Closed — SCOTUS Denied Cert',
+    summary: 'Can AI be listed as the author of a copyrighted work? The Supreme Court said no, denying certiorari in March 2026. Human authorship is now settled law.',
+    significance: 'Landmark',
+    lastUpdate: '2026-03-02',
+  },
+  {
+    name: 'New York Times v. OpenAI & Microsoft',
+    parties: 'The New York Times vs. OpenAI, Microsoft',
+    filed: '2023-12',
+    status: 'active',
+    statusLabel: 'Active — Discovery Phase',
+    summary: 'The NYT alleges OpenAI used millions of its articles to train ChatGPT, creating a product that competes with and substitutes for NYT journalism.',
+    significance: 'Major',
+    lastUpdate: '2026-04-15',
+  },
+  {
+    name: 'Authors v. Anthropic (The Pile)',
+    parties: 'Andrea Bartz, Charles Graeber et al. vs. Anthropic',
+    filed: '2024-08',
+    status: 'settlement',
+    statusLabel: 'Settlement Rejected',
+    summary: 'Authors sued Anthropic for using copyrighted books from The Pile dataset. Anthropic offered $1.5B settlement (~$3K per author), but Judge Alsup rejected the terms.',
+    significance: 'Major',
+    lastUpdate: '2025-08-20',
+  },
+  {
+    name: 'Authors v. Meta',
+    parties: 'Multiple Authors vs. Meta Platforms',
+    filed: '2023',
+    status: 'partial',
+    statusLabel: 'Partial Ruling — Fair Use (Narrow)',
+    summary: 'Judge Chhabria granted summary judgment for Meta on purchased books (fair use) but expressed strong doubts about broader AI training practices.',
+    significance: 'Major',
+    lastUpdate: '2025-06-20',
+  },
+  {
+    name: 'Thomson Reuters v. Ross Intelligence',
+    parties: 'Thomson Reuters vs. Ross Intelligence',
+    filed: '2020',
+    status: 'decided',
+    statusLabel: 'Decided — Infringement Found',
+    summary: 'Ross Intelligence used Westlaw headnotes to train its AI legal research tool. Court found headnotes are copyrightable and their use was infringement.',
+    significance: 'Precedent',
+    lastUpdate: '2025-02-15',
+  },
+  {
+    name: 'Getty Images v. Stability AI',
+    parties: 'Getty Images vs. Stability AI',
+    filed: '2023-01',
+    status: 'active',
+    statusLabel: 'Active',
+    summary: 'Getty alleges Stability AI copied 12 million images to train Stable Diffusion without license or compensation.',
+    significance: 'Major',
+    lastUpdate: '2026-03-10',
+  },
+];
+
+const statusColors: Record<string, string> = {
+  active: 'bg-green-50 text-green-700 border-green-200',
+  closed: 'bg-slate-100 text-slate-600 border-slate-200',
+  settlement: 'bg-amber-50 text-amber-700 border-amber-200',
+  decided: 'bg-blue-50 text-blue-700 border-blue-200',
+  partial: 'bg-purple-50 text-purple-700 border-purple-200',
+};
+---
+
+<BaseLayout
+  title="AI Copyright Lawsuit Tracker — Every Major Case in 2026"
+  description="Track every major AI copyright lawsuit in real-time. From NYT v. OpenAI to Thaler v. Perlmutter — status, outcomes, and analysis."
+>
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <div class="mb-10">
+      <h1 class="font-heading text-3xl md:text-4xl font-bold text-text mb-3">AI Copyright Lawsuit Tracker</h1>
+      <p class="text-text-muted text-lg">Every major AI copyright case — tracked, analyzed, and updated.</p>
+      <p class="text-sm text-text-muted mt-2">Last updated: April 2026 · {cases.length} cases tracked</p>
+    </div>
+
+    <!-- Summary stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+      <div class="bg-green-50 rounded-xl p-4 text-center border border-green-100">
+        <div class="text-xl font-bold text-green-700">{cases.filter(c => c.status === 'active').length}</div>
+        <div class="text-xs text-green-600 mt-1">Active Cases</div>
+      </div>
+      <div class="bg-amber-50 rounded-xl p-4 text-center border border-amber-100">
+        <div class="text-xl font-bold text-amber-700">{cases.filter(c => c.status === 'settlement').length}</div>
+        <div class="text-xs text-amber-600 mt-1">In Settlement</div>
+      </div>
+      <div class="bg-blue-50 rounded-xl p-4 text-center border border-blue-100">
+        <div class="text-xl font-bold text-blue-700">{cases.filter(c => c.status === 'decided' || c.status === 'partial').length}</div>
+        <div class="text-xs text-blue-600 mt-1">Decided</div>
+      </div>
+      <div class="bg-slate-100 rounded-xl p-4 text-center border border-slate-200">
+        <div class="text-xl font-bold text-slate-700">{cases.filter(c => c.status === 'closed').length}</div>
+        <div class="text-xs text-slate-600 mt-1">Closed</div>
+      </div>
+    </div>
+
+    <!-- Cases list -->
+    <div class="space-y-4">
+      {cases.map((c) => (
+        <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+          <div class="flex flex-col md:flex-row md:items-start gap-4">
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                <span class={`px-2 py-0.5 rounded text-xs font-semibold border ${statusColors[c.status]}`}>
+                  {c.statusLabel}
+                </span>
+                {c.significance === 'Landmark' && (
+                  <span class="px-2 py-0.5 bg-red-50 text-red-700 rounded text-xs font-semibold">⭐ Landmark</span>
+                )}
+              </div>
+              <h2 class="font-heading font-bold text-lg text-text mb-1">{c.name}</h2>
+              <p class="text-xs text-text-muted mb-2">{c.parties} · Filed {c.filed}</p>
+              <p class="text-sm text-text-muted leading-relaxed">{c.summary}</p>
+            </div>
+            <div class="text-right shrink-0">
+              <div class="text-xs text-text-muted">Updated</div>
+              <div class="text-sm font-medium text-text">{new Date(c.lastUpdate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 bg-primary/5 rounded-2xl p-8 text-center border border-primary/10">
+      <h3 class="font-heading font-bold text-xl text-text mb-2">Get Case Updates in Your Inbox</h3>
+      <p class="text-text-muted text-sm mb-4">We'll notify you when major rulings drop.</p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="email" placeholder="your@email.com" class="flex-1 px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-primary" />
+        <button type="submit" class="px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors">Notify Me</button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>

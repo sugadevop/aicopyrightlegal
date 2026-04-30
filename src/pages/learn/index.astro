@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const guides = [
+  {
+    title: 'Can You Copyright AI-Generated Content?',
+    slug: 'can-you-copyright-ai-content',
+    description: 'The definitive guide to whether AI-generated text, images, code, and music can be copyrighted in 2026.',
+    readTime: '12 min',
+    category: 'Fundamentals',
+  },
+  {
+    title: 'AI Training & Fair Use — What the Law Actually Says',
+    slug: 'ai-training-fair-use',
+    description: 'Is it legal for AI companies to train on copyrighted data? A deep dive into fair use doctrine and recent rulings.',
+    readTime: '15 min',
+    category: 'Deep Dive',
+  },
+  {
+    title: 'AI Copyright Basics — Everything You Need to Know',
+    slug: 'ai-copyright-basics',
+    description: 'New to AI copyright? Start here. Plain-English explanation of the key concepts, laws, and cases.',
+    readTime: '8 min',
+    category: 'Beginner',
+  },
+  {
+    title: 'Who Owns AI-Generated Art? A Complete Guide',
+    slug: 'who-owns-ai-generated-art',
+    description: 'If you typed the prompt, do you own the image? The answer depends on jurisdiction, process, and how much human creativity was involved.',
+    readTime: '10 min',
+    category: 'Creators',
+  },
+  {
+    title: 'How to Protect Your Content From AI Scraping',
+    slug: 'protect-content-from-ai',
+    description: 'Practical steps to prevent AI companies from using your creative work for training — from robots.txt to legal notices.',
+    readTime: '7 min',
+    category: 'Practical',
+  },
+  {
+    title: 'AI Copyright Compliance for Businesses',
+    slug: 'ai-copyright-compliance-business',
+    description: 'Using AI in your business? Here\'s how to stay compliant, avoid lawsuits, and implement proper disclosure policies.',
+    readTime: '11 min',
+    category: 'Business',
+  },
+];
+---
+
+<BaseLayout
+  title="Learn AI Copyright Law — Guides & Explainers"
+  description="Comprehensive guides on AI copyright law. From basics to deep dives — understand your rights whether you're creating with AI or protecting against it."
+>
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <div class="mb-10">
+      <h1 class="font-heading text-3xl md:text-4xl font-bold text-text mb-3">Learn AI Copyright Law</h1>
+      <p class="text-text-muted text-lg">In-depth guides and explainers — from beginner basics to advanced compliance.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {guides.map((guide) => (
+        <a href={`/learn/${guide.slug}`} class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-all group">
+          <div class="flex items-center gap-2 mb-3">
+            <span class={`px-2 py-0.5 rounded text-xs font-semibold ${
+              guide.category === 'Fundamentals' ? 'bg-primary/10 text-primary' :
+              guide.category === 'Deep Dive' ? 'bg-purple-50 text-purple-700' :
+              guide.category === 'Beginner' ? 'bg-green-50 text-green-700' :
+              guide.category === 'Creators' ? 'bg-amber-50 text-amber-700' :
+              guide.category === 'Practical' ? 'bg-blue-50 text-blue-700' :
+              'bg-slate-100 text-slate-600'
+            }`}>{guide.category}</span>
+            <span class="text-xs text-text-muted">{guide.readTime} read</span>
+          </div>
+          <h2 class="font-heading font-bold text-lg text-text group-hover:text-primary transition-colors mb-2">{guide.title}</h2>
+          <p class="text-sm text-text-muted leading-relaxed">{guide.description}</p>
+          <span class="inline-block mt-4 text-primary text-sm font-semibold group-hover:underline">Read Guide →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

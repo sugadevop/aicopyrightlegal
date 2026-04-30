@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const tools = [
+  {
+    icon: '📝',
+    title: 'AI Disclosure Generator',
+    description: 'Generate legally-sound AI use disclosure statements for your website, content, or products. Customizable for different jurisdictions.',
+    href: '/tools/ai-disclosure-generator',
+    status: 'live',
+  },
+  {
+    icon: '🤖',
+    title: 'Robots.txt AI Blocker',
+    description: 'Generate a robots.txt file that blocks known AI crawlers (GPTBot, CCBot, Google-Extended, etc.) from scraping your content.',
+    href: '/tools/robots-txt-ai-blocker',
+    status: 'live',
+  },
+  {
+    icon: '⚖️',
+    title: 'AI Copyright Risk Checker',
+    description: 'Answer a few questions about how you use AI and get a personalized risk assessment with actionable recommendations.',
+    href: '/tools/ai-copyright-checker',
+    status: 'live',
+  },
+  {
+    icon: '📋',
+    title: 'AI Use Policy Template',
+    description: 'Generate a comprehensive AI use policy for your company. Covers content creation, code generation, and data handling.',
+    href: '/tools/ai-policy-template',
+    status: 'coming',
+  },
+];
+---
+
+<BaseLayout
+  title="Free AI Copyright Tools — Disclosure Generator, Risk Checker & More"
+  description="Free tools to help you navigate AI copyright law. Generate AI disclosures, block AI crawlers, assess copyright risk, and create AI use policies."
+>
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <div class="mb-10">
+      <h1 class="font-heading text-3xl md:text-4xl font-bold text-text mb-3">Free AI Copyright Tools</h1>
+      <p class="text-text-muted text-lg">Practical tools to help you stay compliant — no signup required.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {tools.map((tool) => (
+        <a href={tool.href} class={`bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-all group ${tool.status === 'coming' ? 'opacity-70' : ''}`}>
+          <div class="flex items-start gap-4">
+            <div class="text-3xl">{tool.icon}</div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-1">
+                <h2 class="font-heading font-bold text-lg text-text group-hover:text-primary transition-colors">{tool.title}</h2>
+                {tool.status === 'coming' && (
+                  <span class="px-2 py-0.5 bg-slate-100 text-slate-500 text-xs font-medium rounded">Coming Soon</span>
+                )}
+              </div>
+              <p class="text-sm text-text-muted leading-relaxed">{tool.description}</p>
+              {tool.status === 'live' && (
+                <span class="inline-block mt-3 text-primary text-sm font-semibold group-hover:underline">Use Tool →</span>
+              )}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

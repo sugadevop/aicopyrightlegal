@@ -1,17 +1,256 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
+// Latest news articles (will come from content collection later)
+const latestNews = [
+  {
+    title: 'Supreme Court Denies AI Copyright Challenge — Human Authorship Now Settled Law',
+    slug: 'supreme-court-denies-ai-copyright-challenge',
+    date: '2026-03-02',
+    category: 'Court Ruling',
+    excerpt: 'The U.S. Supreme Court has denied certiorari in Thaler v. Perlmutter, definitively confirming that AI cannot hold copyrights under U.S. law.',
+  },
+  {
+    title: 'Anthropic Offers $1.5 Billion Settlement to Authors Over Training Data',
+    slug: 'anthropic-1-5-billion-settlement-authors',
+    date: '2026-02-15',
+    category: 'Settlement',
+    excerpt: 'In what would be the largest copyright infringement payout in U.S. history, Anthropic has offered to settle claims from 500,000 affected authors.',
+  },
+  {
+    title: 'Copyright Office Part 3: AI Training Is Not Always Fair Use',
+    slug: 'copyright-office-part-3-ai-training-fair-use',
+    date: '2025-05-09',
+    category: 'Regulation',
+    excerpt: 'The U.S. Copyright Office concludes that AI developers who train models to generate content competing with originals go beyond fair use.',
+  },
+  {
+    title: 'Meta Wins Summary Judgment in Authors\' AI Copyright Case',
+    slug: 'meta-wins-summary-judgment-authors-ai-case',
+    date: '2025-06-20',
+    category: 'Court Ruling',
+    excerpt: 'Judge Chhabria rules in Meta\'s favor based on lack of demonstrated harm, but emphasizes ruling is narrow and case-specific.',
+  },
+  {
+    title: 'First AI-Only Artwork Registered for Copyright as Composite Work',
+    slug: 'first-ai-artwork-copyright-registered',
+    date: '2025-01-15',
+    category: 'Registration',
+    excerpt: '"A Single Piece of American Cheese" becomes the first visual artwork composed solely of AI outputs to receive copyright registration.',
+  },
+];
+
+const caseTracker = [
+  { name: 'Thaler v. Perlmutter', status: 'Closed', party: 'vs. Copyright Office', outcome: 'AI cannot be author' },
+  { name: 'NYT v. OpenAI', status: 'Active', party: 'New York Times', outcome: 'Pending' },
+  { name: 'Authors v. Anthropic', status: 'Settlement', party: '500K+ Authors', outcome: '$1.5B offered' },
+  { name: 'Authors v. Meta', status: 'Partial Ruling', party: 'Multiple Authors', outcome: 'Fair use (narrow)' },
+  { name: 'Thomson Reuters v. Ross', status: 'Decided', party: 'Thomson Reuters', outcome: 'Infringement found' },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="AI Copyright Legal — Navigate AI Copyright Law">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-primary via-blue-800 to-surface-dark">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-4 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <span class="inline-block px-3 py-1 bg-accent/20 text-accent text-sm font-semibold rounded-full mb-4">
+          Updated April 2026
+        </span>
+        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+          Navigate AI Copyright Law<br/>
+          <span class="text-accent">With Confidence</span>
+        </h1>
+        <p class="text-lg md:text-xl text-blue-100 leading-relaxed mb-8">
+          Whether you're creating with AI or protecting your work from it — get clear, practical guidance on copyright law, landmark cases, and compliance.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/learn/ai-copyright-basics" class="px-6 py-3 bg-accent text-surface-dark font-bold rounded-xl hover:bg-amber-400 transition-colors">
+            Start Learning →
+          </a>
+          <a href="/cases" class="px-6 py-3 bg-white/10 text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-colors">
+            Track Lawsuits
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="max-w-6xl mx-auto px-4 -mt-8 relative z-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white rounded-xl shadow-lg p-5 text-center border border-slate-100">
+        <div class="text-2xl font-bold text-primary">25+</div>
+        <div class="text-sm text-text-muted mt-1">Active Lawsuits</div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-5 text-center border border-slate-100">
+        <div class="text-2xl font-bold text-primary">$4.5B+</div>
+        <div class="text-sm text-text-muted mt-1">Damages Claimed</div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-5 text-center border border-slate-100">
+        <div class="text-2xl font-bold text-primary">12</div>
+        <div class="text-sm text-text-muted mt-1">Countries w/ AI Laws</div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-5 text-center border border-slate-100">
+        <div class="text-2xl font-bold text-primary">2026</div>
+        <div class="text-sm text-text-muted mt-1">Latest Updates</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest News -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-text">Latest AI Copyright News</h2>
+      <a href="/blog" class="text-primary font-semibold text-sm hover:underline">View All →</a>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {latestNews.slice(0, 3).map((article) => (
+        <article class="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow group">
+          <div class="h-2 bg-gradient-to-r from-primary to-accent"></div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2 py-0.5 bg-blue-50 text-primary text-xs font-semibold rounded">{article.category}</span>
+              <span class="text-xs text-text-muted">{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-text group-hover:text-primary transition-colors mb-2 line-clamp-2">
+              <a href={`/blog/${article.slug}`}>{article.title}</a>
+            </h3>
+            <p class="text-sm text-text-muted leading-relaxed line-clamp-3">{article.excerpt}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+    <!-- More news list -->
+    <div class="mt-6 space-y-3">
+      {latestNews.slice(3).map((article) => (
+        <a href={`/blog/${article.slug}`} class="flex items-center gap-4 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors group">
+          <span class="px-2 py-0.5 bg-blue-50 text-primary text-xs font-semibold rounded whitespace-nowrap">{article.category}</span>
+          <span class="font-medium text-text group-hover:text-primary transition-colors flex-1 line-clamp-1">{article.title}</span>
+          <span class="text-xs text-text-muted whitespace-nowrap">{new Date(article.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Case Tracker Preview -->
+  <section class="bg-slate-50 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-text">AI Copyright Lawsuit Tracker</h2>
+        <a href="/cases" class="text-primary font-semibold text-sm hover:underline">Full Tracker →</a>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-slate-50 border-b border-slate-200">
+              <tr>
+                <th class="text-left px-6 py-3 font-semibold text-text-muted">Case</th>
+                <th class="text-left px-6 py-3 font-semibold text-text-muted">Party</th>
+                <th class="text-left px-6 py-3 font-semibold text-text-muted">Status</th>
+                <th class="text-left px-6 py-3 font-semibold text-text-muted">Outcome</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              {caseTracker.map((c) => (
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="px-6 py-4 font-medium text-text">{c.name}</td>
+                  <td class="px-6 py-4 text-text-muted">{c.party}</td>
+                  <td class="px-6 py-4">
+                    <span class={`px-2 py-0.5 rounded text-xs font-semibold ${
+                      c.status === 'Active' ? 'bg-green-50 text-green-700' :
+                      c.status === 'Settlement' ? 'bg-amber-50 text-amber-700' :
+                      c.status === 'Closed' ? 'bg-slate-100 text-slate-600' :
+                      'bg-blue-50 text-blue-700'
+                    }`}>{c.status}</span>
+                  </td>
+                  <td class="px-6 py-4 text-text-muted">{c.outcome}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two Audiences -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="font-heading text-2xl md:text-3xl font-bold text-text text-center mb-4">Who Is This For?</h2>
+    <p class="text-text-muted text-center max-w-2xl mx-auto mb-10">Whether you're protecting your creative work or using AI responsibly — we've got you covered.</p>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100">
+        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-xl mb-3">Creators & Artists</h3>
+        <p class="text-text-muted text-sm leading-relaxed mb-4">Your work was scraped to train AI. Learn your rights, opt-out options, and whether you have a legal claim.</p>
+        <ul class="space-y-2 text-sm text-text-muted">
+          <li class="flex items-center gap-2"><span class="text-primary">✓</span> Opt-out guides for AI training</li>
+          <li class="flex items-center gap-2"><span class="text-primary">✓</span> Copyright registration tips</li>
+          <li class="flex items-center gap-2"><span class="text-primary">✓</span> Lawsuit eligibility checker</li>
+        </ul>
+        <a href="/for-creators" class="inline-block mt-6 text-primary font-semibold text-sm hover:underline">Guide for Creators →</a>
+      </div>
+      <div class="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 border border-amber-100">
+        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-xl mb-3">Businesses & Developers</h3>
+        <p class="text-text-muted text-sm leading-relaxed mb-4">Using AI in your products or content? Stay compliant and avoid costly lawsuits with practical guidance.</p>
+        <ul class="space-y-2 text-sm text-text-muted">
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> AI content disclosure templates</li>
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> Company AI use policies</li>
+          <li class="flex items-center gap-2"><span class="text-accent">✓</span> Risk assessment tools</li>
+        </ul>
+        <a href="/for-businesses" class="inline-block mt-6 text-accent font-semibold text-sm hover:underline">Guide for Businesses →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free Tools CTA -->
+  <section class="bg-gradient-to-r from-primary to-blue-800 py-16">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-white mb-4">Free AI Copyright Tools</h2>
+      <p class="text-blue-100 max-w-2xl mx-auto mb-8">Practical tools to help you navigate AI copyright — no signup required.</p>
+      <div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+        <a href="/tools/ai-disclosure-generator" class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20 hover:bg-white/20 transition-colors text-left">
+          <div class="text-2xl mb-2">📝</div>
+          <h3 class="font-semibold text-white text-sm">AI Disclosure Generator</h3>
+          <p class="text-blue-200 text-xs mt-1">Generate compliant AI use disclosures</p>
+        </a>
+        <a href="/tools/robots-txt-ai-blocker" class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20 hover:bg-white/20 transition-colors text-left">
+          <div class="text-2xl mb-2">🤖</div>
+          <h3 class="font-semibold text-white text-sm">Robots.txt AI Blocker</h3>
+          <p class="text-blue-200 text-xs mt-1">Block AI crawlers from your content</p>
+        </a>
+        <a href="/tools/ai-copyright-checker" class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20 hover:bg-white/20 transition-colors text-left">
+          <div class="text-2xl mb-2">⚖️</div>
+          <h3 class="font-semibold text-white text-sm">Copyright Risk Checker</h3>
+          <p class="text-blue-200 text-xs mt-1">Assess your AI content copyright risk</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="bg-slate-50 rounded-2xl p-8 md:p-12 text-center border border-slate-200">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-text mb-3">Stay Ahead of AI Copyright Law</h2>
+      <p class="text-text-muted max-w-xl mx-auto mb-6">Weekly digest of new rulings, regulations, and practical guidance. Join 2,000+ creators and legal professionals.</p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="email" placeholder="your@email.com" class="flex-1 px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-primary" />
+        <button type="submit" class="px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors">Subscribe Free</button>
+      </form>
+      <p class="text-xs text-text-muted mt-3">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+</BaseLayout>

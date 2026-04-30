@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const aiCrawlers = [
+  { name: 'GPTBot', company: 'OpenAI', description: 'Used to train GPT models' },
+  { name: 'ChatGPT-User', company: 'OpenAI', description: 'ChatGPT browsing feature' },
+  { name: 'CCBot', company: 'Common Crawl', description: 'Used by many AI companies' },
+  { name: 'Google-Extended', company: 'Google', description: 'Gemini/Bard training' },
+  { name: 'anthropic-ai', company: 'Anthropic', description: 'Claude model training' },
+  { name: 'ClaudeBot', company: 'Anthropic', description: 'Claude web access' },
+  { name: 'Bytespider', company: 'ByteDance', description: 'TikTok/Doubao AI training' },
+  { name: 'FacebookBot', company: 'Meta', description: 'Meta AI training' },
+  { name: 'Meta-ExternalAgent', company: 'Meta', description: 'Meta AI browsing' },
+  { name: 'cohere-ai', company: 'Cohere', description: 'Cohere model training' },
+  { name: 'PerplexityBot', company: 'Perplexity', description: 'Perplexity AI search' },
+  { name: 'Amazonbot', company: 'Amazon', description: 'Alexa/Amazon AI' },
+  { name: 'OAI-SearchBot', company: 'OpenAI', description: 'OpenAI search feature' },
+  { name: 'YouBot', company: 'You.com', description: 'You.com AI search' },
+  { name: 'Applebot-Extended', company: 'Apple', description: 'Apple Intelligence training' },
+];
+---
+
+<BaseLayout
+  title="Robots.txt AI Blocker Generator — Block AI Crawlers From Your Site"
+  description="Generate a robots.txt file that blocks AI crawlers like GPTBot, ClaudeBot, and Google-Extended from scraping your content for AI training."
+>
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <div class="mb-8">
+      <h1 class="font-heading text-3xl md:text-4xl font-bold text-text mb-3">Robots.txt AI Blocker Generator</h1>
+      <p class="text-text-muted text-lg">Block AI companies from scraping your website content for model training. Select which crawlers to block and copy your robots.txt.</p>
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+      <p class="text-sm text-amber-800"><strong>⚠️ Important:</strong> robots.txt is a voluntary standard. While major AI companies honor it, it's not legally enforceable. For stronger protection, consider also adding HTTP headers and meta tags.</p>
+    </div>
+
+    <!-- Tool UI -->
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- Left: Crawler selection -->
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="font-heading font-bold text-lg">Select AI Crawlers to Block</h2>
+          <button id="select-all-btn" class="text-sm text-primary font-medium hover:underline">Select All</button>
+        </div>
+        <div class="space-y-2" id="crawler-list">
+          {aiCrawlers.map((crawler) => (
+            <label class="flex items-center gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-primary/30 transition-colors cursor-pointer">
+              <input type="checkbox" class="crawler-checkbox w-4 h-4 text-primary rounded border-slate-300 focus:ring-primary" value={crawler.name} checked />
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <span class="font-medium text-sm text-text">{crawler.name}</span>
+                  <span class="text-xs text-text-muted">({crawler.company})</span>
+                </div>
+                <p class="text-xs text-text-muted">{crawler.description}</p>
+              </div>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: Generated output -->
+      <div>
+        <div class="sticky top-20">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-heading font-bold text-lg">Your robots.txt</h2>
+            <button id="copy-btn" class="px-3 py-1.5 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-dark transition-colors">
+              📋 Copy
+            </button>
+          </div>
+          <div class="bg-slate-900 rounded-xl p-5 overflow-auto max-h-[500px]">
+            <pre id="robots-output" class="text-sm text-green-400 font-mono whitespace-pre leading-relaxed"></pre>
+          </div>
+
+          <div class="mt-4 bg-blue-50 border border-blue-200 rounded-xl p-4">
+            <h3 class="font-semibold text-sm text-blue-800 mb-2">How to use:</h3>
+            <ol class="text-sm text-blue-700 space-y-1 list-decimal list-inside">
+              <li>Copy the generated text above</li>
+              <li>Open or create <code class="bg-blue-100 px-1 rounded">robots.txt</code> in your website root</li>
+              <li>Paste the content (merge with existing rules)</li>
+              <li>Verify at <code class="bg-blue-100 px-1 rounded">yourdomain.com/robots.txt</code></li>
+            </ol>
+          </div>
+
+          <div class="mt-4 bg-slate-50 border border-slate-200 rounded-xl p-4">
+            <h3 class="font-semibold text-sm text-text mb-2">Also recommended:</h3>
+            <p class="text-xs text-text-muted mb-2">Add this meta tag to your HTML &lt;head&gt; for extra protection:</p>
+            <code class="block bg-white p-2 rounded border text-xs text-slate-700 break-all">
+              &lt;meta name="robots" content="noai, noimageai"&gt;
+            </code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function generateRobotsTxt() {
+      const checkboxes = document.querySelectorAll('.crawler-checkbox:checked');
+      const output = document.getElementById('robots-output');
+      if (!output) return;
+
+      let text = `# AI Crawler Blocking Rules\n# Generated by aicopyrightlegal.com/tools/robots-txt-ai-blocker\n# Last updated: ${new Date().toISOString().split('T')[0]}\n\n`;
+
+      checkboxes.forEach((cb) => {
+        const input = cb as HTMLInputElement;
+        text += `User-agent: ${input.value}\nDisallow: /\n\n`;
+      });
+
+      text += `# Allow regular search engines\nUser-agent: Googlebot\nAllow: /\n\nUser-agent: Bingbot\nAllow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: https://yourdomain.com/sitemap.xml`;
+
+      output.textContent = text;
+    }
+
+    // Init
+    generateRobotsTxt();
+
+    // Listen for changes
+    document.querySelectorAll('.crawler-checkbox').forEach((cb) => {
+      cb.addEventListener('change', generateRobotsTxt);
+    });
+
+    // Select all
+    document.getElementById('select-all-btn')?.addEventListener('click', () => {
+      const checkboxes = document.querySelectorAll('.crawler-checkbox') as NodeListOf<HTMLInputElement>;
+      const allChecked = Array.from(checkboxes).every((cb) => cb.checked);
+      checkboxes.forEach((cb) => { cb.checked = !allChecked; });
+      generateRobotsTxt();
+      const btn = document.getElementById('select-all-btn');
+      if (btn) btn.textContent = allChecked ? 'Select All' : 'Deselect All';
+    });
+
+    // Copy
+    document.getElementById('copy-btn')?.addEventListener('click', () => {
+      const output = document.getElementById('robots-output');
+      if (output) {
+        navigator.clipboard.writeText(output.textContent || '');
+        const btn = document.getElementById('copy-btn');
+        if (btn) {
+          btn.textContent = '✅ Copied!';
+          setTimeout(() => { btn.textContent = '📋 Copy'; }, 2000);
+        }
+      }
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const articles = [
+  {
+    title: 'Supreme Court Denies AI Copyright Challenge — Human Authorship Now Settled Law',
+    slug: 'supreme-court-denies-ai-copyright-challenge',
+    date: '2026-03-02',
+    category: 'Court Ruling',
+    excerpt: 'The U.S. Supreme Court has denied certiorari in Thaler v. Perlmutter, definitively confirming that AI cannot hold copyrights under U.S. law. This closes all avenues of appeal.',
+    readTime: '5 min',
+  },
+  {
+    title: 'Anthropic Offers $1.5 Billion Settlement to Authors Over Training Data',
+    slug: 'anthropic-1-5-billion-settlement-authors',
+    date: '2026-02-15',
+    category: 'Settlement',
+    excerpt: 'In what would be the largest copyright infringement payout in U.S. history, Anthropic has offered to settle claims from 500,000 affected authors at roughly $3,000 each.',
+    readTime: '7 min',
+  },
+  {
+    title: 'Copyright Office Part 3: AI Training Is Not Always Fair Use',
+    slug: 'copyright-office-part-3-ai-training-fair-use',
+    date: '2025-05-09',
+    category: 'Regulation',
+    excerpt: 'The U.S. Copyright Office concludes that AI developers who use copyrighted works to train models generating competing content go beyond fair use.',
+    readTime: '8 min',
+  },
+  {
+    title: 'Meta Wins Summary Judgment in Authors\' AI Copyright Case',
+    slug: 'meta-wins-summary-judgment-authors-ai-case',
+    date: '2025-06-20',
+    category: 'Court Ruling',
+    excerpt: 'Judge Chhabria rules in Meta\'s favor based on lack of demonstrated harm, but emphasizes the ruling is narrow and does not broadly validate AI training practices.',
+    readTime: '6 min',
+  },
+  {
+    title: 'First AI-Only Artwork Registered for Copyright as Composite Work',
+    slug: 'first-ai-artwork-copyright-registered',
+    date: '2025-01-15',
+    category: 'Registration',
+    excerpt: '"A Single Piece of American Cheese" becomes the first visual artwork composed solely of AI outputs to receive copyright registration based on human selection and arrangement.',
+    readTime: '4 min',
+  },
+  {
+    title: 'Copyright Office January 2025: AI-Assisted Works Can Be Copyrighted',
+    slug: 'copyright-office-ai-assisted-works-copyrightable',
+    date: '2025-01-29',
+    category: 'Regulation',
+    excerpt: 'The Copyright Office clarifies that works where human creative expression remains evident can be copyrighted, even when AI tools were used in creation.',
+    readTime: '6 min',
+  },
+];
+---
+
+<BaseLayout
+  title="AI Copyright News & Analysis"
+  description="Latest news, court rulings, and analysis on AI copyright law. Stay updated on lawsuits, regulations, and policy changes affecting creators and businesses."
+>
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <div class="mb-10">
+      <h1 class="font-heading text-3xl md:text-4xl font-bold text-text mb-3">AI Copyright News</h1>
+      <p class="text-text-muted text-lg">Latest rulings, regulations, and developments in AI copyright law.</p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="flex flex-wrap gap-2 mb-8">
+      <button class="px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg">All</button>
+      <button class="px-4 py-2 bg-slate-100 text-text-muted text-sm font-medium rounded-lg hover:bg-slate-200 transition-colors">Court Rulings</button>
+      <button class="px-4 py-2 bg-slate-100 text-text-muted text-sm font-medium rounded-lg hover:bg-slate-200 transition-colors">Regulation</button>
+      <button class="px-4 py-2 bg-slate-100 text-text-muted text-sm font-medium rounded-lg hover:bg-slate-200 transition-colors">Settlements</button>
+      <button class="px-4 py-2 bg-slate-100 text-text-muted text-sm font-medium rounded-lg hover:bg-slate-200 transition-colors">Analysis</button>
+    </div>
+
+    <!-- Articles grid -->
+    <div class="space-y-6">
+      {articles.map((article) => (
+        <article class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow group">
+          <div class="flex flex-col md:flex-row md:items-start gap-4">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">
+                <span class={`px-2 py-0.5 rounded text-xs font-semibold ${
+                  article.category === 'Court Ruling' ? 'bg-red-50 text-red-700' :
+                  article.category === 'Regulation' ? 'bg-purple-50 text-purple-700' :
+                  article.category === 'Settlement' ? 'bg-amber-50 text-amber-700' :
+                  'bg-blue-50 text-blue-700'
+                }`}>{article.category}</span>
+                <span class="text-xs text-text-muted">{new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                <span class="text-xs text-text-muted">· {article.readTime} read</span>
+              </div>
+              <h2 class="font-heading font-bold text-xl text-text group-hover:text-primary transition-colors mb-2">
+                <a href={`/blog/${article.slug}`}>{article.title}</a>
+              </h2>
+              <p class="text-text-muted text-sm leading-relaxed">{article.excerpt}</p>
+            </div>
+            <a href={`/blog/${article.slug}`} class="shrink-0 text-primary text-sm font-semibold hover:underline md:mt-6">
+              Read →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
