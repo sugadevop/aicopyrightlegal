@@ -162,6 +162,42 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
       document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
         document.getElementById('mobile-menu')?.classList.toggle('hidden');
       });
+
+      // Newsletter form handler — all forms on page
+      document.querySelectorAll('form').forEach(form => {
+        const emailInput = form.querySelector('input[type="email"]');
+        if (!emailInput) return;
+        
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const email = emailInput.value.trim();
+          if (!email) return;
+          
+          const btn = form.querySelector('button[type="submit"]');
+          const originalText = btn?.textContent;
+          if (btn) btn.textContent = 'Subscribing...';
+          
+          try {
+            const res = await fetch('/api/subscribe', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email }),
+            });
+            const data = await res.json();
+            if (data.success) {
+              emailInput.value = '';
+              if (btn) btn.textContent = '✅ Subscribed!';
+              setTimeout(() => { if (btn) btn.textContent = originalText; }, 3000);
+            } else {
+              if (btn) btn.textContent = '❌ Try again';
+              setTimeout(() => { if (btn) btn.textContent = originalText; }, 3000);
+            }
+          } catch {
+            if (btn) btn.textContent = '❌ Error';
+            setTimeout(() => { if (btn) btn.textContent = originalText; }, 3000);
+          }
+        });
+      });
     </script>
   </body>
 </html>
