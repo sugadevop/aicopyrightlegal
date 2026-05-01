@@ -43,7 +43,7 @@ export async function onRequest(context) {
       });
     }
 
-    // Subscribe to Buttondown
+    // Subscribe to Buttondown (v1 API uses email_address)
     const res = await fetch('https://api.buttondown.com/v1/subscribers', {
       method: 'POST',
       headers: {
@@ -51,7 +51,7 @@ export async function onRequest(context) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: email,
+        email_address: email,
         tags: ['website'],
       }),
     });
@@ -63,13 +63,13 @@ export async function onRequest(context) {
         status: 200,
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
       });
-    } else if (res.status === 409 || (data.email && data.email[0]?.includes('already'))) {
+    } else if (data.code === 'email_already_exists' || (data.detail && data.detail.includes('already'))) {
       return new Response(JSON.stringify({ success: true, message: 'You\'re already subscribed!' }), {
         status: 200,
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
       });
     } else {
-      return new Response(JSON.stringify({ error: 'Subscription failed. Please try again.' }), {
+      return new Response(JSON.stringify({ error: data.detail || 'Subscription failed. Please try again.' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
       });
