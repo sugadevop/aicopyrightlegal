@@ -32,6 +32,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
     <!-- SEO -->
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="max-image-preview:large" />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->

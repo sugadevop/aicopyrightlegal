@@ -70,14 +70,17 @@ export async function onRequest(context) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escHtml(article.seo_title || article.title)} | AI Copyright Legal</title>
   <meta name="description" content="${escHtml(article.seo_description || article.excerpt || '')}">
+  <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="https://aicopyrightlegal.com/blog/${slug}">
   <meta property="og:type" content="article">
   <meta property="og:title" content="${escHtml(article.title)}">
   <meta property="og:description" content="${escHtml(article.excerpt || '')}">
+  ${article.featured_image ? `<meta property="og:image" content="${escHtml(article.featured_image)}">` : ''}
   <meta property="og:url" content="https://aicopyrightlegal.com/blog/${slug}">
   <meta property="og:site_name" content="AI Copyright Legal">
   ${article.published_at ? `<meta property="article:published_time" content="${article.published_at}">` : ''}
   <meta name="twitter:card" content="summary_large_image">
+  ${article.featured_image ? `<meta name="twitter:image" content="${escHtml(article.featured_image)}">` : ''}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
@@ -87,12 +90,19 @@ export async function onRequest(context) {
   <link rel="stylesheet" href="/styles.css">
   <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "NewsArticle",
     "headline": article.title,
     "description": article.excerpt,
     "datePublished": article.published_at,
     "dateModified": article.updated_at || article.published_at,
-    "publisher": { "@type": "Organization", "name": "AI Copyright Legal", "url": "https://aicopyrightlegal.com" },
+    ...(article.featured_image ? { "image": [article.featured_image] } : {}),
+    "author": { "@type": "Organization", "name": "AI Copyright Legal" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI Copyright Legal",
+      "url": "https://aicopyrightlegal.com",
+      "logo": { "@type": "ImageObject", "url": "https://aicopyrightlegal.com/favicon.svg" }
+    },
     "mainEntityOfPage": { "@type": "WebPage", "@id": `https://aicopyrightlegal.com/blog/${slug}` }
   })}</script>
 </head>
