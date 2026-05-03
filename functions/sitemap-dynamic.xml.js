@@ -46,7 +46,7 @@ export async function onRequest(context) {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(u => `  <url>
     <loc>${u.loc}</loc>
-    ${u.lastmod ? `<lastmod>${u.lastmod.split('T')[0] || u.lastmod.split(' ')[0]}</lastmod>` : ''}
+    ${u.lastmod ? `<lastmod>${u.lastmod.substring(0, 10)}</lastmod>` : ''}
     <changefreq>${u.changefreq}</changefreq>
     <priority>${u.priority}</priority>
   </url>`).join('\n')}
