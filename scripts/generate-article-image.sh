@@ -18,10 +18,14 @@ ENDPOINT="http://localhost:20128/v1/images/generations"
 R2_UPLOAD_URL="https://api.aicopyrightlegal.com/api/images"
 R2_API_KEY="acl-dashboard-2026-secret"
 
-OUTPUT="/tmp/article-hero-${SLUG}.png"
+OUTPUT_PNG="/tmp/article-hero-${SLUG}.png"
+OUTPUT="/tmp/article-hero-${SLUG}.webp"
 
 # Build a prompt that creates a professional editorial illustration
 PROMPT="Professional editorial illustration for a legal technology news article titled '${TITLE}'. Category: ${CATEGORY}. Style: modern, clean, minimalist digital art with blue and purple tones. Include subtle visual elements related to AI, copyright law, digital rights, or technology. No text in the image. Wide landscape format, suitable as a blog hero image. High quality, editorial magazine style."
+
+# WebP quality (82 = good balance of quality/size, typically 100-200KB)
+WEBP_QUALITY=82
 
 echo "🎨 Generating hero image for: ${TITLE}"
 echo "   Slug: ${SLUG}"
@@ -33,7 +37,7 @@ RESPONSE=$(curl -s --max-time 180 -X POST "$ENDPOINT" \
   -H "Authorization: Bearer $API_KEY" \
   -d "{\"model\":\"cx/gpt-5.4-image\",\"prompt\":\"${PROMPT}\",\"n\":1,\"size\":\"1536x1024\",\"quality\":\"high\",\"output_format\":\"png\"}")
 
-# Extract and save image
+# Extract and save image (as PNG first)
 IMAGE_URL=$(echo "$RESPONSE" | python3 -c "
 import json, sys, base64, os
 try:
@@ -45,7 +49,7 @@ try:
         b64 = data['data'][0].get('b64_json', '')
         if b64:
             img = base64.b64decode(b64)
-            with open('$OUTPUT', 'wb') as f:
+            with open('$OUTPUT_PNG', 'wb') as f:
                 f.write(img)
             print('OK')
         else:
@@ -68,19 +72,32 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-if [ ! -f "$OUTPUT" ]; then
+if [ ! -f "$OUTPUT_PNG" ]; then
     echo "❌ Image file not created"
     exit 1
 fi
 
-SIZE_KB=$(( $(stat -f%z "$OUTPUT" 2>/dev/null || stat -c%s "$OUTPUT" 2>/dev/null) / 1024 ))
-echo "✅ Image generated (${SIZE_KB} KB)"
+PNG_KB=$(( $(stat -f%z "$OUTPUT_PNG" 2>/dev/null || stat -c%s "$OUTPUT_PNG" 2>/dev/null) / 1024 ))
+echo "✅ PNG generated (${PNG_KB} KB)"
+
+# Convert PNG → WebP (massive size reduction)
+echo "🔄 Converting to WebP (quality ${WEBP_QUALITY})..."
+cwebp -q $WEBP_QUALITY -resize 1536 0 "$OUTPUT_PNG" -o "$OUTPUT" 2>/dev/null
+
+if [ ! -f "$OUTPUT" ]; then
+    echo "⚠️  WebP conversion failed, using PNG"
+    OUTPUT="$OUTPUT_PNG"
+else
+    WEBP_KB=$(( $(stat -f%z "$OUTPUT" 2>/dev/null || stat -c%s "$OUTPUT" 2>/dev/null) / 1024 ))
+    echo "✅ WebP: ${WEBP_KB} KB (was ${PNG_KB} KB PNG, ${WEBP_KB}/${PNG_KB} = $(( WEBP_KB * 100 / PNG_KB ))% of original)"
+    rm -f "$OUTPUT_PNG"
+fi
 
 # Upload to R2 via API
 echo "📤 Uploading to R2..."
 UPLOAD_RESPONSE=$(curl -s --max-time 30 -X POST "$R2_UPLOAD_URL" \
   -H "Authorization: Bearer $R2_API_KEY" \
-  -F "file=@${OUTPUT};type=image/png;filename=hero-${SLUG}.png" \
+  -F "file=@${OUTPUT};type=image/webp;filename=hero-${SLUG}.webp" \
   -F "alt=${TITLE}" \
   -F "folder=heroes")
 
@@ -121,4 +138,4 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/d1/
 echo "✅ Done! Article '${SLUG}' now has hero image: ${R2_URL}"
 
 # Cleanup
-rm -f "$OUTPUT"
+rm -f "$OUTPUT" "$OUTPUT_PNG"
