@@ -9,10 +9,8 @@ export async function onRequest(context) {
   const url = new URL(context.request.url);
   const page = parseInt(url.searchParams.get('page') || '1', 10);
   
-  // If page=1 and no query params, serve static file (faster)
-  if (page === 1 && !url.searchParams.has('page')) {
-    return context.env.ASSETS.fetch(context.request);
-  }
+  // Always serve dynamic content from D1 (not static file)
+  // This ensures all 12+ articles show up with pagination
 
   // Fetch all published articles
   let articles = [];
