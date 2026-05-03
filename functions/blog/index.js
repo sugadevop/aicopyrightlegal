@@ -59,13 +59,13 @@ export async function onRequest(context) {
   // Pagination controls
   const paginationHtml = totalPages > 1 ? `
     <nav aria-label="Pagination" style="display:flex;justify-content:center;align-items:center;gap:0.5rem;margin-top:2.5rem;font-family:'Inter',sans-serif;">
-      ${currentPage > 1 ? `<a href="/blog?page=${currentPage - 1}" style="padding:0.5rem 1rem;border:1px solid #e2e8f0;border-radius:8px;font-size:0.875rem;font-weight:500;color:#1e40af;text-decoration:none;">← Previous</a>` : `<span style="padding:0.5rem 1rem;border:1px solid #f1f5f9;border-radius:8px;font-size:0.875rem;color:#cbd5e1;">← Previous</span>`}
+      ${currentPage > 1 ? `<a href="${currentPage === 2 ? '/blog/' : `/blog/?page=${currentPage - 1}`}" style="padding:0.5rem 1rem;border:1px solid #e2e8f0;border-radius:8px;font-size:0.875rem;font-weight:500;color:#1e40af;text-decoration:none;">← Previous</a>` : `<span style="padding:0.5rem 1rem;border:1px solid #f1f5f9;border-radius:8px;font-size:0.875rem;color:#cbd5e1;">← Previous</span>`}
       
       <span style="padding:0.5rem 1rem;font-size:0.875rem;color:#64748b;">
         Page ${currentPage} of ${totalPages}
       </span>
       
-      ${currentPage < totalPages ? `<a href="/blog?page=${currentPage + 1}" style="padding:0.5rem 1rem;border:1px solid #e2e8f0;border-radius:8px;font-size:0.875rem;font-weight:500;color:#1e40af;text-decoration:none;">Next →</a>` : `<span style="padding:0.5rem 1rem;border:1px solid #f1f5f9;border-radius:8px;font-size:0.875rem;color:#cbd5e1;">Next →</span>`}
+      ${currentPage < totalPages ? `<a href="/blog/?page=${currentPage + 1}" style="padding:0.5rem 1rem;border:1px solid #e2e8f0;border-radius:8px;font-size:0.875rem;font-weight:500;color:#1e40af;text-decoration:none;">Next →</a>` : `<span style="padding:0.5rem 1rem;border:1px solid #f1f5f9;border-radius:8px;font-size:0.875rem;color:#cbd5e1;">Next →</span>`}
     </nav>
     <p style="text-align:center;font-size:0.75rem;color:#94a3b8;margin-top:0.75rem;">${totalArticles} articles total</p>
   ` : '';
@@ -77,7 +77,7 @@ export async function onRequest(context) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Copyright News — Page ${currentPage} | AI Copyright Legal</title>
   <meta name="description" content="Latest news, court rulings, and analysis on AI copyright law. Page ${currentPage} of ${totalPages}.">
-  <link rel="canonical" href="https://aicopyrightlegal.com/blog${currentPage > 1 ? `?page=${currentPage}` : ''}">
+  <link rel="canonical" href="https://aicopyrightlegal.com/blog/${currentPage > 1 ? `?page=${currentPage}` : ''}">
   ${currentPage > 1 ? `<link rel="prev" href="https://aicopyrightlegal.com/blog${currentPage > 2 ? `?page=${currentPage - 1}` : ''}">` : ''}
   ${currentPage < totalPages ? `<link rel="next" href="https://aicopyrightlegal.com/blog?page=${currentPage + 1}">` : ''}
   <link rel="preconnect" href="https://fonts.googleapis.com">

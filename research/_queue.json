@@ -30,7 +30,9 @@
         "target": "10,000 UV/month in 6-9 months",
         "current_pages": 36,
         "niche": "AI copyright law",
-        "competitors": ["aicopyright.com"]
+        "competitors": [
+          "aicopyright.com"
+        ]
       },
       "output_to": "keywords/2026-05-01.json"
     },
@@ -40,7 +42,7 @@
       "from": "researcher",
       "for": "writer",
       "priority": "high",
-      "status": "pending",
+      "status": "completed",
       "task": "Write article: The Ultimate 2026 AI Copyright Lawsuit Tracker: OpenAI, Anthropic, & More. Target keyword: ai copyright lawsuit 2026. See content-plans/2026-05.json#article-1 for full brief.",
       "data": "content-plans/2026-05.json"
     },
@@ -70,7 +72,7 @@
       "from": "researcher",
       "for": "writer",
       "priority": "medium",
-      "status": "pending",
+      "status": "completed",
       "task": "Write article: Can You Copyright AI-Assisted Content? 2026 Registration Guide. Target keyword: how to register ai assisted work copyright. See content-plans/2026-05.json#article-4 for full brief.",
       "data": "content-plans/2026-05.json"
     },
@@ -113,6 +115,26 @@
       "status": "pending",
       "task": "Write article: How to Find an AI Copyright Attorney for Your Case (2026). Target keyword: ai copyright attorney near me. See content-plans/2026-05.json#article-8 for full brief.",
       "data": "content-plans/2026-05.json"
+    },
+    {
+      "id": "task-011",
+      "created": "2026-05-01T23:20:22.098Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: The Ultimate 2026 AI Copyright Lawsuit Tracker: OpenAI, Anthropic, & More. Slug: ai-copyright-lawsuit-tracker-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-012",
+      "created": "2026-05-02T23:02:04.048Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: Can You Copyright AI-Assisted Content? 2026 Registration Guide. Slug: can-you-copyright-ai-assisted-content. Monitor indexing after it goes live.",
+      "output_to": null
     }
   ]
 }

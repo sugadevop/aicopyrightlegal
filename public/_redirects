@@ -1,0 +1,3 @@
+# Redirect ?page=1 to clean URL
+/blog?page=1 /blog/ 301
+/blog/?page=1 /blog/ 301
