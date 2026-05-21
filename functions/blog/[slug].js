@@ -24,7 +24,10 @@ export async function onRequest(context) {
 
   if (!article) return notFound(context);
 
-  // Find related posts: same category, exclude current, max 3
+  // Internal linking: Find internal link opportunities from article body
+  const internalLinks = findInternalLinks(article.content || '', allArticles, slug);
+  
+  // Find related posts: same category, exclude current, max 5
   const related = allArticles
     .filter(a => a.slug !== slug)
     .sort((a, b) => {
@@ -34,9 +37,13 @@ export async function onRequest(context) {
       if (bMatch !== aMatch) return bMatch - aMatch;
       return new Date(b.published_at || b.created_at) - new Date(a.published_at || a.created_at);
     })
-    .slice(0, 3);
+    .slice(0, 5);
 
-  const htmlContent = markdownToHtml(article.content || '');
+  let htmlContent = markdownToHtml(article.content || '');
+  // Inject internal links if found
+  if (internalLinks.length > 0) {
+    htmlContent += `\n<div class="acl-internal-links"><h3>Also Read</h3><ul>${internalLinks.map(l => `<li><a href="/blog/${escHtml(l.slug)}">${escHtml(l.title)}</a></li>`).join('')}</ul></div>`;
+  }
   const displayDate = new Date(article.published_at || article.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   const updatedDate = new Date(article.updated_at || article.published_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
@@ -88,22 +95,40 @@ export async function onRequest(context) {
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K56QDLDYYY"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-K56QDLDYYY");</script>
   <link rel="stylesheet" href="/styles.css">
+  <!-- Schema.org structured data -->
   <script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     "headline": article.title,
-    "description": article.excerpt,
+    "description": (article.excerpt || '').substring(0, 160),
     "datePublished": article.published_at,
     "dateModified": article.updated_at || article.published_at,
     ...(article.featured_image ? { "image": [article.featured_image] } : {}),
-    "author": { "@type": "Organization", "name": "AI Copyright Legal" },
+    "author": { "@type": "Organization", "name": "AI Copyright Legal", "url": "https://aicopyrightlegal.com" },
     "publisher": {
       "@type": "Organization",
       "name": "AI Copyright Legal",
       "url": "https://aicopyrightlegal.com",
-      "logo": { "@type": "ImageObject", "url": "https://aicopyrightlegal.com/favicon.svg" }
+      "logo": { "@type": "ImageObject", "url": "https://aicopyrightlegal.com/favicon.svg", "width": "32", "height": "32" }
     },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": `https://aicopyrightlegal.com/blog/${slug}` }
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `https://aicopyrightlegal.com/blog/${slug}` },
+    "about": { "@type": "Thing", "name": article.category || "AI Copyright Law" },
+    "isAccessibleForFree": "true",
+    "isPartOf": {
+      "@type": ["CreativeWork", "Product"],
+      "name": "AI Copyright Legal",
+      "productID": "aicopyrightlegal.com"
+    }
+  })}</script>
+  <!-- BreadcrumbList schema -->
+  <script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aicopyrightlegal.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aicopyrightlegal.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": article.title, "item": `https://aicopyrightlegal.com/blog/${slug}` }
+    ]
   })}</script>
 </head>
 <body class="bg-white text-text font-sans antialiased overflow-x-hidden">
@@ -189,6 +214,21 @@ export async function onRequest(context) {
 
 function notFound(context) {
   return context.env.ASSETS.fetch(new URL('/404.html', context.request.url));
+}
+
+// Find related articles to link from content body
+function findInternalLinks(content, allArticles, currentSlug) {
+  if (!content || !allArticles || allArticles.length < 2) return [];
+  const links = [];
+  const contentLower = (content || '').toLowerCase();
+  for (const a of allArticles) {
+    if (a.slug === currentSlug || links.length >= 3) continue;
+    const titleLower = (a.title || '').toLowerCase();
+    const words = titleLower.split(/\s+/).filter(w => w.length > 4).slice(0, 4);
+    const matchCount = words.filter(w => contentLower.includes(w)).length;
+    if (matchCount >= 2) links.push({ slug: a.slug, title: a.title });
+  }
+  return links;
 }
 
 function escHtml(str) {

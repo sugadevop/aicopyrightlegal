@@ -220,3 +220,12 @@ html, body {
 }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
+
+/* Internal Links Section */
+.acl-internal-links { margin: 2rem 0; padding: 1.25rem 1.5rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; }
+.acl-internal-links h3 { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: #334155; margin: 0 0 0.75rem; }
+.acl-internal-links ul { list-style: none; padding: 0; margin: 0; }
+.acl-internal-links li { margin-bottom: 0.5rem; }
+.acl-internal-links li:last-child { margin-bottom: 0; }
+.acl-internal-links a { font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-accent); text-decoration: none; font-weight: 500; }
+.acl-internal-links a:hover { text-decoration: underline; }
