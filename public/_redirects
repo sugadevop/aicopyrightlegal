@@ -1,3 +1,7 @@
 # Redirect ?page=1 to clean URL
 /blog?page=1 /blog/ 301
 /blog/?page=1 /blog/ 301
+
+# Redirect removed/non-existent tool pages to tools index
+/tools/ai-scraper-blocker /tools/ 301
+/tools/registration-helper /tools/ 301
