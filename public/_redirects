@@ -5,3 +5,8 @@
 # Redirect removed/non-existent tool pages to tools index
 /tools/ai-scraper-blocker /tools/ 301
 /tools/registration-helper /tools/ 301
+
+# Deleted duplicate articles → canonical (June 9, 2026 content cleanup)
+/blog/sora-2-voice-cloning-copyright-issues-new /blog/sora-2-voice-cloning-copyright-issues 301
+/blog/ai-copyright-compliance-business-2026 /blog/ai-copyright-compliance-guide 301
+/blog/ai-art-copyright-2026-guide /blog/can-you-copyright-ai-generated-content 301
