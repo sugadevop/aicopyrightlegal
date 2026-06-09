@@ -1,0 +1,69 @@
+{
+  "month": "2026-06",
+  "strategy": "Quality over quantity. Max 3 articles/week. 50% Guides, 30% Analysis, 20% News.",
+  "velocity_limit": "3 articles/week (Mon/Wed/Fri via cron)",
+  "content_rules": [
+    "Minimum 2000 words",
+    "At least 3 internal links to existing articles",
+    "Cite specific cases, rulings, dates",
+    "No duplicate topics — check D1 first",
+    "Prefer Guide/Analysis over News",
+    "All articles get WebP hero images (optional if 9Router down)"
+  ],
+  "articles": [
+    {
+      "id": "june-1",
+      "target_keyword": "ai copyright internal linking content clusters",
+      "title_suggestion": "AI Copyright Law 2026: The Complete Guide (Pillar Page)",
+      "word_count": 4000,
+      "category": "Guide",
+      "priority": 1,
+      "notes": "PILLAR PAGE. Link to all 54 articles as content clusters. Cover: what is AI copyright, key laws globally, major cases, how to protect work, compliance checklist."
+    },
+    {
+      "id": "june-2",
+      "target_keyword": "ai copyright fair use defense 2026",
+      "title_suggestion": "The AI Fair Use Defense: What Courts Actually Look For in 2026",
+      "word_count": 2500,
+      "category": "Analysis",
+      "priority": 1,
+      "notes": "Deep dive into the 4 fair use factors as applied to AI training. Cite specific cases: Thomson Reuters v Ross, NYT v OpenAI, Authors Guild v Google."
+    },
+    {
+      "id": "june-3",
+      "target_keyword": "ai copyright compliance checklist 2026",
+      "title_suggestion": "AI Copyright Compliance Checklist: 20 Questions Every Business Must Answer in 2026",
+      "word_count": 2000,
+      "category": "Guide",
+      "priority": 1,
+      "notes": "Actionable checklist format. EU AI Act, US Copyright Office Part 3, California AB 2013. Include downloadable elements."
+    },
+    {
+      "id": "june-4",
+      "target_keyword": "ai training data copyright global comparison",
+      "title_suggestion": "AI Training & Copyright: How 10 Countries Are Handling It Differently in 2026",
+      "word_count": 3000,
+      "category": "Analysis",
+      "priority": 2,
+      "notes": "Comparative law piece: US, EU, UK, Japan, China, India, Brazil, Australia, Singapore, Korea. Link to /laws/ pages."
+    },
+    {
+      "id": "june-5",
+      "target_keyword": "ai copyright indemnification 2026",
+      "title_suggestion": "Who Pays When AI Infringes Copyright? The 2026 Indemnification Guide",
+      "word_count": 2000,
+      "category": "Guide",
+      "priority": 2,
+      "notes": "Adobe, Microsoft, Google, OpenAI all offer indemnification — but with major caveats. Compare terms. Business decision framework."
+    },
+    {
+      "id": "june-6",
+      "target_keyword": "ai generated content disclosure requirements 2026",
+      "title_suggestion": "AI Content Labeling Laws in 2026: EU, US, China Requirements Compared",
+      "word_count": 2000,
+      "category": "Guide",
+      "priority": 2,
+      "notes": "Practical compliance: what must be labeled, where, how. EU AI Act Article 52, California AB 2013, China deep synthesis rules."
+    }
+  ]
+}
