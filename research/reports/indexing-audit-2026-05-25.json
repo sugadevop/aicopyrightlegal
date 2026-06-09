@@ -1,0 +1,304 @@
+{
+  "report": "Indexing Audit — 2026-05-25",
+  "generated_by": "monitor",
+  "site": "aicopyrightlegal.com",
+  "summary": {
+    "total_pages_checked": 88,
+    "total_sitemap_0_urls": 26,
+    "total_sitemap_dynamic_urls": 45,
+    "total_sitemap_urls": 71,
+    "total_404s_found": 16,
+    "total_301_308_redirects": 26,
+    "total_200_ok": 46,
+    "total_broken_internal_links_fixed": 6,
+    "total_redirects_added": 16,
+    "gsc_indexed": "Homepage + /about/ confirmed indexed. Majority of blog articles NOT indexed (\"Discovered - currently not indexed\" or \"URL is unknown to Google\"). GSC shows 70 submitted, 0 indexed in sitemap report.",
+    "severity": "HIGH — Major indexing problem detected"
+  },
+  "gsc_data": {
+    "homepage": {
+      "url": "https://aicopyrightlegal.com/",
+      "status": "Submitted and indexed",
+      "last_crawled": "2026-05-19T17:46:10Z",
+      "verdict": "PASS"
+    },
+    "about_page": {
+      "url": "https://aicopyrightlegal.com/about/",
+      "status": "Submitted and indexed",
+      "last_crawled": "2026-05-20T00:51:14Z",
+      "verdict": "PASS"
+    },
+    "blog_articles_indexed": [
+      "can-you-copyright-ai-assisted-content",
+      "ai-copyright-infringement-examples-2026",
+      "protect-content-from-ai-scraping-2026",
+      "ai-copyright-compliance-business-2026",
+      "sora-2-voice-cloning-copyright-issues-new",
+      "midjourney-copyright-lawsuit-status-2026",
+      "eu-ai-act-copyright-transparency-requirements",
+      "corporate-policy-ai-generated-content-2026",
+      "sag-aftra-ai-protections-2026",
+      "ai-training-fair-use-global-copyright-laws-2026",
+      "find-ai-copyright-attorney-2026",
+      "us-copyright-office-ai-report-part-3-summary",
+      "strike-3-meta-movie-gen-adult-films-lawsuit-2026",
+      "oscars-ai-rules-2026-human-authorship",
+      "ai-music-copyright-lawsuits-suno-udio-2026",
+      "youtube-likeness-detection-ai-deepfakes-2026",
+      "bipa-voiceprint-class-actions-google-amazon-microsoft-ai-2026"
+    ],
+    "blog_articles_not_indexed": [
+      {
+        "slug": "ai-copyright-lawsuit-tracker-2026",
+        "status": "Discovered - currently not indexed",
+        "published": "2026-05-02"
+      },
+      {
+        "slug": "ai-copyright-licensing-2026-publisher-deals",
+        "status": "Discovered - currently not indexed",
+        "published": "2026-05-22"
+      },
+      {
+        "slug": "ai-fabricated-quotes-future-of-truth-2026",
+        "status": "Discovered - currently not indexed",
+        "published": "2026-05-23"
+      }
+    ],
+    "blog_articles_unknown_to_google": [
+      {
+        "slug": "hachette-macmillan-elsevier-turow-meta-llama-class-action-2026",
+        "status": "URL is unknown to Google",
+        "published": "2026-05-18"
+      },
+      {
+        "slug": "california-ab-2013-ai-training-data-transparency-2026",
+        "status": "URL is unknown to Google",
+        "published": "2026-05-19"
+      },
+      {
+        "slug": "tanzer-v-adobe-nvidia-nemotron-ai-training-2026",
+        "status": "URL is unknown to Google",
+        "published": "2026-05-20"
+      },
+      {
+        "slug": "ftc-take-it-down-act-enforcement-ai-deepfakes-2026",
+        "status": "URL is unknown to Google",
+        "published": "2026-05-22"
+      },
+      {
+        "slug": "ai-remix-colorization-copyright-ansel-adams-2026",
+        "status": "URL is unknown to Google",
+        "published": "2026-05-24"
+      }
+    ],
+    "sitemap_report": {
+      "submitted": 70,
+      "indexed": 0,
+      "last_downloaded": "2026-05-23T14:29:20.490Z",
+      "note": "The 0 indexed count is concerning but may be a display lag. Individual URL inspection shows many are indeed indexed."
+    }
+  },
+  "404s_found": [
+    {
+      "category": "old_bare_path_articles",
+      "action": "should_redirect",
+      "urls": [
+        {
+          "broken_url": "https://aicopyrightlegal.com/ai-copyright-compliance-guide",
+          "redirect_to": "https://aicopyrightlegal.com/blog/ai-copyright-compliance-guide",
+          "fix_applied": true,
+          "method": "Astro redirects in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/sora-2-voice-cloning-copyright-issues",
+          "redirect_to": "https://aicopyrightlegal.com/blog/sora-2-voice-cloning-copyright-issues",
+          "fix_applied": true,
+          "method": "Astro redirects in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/can-you-copyright-ai-generated-content",
+          "redirect_to": "https://aicopyrightlegal.com/blog/can-you-copyright-ai-generated-content",
+          "fix_applied": true,
+          "method": "Astro redirects in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/protect-content-from-ai-scraping",
+          "redirect_to": "https://aicopyrightlegal.com/blog/protect-content-from-ai-scraping",
+          "fix_applied": true,
+          "method": "Astro redirects in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/ai-training-fair-use-law-2026",
+          "redirect_to": "https://aicopyrightlegal.com/blog/ai-training-fair-use-law-2026",
+          "fix_applied": true,
+          "method": "Astro redirects in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/ai-art-copyright-2026-guide",
+          "redirect_to": "https://aicopyrightlegal.com/blog/ai-art-copyright-2026-guide",
+          "fix_applied": true,
+          "method": "Astro redirects in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/copyright-office-part-3",
+          "redirect_to": "https://aicopyrightlegal.com/blog/copyright-office-part-3",
+          "fix_applied": true,
+          "method": "Astro redirects in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/anthropic-settlement-authors",
+          "redirect_to": "https://aicopyrightlegal.com/blog/anthropic-settlement-authors",
+          "fix_applied": true,
+          "method": "Astro redirects in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/supreme-court-denies-ai-copyright-challenge",
+          "redirect_to": "https://aicopyrightlegal.com/blog/supreme-court-denies-ai-copyright-challenge",
+          "fix_applied": true,
+          "method": "Astro redirects in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/oscars-ban-ai-generated-performances-2027",
+          "redirect_to": "https://aicopyrightlegal.com/blog/oscars-ban-ai-generated-performances-2027",
+          "fix_applied": true,
+          "method": "Astro redirects in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/publishers-sue-meta-copyright-ai",
+          "redirect_to": "https://aicopyrightlegal.com/blog/publishers-sue-meta-copyright-ai",
+          "fix_applied": true,
+          "method": "Astro redirects in astro.config.mjs"
+        }
+      ]
+    },
+    {
+      "category": "internal_links_to_nonexistent_pages",
+      "action": "should_redirect",
+      "urls": [
+        {
+          "broken_url": "https://aicopyrightlegal.com/newsletter",
+          "referenced_from": [
+            "src/layouts/BaseLayout.astro (2 links in nav + mobile menu)"
+          ],
+          "redirect_to": "https://aicopyrightlegal.com/blog",
+          "fix_applied": true,
+          "method": "Changed in-page links to /blog + added redirect in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/tools/copyright-eligibility-checker",
+          "referenced_from": [
+            "src/pages/learn/can-you-copyright-ai-content.astro"
+          ],
+          "redirect_to": "https://aicopyrightlegal.com/tools/ai-copyright-checker",
+          "fix_applied": true,
+          "method": "Fixed internal link + added redirect in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/tools/generation-liability",
+          "referenced_from": [
+            "src/pages/laws/japan.astro"
+          ],
+          "redirect_to": "https://aicopyrightlegal.com/tools/ai-copyright-checker",
+          "fix_applied": true,
+          "method": "Fixed internal link + added redirect in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/tools/opt-out-guide",
+          "referenced_from": [
+            "src/pages/laws/european-union.astro"
+          ],
+          "redirect_to": "https://aicopyrightlegal.com/tools/robots-txt-ai-blocker",
+          "fix_applied": true,
+          "method": "Fixed internal link + added redirect in astro.config.mjs"
+        },
+        {
+          "broken_url": "https://aicopyrightlegal.com/laws/usco-ai-guidance-2023",
+          "referenced_from": [
+            "src/pages/learn/can-you-copyright-ai-content.astro"
+          ],
+          "redirect_to": "https://aicopyrightlegal.com/laws/united-states",
+          "fix_applied": true,
+          "method": "Fixed internal link + added redirect in astro.config.mjs"
+        }
+      ]
+    }
+  ],
+  "fixes_applied": {
+    "astro_config_redirects": {
+      "file": "astro.config.mjs",
+      "total_redirects_added": 16,
+      "description": "Added redirects for all 11 old bare-path articles and 5 broken internal link targets"
+    },
+    "internal_link_fixes": [
+      {
+        "file": "src/layouts/BaseLayout.astro",
+        "changes": "Changed 2x /newsletter links to /blog (Newsletter page doesn't exist yet)"
+      },
+      {
+        "file": "src/pages/learn/can-you-copyright-ai-content.astro",
+        "changes": "Fixed /tools/copyright-eligibility-checker → /tools/ai-copyright-checker; /laws/usco-ai-guidance-2023 → /laws/united-states"
+      },
+      {
+        "file": "src/pages/laws/japan.astro",
+        "changes": "Fixed /tools/generation-liability → /tools/ai-copyright-checker"
+      },
+      {
+        "file": "src/pages/laws/european-union.astro",
+        "changes": "Fixed /tools/opt-out-guide → /tools/robots-txt-ai-blocker"
+      }
+    ]
+  },
+  "indexing_issues": {
+    "severity": "CRITICAL",
+    "problem": "GSC sitemap report shows 70 submitted, 0 indexed. While homepage and /about/ are confirmed indexed via URL Inspection API, many blog articles show \"Discovered - currently not indexed\" or \"URL is unknown to Google\".",
+    "articles_at_risk": [
+      "ai-copyright-lawsuit-tracker-2026 (published May 2 — 23 days, still not indexed)",
+      "ai-copyright-licensing-2026-publisher-deals (published May 22 — not indexed)",
+      "ai-fabricated-quotes-future-of-truth-2026 (published May 23 — not indexed)",
+      "hachette-macmillan-elsevier-turow-meta-llama-class-action-2026 (published May 18 — Google doesn't know it)",
+      "california-ab-2013-ai-training-data-transparency-2026 (published May 19 — Google doesn't know it)",
+      "tanzer-v-adobe-nvidia-nemotron-ai-training-2026 (published May 20 — Google doesn't know it)",
+      "ftc-take-it-down-act-enforcement-ai-deepfakes-2026 (published May 22 — Google doesn't know it)",
+      "ai-remix-colorization-copyright-ansel-adams-2026 (published May 24 — Google doesn't know it)"
+    ],
+    "root_cause_analysis": "Blog articles come from external API (api.aicopyrightlegal.com) and there is NO [slug].astro dynamic route file in src/pages/blog/. Individual blog pages are likely served via Cloudflare Workers or the API layer. This means Astro build doesn't generate them as static HTML, which may prevent Google from discovering them properly. The sitemap lists them, but Google may not be finding the pages through the normal crawl path.",
+    "recommendation": "1) Investigate how blog pages are served (Workers? API proxy?). 2) If using SSR/Workers, ensure proper caching headers. 3) Consider adding [slug].astro with getStaticPaths() to pre-render all blog pages at build time. 4) Site-owner should manually request indexing for the 8 unindexed articles via GSC."
+  },
+  "recommendations": {
+    "site_owner": [
+      "URGENT: Manually request indexing in GSC for 8 unindexed articles (list above)",
+      "Investigate why blog articles route through API instead of static Astro pages",
+      "Consider adding [slug].astro with getStaticPaths() for blog and cases pages",
+      "Redeploy site after redirects are added to astro.config.mjs",
+      "Google OAuth client secret may need to be re-generated — refresh token is failing"
+    ],
+    "editor": [
+      "Review all fixed internal links in can-you-copyright-ai-content.astro, japan.astro, european-union.astro",
+      "Update link-map.json to reflect new redirect structure",
+      "Consider creating actual /newsletter landing page (currently redirects to /blog)",
+      "Plan dedicated pages for: generation-liability, opt-out-guide, copyright-eligibility-checker, usco-ai-guidance-2023"
+    ],
+    "writer": [
+      "No broken blog article links found — all 46 blog articles return 200",
+      "The 11 old bare-path articles already have new /blog/ versions published — no new content needed"
+    ]
+  },
+  "redirects_in_astro_config": [
+    "/ai-copyright-compliance-guide → /blog/ai-copyright-compliance-guide",
+    "/sora-2-voice-cloning-copyright-issues → /blog/sora-2-voice-cloning-copyright-issues",
+    "/can-you-copyright-ai-generated-content → /blog/can-you-copyright-ai-generated-content",
+    "/protect-content-from-ai-scraping → /blog/protect-content-from-ai-scraping",
+    "/ai-training-fair-use-law-2026 → /blog/ai-training-fair-use-law-2026",
+    "/ai-art-copyright-2026-guide → /blog/ai-art-copyright-2026-guide",
+    "/copyright-office-part-3 → /blog/copyright-office-part-3",
+    "/anthropic-settlement-authors → /blog/anthropic-settlement-authors",
+    "/supreme-court-denies-ai-copyright-challenge → /blog/supreme-court-denies-ai-copyright-challenge",
+    "/oscars-ban-ai-generated-performances-2027 → /blog/oscars-ban-ai-generated-performances-2027",
+    "/publishers-sue-meta-copyright-ai → /blog/publishers-sue-meta-copyright-ai",
+    "/newsletter → /blog",
+    "/tools/copyright-eligibility-checker → /tools/ai-copyright-checker",
+    "/tools/generation-liability → /tools/ai-copyright-checker",
+    "/tools/opt-out-guide → /tools/robots-txt-ai-blocker",
+    "/laws/usco-ai-guidance-2023 → /laws/united-states"
+  ]
+}

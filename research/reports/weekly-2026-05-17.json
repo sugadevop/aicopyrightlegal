@@ -1,0 +1,22 @@
+{
+  "site": "sc-domain:aicopyrightlegal.com",
+  "period": {"start": "2026-05-11", "end": "2026-05-17"},
+  "generated_at": "2026-05-18T03:01:00Z",
+  "status": "FAILED",
+  "error": {
+    "stage": "oauth_refresh",
+    "code": 400,
+    "message": "invalid_grant: Token has been expired or revoked.",
+    "credentials_path": "~/.openclaw/credentials/google-oauth-tokens.json"
+  },
+  "totals": null,
+  "top_queries": null,
+  "top_pages": null,
+  "devices": null,
+  "countries": null,
+  "remediation": [
+    "Re-run the Google OAuth flow for the Search Console scope (https://www.googleapis.com/auth/webmasters.readonly).",
+    "Overwrite ~/.openclaw/credentials/google-oauth-tokens.json with the new access_token + refresh_token (keep client_id/client_secret).",
+    "Alternative: switch this report to use the service account at ~/.openclaw/credentials/google-service-account.json after granting it Restricted user access in Search Console > Settings > Users and permissions."
+  ]
+}

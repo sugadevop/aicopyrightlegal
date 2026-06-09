@@ -188,6 +188,66 @@
       "external_links": [],
       "priority": 3,
       "notes": "Bottom-of-funnel content aimed at those looking for legal representation."
+    },
+    {
+      "id": "article-9",
+      "target_keyword": "midjourney copyright status 2026",
+      "search_intent": "informational",
+      "title_suggestion": "Midjourney Copyright Lawsuit: Where We Stand in May 2026",
+      "word_count": 1000,
+      "category": "News/Resources",
+      "priority": 1,
+      "notes": "Target low competition keyword with high relevance."
+    },
+    {
+      "id": "article-10",
+      "target_keyword": "eu ai act copyright transparency requirements",
+      "search_intent": "informational",
+      "title_suggestion": "Breaking Down the EU AI Act: What Are the Copyright Transparency Requirements?",
+      "word_count": 1200,
+      "category": "Guides",
+      "priority": 1,
+      "notes": "Important legal explainer for global AI tools."
+    },
+    {
+      "id": "article-11",
+      "target_keyword": "us copyright office ai report part 3 summary",
+      "search_intent": "informational",
+      "title_suggestion": "Summary: US Copyright Office AI Report Part 3 (Generative AI Training)",
+      "word_count": 1500,
+      "category": "News/Resources",
+      "priority": 1,
+      "notes": "Direct response to recent government publication."
+    },
+    {
+      "id": "article-12",
+      "target_keyword": "corporate policy on ai generated content",
+      "search_intent": "informational/navigational",
+      "title_suggestion": "Drafting a Corporate Policy for AI-Generated Content (2026 Template)",
+      "word_count": 2000,
+      "category": "Guides",
+      "priority": 1,
+      "notes": "Highly actionable B2B content."
+    },
+    {
+      "id": "article-13",
+      "target_keyword": "sag aftra ai protections 2026",
+      "search_intent": "informational",
+      "title_suggestion": "New SAG-AFTRA Deal: What the 2026 AI Protections Mean for Creators",
+      "word_count": 1000,
+      "category": "News/Resources",
+      "priority": 2,
+      "notes": "Timely news tie-in based on recent agreements."
+    },
+    {
+      "id": "article-14",
+      "target_keyword": "oscars ai rules 2026",
+      "search_intent": "informational",
+      "title_suggestion": "The Oscars & AI: Why Only Humans Can Win in 2026",
+      "word_count": 800,
+      "category": "News/Resources",
+      "priority": 2,
+      "notes": "Pop culture intersection with AI copyright rules."
     }
   ]
 }

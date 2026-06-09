@@ -1,9 +1,63 @@
 {
-  "last_updated": "2026-05-01T06:15:00Z",
-  "status": "idle",
-  "current_task": null,
-  "completed_tasks": ["task-002", "task-001"],
-  "site-owner": {
-    "status": "completed-setup"
+  "project": "aicopyrightlegal.com",
+  "last_updated": "2026-05-25T03:10:00Z",
+  "status": "active",
+  "team": {
+    "site-owner": {
+      "role": "Final approval, monitoring, GSC/GA setup",
+      "status": "active",
+      "bottleneck_note": "Currently bottleneck — many tasks pending approval. Monitor agent will help reduce this."
+    },
+    "researcher": {
+      "role": "Keyword research, content planning, competitor analysis",
+      "status": "active",
+      "latest_output": "content-plans/2026-05.json (14 articles planned)"
+    },
+    "writer": {
+      "role": "Daily article writing, news coverage",
+      "status": "active",
+      "schedule": "Daily 06:00 WIB",
+      "latest_output": "34 articles published/drafted (task-003 to task-035)"
+    },
+    "editor": {
+      "role": "SEO optimization, CTR improvement, striking-distance content refresh, internal links",
+      "status": "active",
+      "schedule": "Weekly Monday 09:00 WIB",
+      "agent_file": "agents/editor.md"
+    },
+    "distributor": {
+      "role": "Social distribution, backlinks, content repurposing",
+      "status": "standby",
+      "note": "Triggered manually or by editor as needed",
+      "agent_file": "agents/distributor.md"
+    },
+    "monitor": {
+      "role": "Daily health check, weekly/monthly reporting, indexing tracking",
+      "status": "active",
+      "schedule": "Daily 08:30 WIB, Weekly Mon 10:00 WIB, Monthly 1st 12:00 WIB",
+      "agent_file": "agents/monitor.md"
+    }
+  },
+  "cron_schedule": {
+    "daily": {
+      "06:00_wib": "Writer — publish 1 article from content plan",
+      "08:00_wib": "News Scanner — check trending AI copyright news → draft article if newsworthy",
+      "08:30_wib": "Monitor — indexing check + site health (silent unless critical alert)"
+    },
+    "weekly_monday": {
+      "09:00_wib": "Editor — striking distance optimization sweep",
+      "10:00_wib": "Monitor — full weekly SEO report with recommendations for all agents"
+    },
+    "monthly_1st": {
+      "12:00_wib": "Monitor — monthly performance review, MoM comparison, top recommendations"
+    }
+  },
+  "active_tasks": {
+    "pending_approval": "task-011 through task-035 (25 articles pending site-owner review)",
+    "next_actions": [
+      "Run editor sweep on striking-distance queries (pos 11-20)",
+      "Fix site-wide CTR — title/meta optimization",
+      "Enable distributor for backlink building"
+    ]
   }
 }

@@ -1,0 +1,358 @@
+{
+  "report_type": "monthly_seo_performance",
+  "site": "aicopyrightlegal.com",
+  "month": "2026-05",
+  "generated_at": "2026-06-01T06:10:00Z",
+  "data_quality": {
+    "weekly_reports_found": [
+      "weekly-2026-05-04.json",
+      "weekly-2026-05-11.json",
+      "weekly-2026-05-17.json",
+      "weekly-2026-05-24.json"
+    ],
+    "valid_weekly_reports": [
+      "weekly-2026-05-04.json",
+      "weekly-2026-05-24.json"
+    ],
+    "failed_weekly_reports": [
+      {
+        "file": "weekly-2026-05-11.json",
+        "error": {
+          "stage": "oauth_refresh",
+          "code": "invalid_grant",
+          "description": "Token has been expired or revoked.",
+          "access_token_check": "invalid_token / Invalid Value"
+        }
+      },
+      {
+        "file": "weekly-2026-05-17.json",
+        "error": {
+          "stage": "oauth_refresh",
+          "code": 400,
+          "message": "invalid_grant: Token has been expired or revoked.",
+          "credentials_path": "~/.openclaw/credentials/google-oauth-tokens.json"
+        }
+      }
+    ],
+    "coverage_note": "GSC OAuth failed for two mid-month weekly reports; May totals are partial, based only on valid weekly files."
+  },
+  "totals_partial": {
+    "clicks": 11,
+    "impressions": 640,
+    "ctr_pct": 1.72,
+    "avg_position": 13.43
+  },
+  "mom_comparison": {
+    "previous_month_report_exists": false,
+    "note": "No monthly-2026-04.json found; MoM baseline unavailable. Use May as baseline for June."
+  },
+  "top_pages_by_traffic": [
+    {
+      "page": "https://aicopyrightlegal.com/blog/suryast-copyright-office-lawsuit-ai-artwork-2026",
+      "clicks": 4,
+      "impressions": 12,
+      "ctr_pct": 33.33,
+      "avg_position": 6.58
+    },
+    {
+      "page": "https://www.aicopyrightlegal.com/laws",
+      "clicks": 2,
+      "impressions": 29,
+      "ctr_pct": 6.9,
+      "avg_position": 8.17
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/anthropic-settlement-approval-delayed-martinez-olguin-2026",
+      "clicks": 2,
+      "impressions": 7,
+      "ctr_pct": 28.57,
+      "avg_position": 11.71
+    },
+    {
+      "page": "https://aicopyrightlegal.com/",
+      "clicks": 1,
+      "impressions": 33,
+      "ctr_pct": 3.03,
+      "avg_position": 14.97
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/supreme-court-denies-ai-copyright-challenge",
+      "clicks": 1,
+      "impressions": 3,
+      "ctr_pct": 33.33,
+      "avg_position": 33.0
+    },
+    {
+      "page": "https://aicopyrightlegal.com/laws/united-kingdom/",
+      "clicks": 1,
+      "impressions": 3,
+      "ctr_pct": 33.33,
+      "avg_position": 38.67
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/ai-art-copyright-2026-guide",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr_pct": 0.0,
+      "avg_position": 15.96
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr_pct": 0.0,
+      "avg_position": 19.11
+    },
+    {
+      "page": "https://aicopyrightlegal.com/about/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr_pct": 0.0,
+      "avg_position": 2.5
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/ai-copyright-compliance-business-2026",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr_pct": 0.0,
+      "avg_position": 4.5
+    }
+  ],
+  "keyword_changes": {
+    "gained": [
+      "ai training data copyright violation lawsuit 2026",
+      "ai training fair use court cases 2025 2026",
+      "ai copyright lawsuits training data 2025 2026",
+      "ai image generation copyright news may 2026",
+      "ai copyright ruling"
+    ],
+    "lost": [],
+    "note": "No previous monthly keyword export available; gained list is inferred from newly visible GSC queries in the valid May 18\u201324 report, not a full ranking-delta export."
+  },
+  "content_velocity": {
+    "articles_published_in_may": 28,
+    "articles": [
+      {
+        "id": "task-011",
+        "created": "2026-05-01T23:20:22.098Z",
+        "slug": "ai-copyright-lawsuit-tracker-2026",
+        "task": "New article published as draft: The Ultimate 2026 AI Copyright Lawsuit Tracker: OpenAI, Anthropic, & More. Slug: ai-copyright-lawsuit-tracker-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-012",
+        "created": "2026-05-02T23:02:04.048Z",
+        "slug": "can-you-copyright-ai-assisted-content",
+        "task": "New article published as draft: Can You Copyright AI-Assisted Content? 2026 Registration Guide. Slug: can-you-copyright-ai-assisted-content. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-013",
+        "created": "2026-05-03T23:02:47.719Z",
+        "slug": "ai-copyright-infringement-examples-2026",
+        "task": "New article published as draft: 7 Real-World Examples of AI Copyright Infringement in 2026. Slug: ai-copyright-infringement-examples-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-014",
+        "created": "2026-05-04T23:24:44.113Z",
+        "slug": "protect-content-from-ai-scraping-2026",
+        "task": "New article published as draft: How to Protect Your Content From AI Scraping in 2026 (Technical & Legal Guide). Slug: protect-content-from-ai-scraping-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-015",
+        "created": "2026-05-04T23:26:00.000Z",
+        "slug": "ai-copyright-compliance-business-2026",
+        "task": "New article published as draft: AI Copyright Compliance: The 2026 Survival Guide for Businesses. Slug: ai-copyright-compliance-business-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-016",
+        "created": "2026-05-05T23:02:36.800Z",
+        "slug": "sora-2-voice-cloning-copyright-issues-new",
+        "task": "New article published as draft: Sora 2 and Voice Cloning: The Next Wave of AI Copyright Battles. Slug: sora-2-voice-cloning-copyright-issues-new. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-017",
+        "created": "2026-05-06T23:04:00.000Z",
+        "slug": "midjourney-copyright-lawsuit-status-2026",
+        "task": "New article published as draft: Midjourney Copyright Lawsuit: Where We Stand in May 2026. Slug: midjourney-copyright-lawsuit-status-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-018",
+        "created": "2026-05-07T23:04:00.000Z",
+        "slug": "eu-ai-act-copyright-transparency-requirements",
+        "task": "New article published as draft: Breaking Down the EU AI Act: What Are the Copyright Transparency Requirements? Slug: eu-ai-act-copyright-transparency-requirements. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-019",
+        "created": "2026-05-08T23:05:43.000Z",
+        "slug": "corporate-policy-ai-generated-content-2026",
+        "task": "New article published as draft: Drafting a Corporate Policy for AI-Generated Content (2026 Template). Slug: corporate-policy-ai-generated-content-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-020",
+        "created": "2026-05-10T00:24:00.000Z",
+        "slug": "sag-aftra-ai-protections-2026",
+        "task": "New article published as draft: New SAG-AFTRA Deal: What the 2026 AI Protections Mean for Creators. Slug: sag-aftra-ai-protections-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-021",
+        "created": "2026-05-10T23:02:34.000Z",
+        "slug": "ai-training-fair-use-global-copyright-laws-2026",
+        "task": "New article published as draft: Is AI Training Fair Use? How Global Copyright Laws Are Evolving in 2026. Slug: ai-training-fair-use-global-copyright-laws-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-022",
+        "created": "2026-05-11T23:02:41.000Z",
+        "slug": "find-ai-copyright-attorney-2026",
+        "task": "New article published as draft: How to Find an AI Copyright Attorney for Your Case (2026). Slug: find-ai-copyright-attorney-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-023",
+        "created": "2026-05-12T23:03:00.000Z",
+        "slug": "us-copyright-office-ai-report-part-3-summary",
+        "task": "New article published as draft: Summary: US Copyright Office AI Report Part 3 (Generative AI Training). Slug: us-copyright-office-ai-report-part-3-summary. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-024",
+        "created": "2026-05-14T16:52:00.000Z",
+        "slug": "strike-3-meta-movie-gen-adult-films-lawsuit-2026",
+        "task": "New article published as draft: Strike 3 Sues Meta for $359M: Adult Studios Allege Movie Gen AI Trained on Pirated Films. Slug: strike-3-meta-movie-gen-adult-films-lawsuit-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-025",
+        "created": "2026-05-14T23:02:30.000Z",
+        "slug": "oscars-ai-rules-2026-human-authorship",
+        "task": "New article published as draft: The Oscars & AI: Why Only Humans Can Win in 2026. Slug: oscars-ai-rules-2026-human-authorship. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-026",
+        "created": "2026-05-15T23:03:00.000Z",
+        "slug": "ai-music-copyright-lawsuits-suno-udio-2026",
+        "task": "New article published as draft: AI Music Copyright Lawsuits: Suno, Udio & the State of Music AI in 2026. Slug: ai-music-copyright-lawsuits-suno-udio-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-027",
+        "created": "2026-05-17T00:56:00.000Z",
+        "slug": "youtube-likeness-detection-ai-deepfakes-2026",
+        "task": "New article published as draft: YouTube Opens AI Likeness Detection to Everyone: What Creators Need to Know. Slug: youtube-likeness-detection-ai-deepfakes-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-028",
+        "created": "2026-05-17T23:03:00.000Z",
+        "slug": "bipa-voiceprint-class-actions-google-amazon-microsoft-ai-2026",
+        "task": "New article published as draft: 9 Class Actions Hit Big Tech Over AI Voiceprints: How BIPA Just Opened a New Front. Slug: bipa-voiceprint-class-actions-google-amazon-microsoft-ai-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-029",
+        "created": "2026-05-18T23:04:00.000Z",
+        "slug": "hachette-macmillan-elsevier-turow-meta-llama-class-action-2026",
+        "task": "New article published as draft: Hachette, Macmillan, Elsevier and Scott Turow Sue Meta Over Llama Training. Slug: hachette-macmillan-elsevier-turow-meta-llama-class-action-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-030",
+        "created": "2026-05-19T23:04:00.000Z",
+        "slug": "california-ab-2013-ai-training-data-transparency-2026",
+        "task": "New article published as draft: California's AB 2013 Is Now in Force: What the AI Training Data Transparency Law Means for Developers. Slug: california-ab-2013-ai-training-data-transparency-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-031",
+        "created": "2026-05-20T23:03:00.000Z",
+        "slug": "tanzer-v-adobe-nvidia-nemotron-ai-training-2026",
+        "task": "New article published as draft: Tanzer v. Adobe: Author Sues Adobe Over Alleged Use of Books to Train NVIDIA Nemotron AI Models. Slug: tanzer-v-adobe-nvidia-nemotron-ai-training-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-032",
+        "created": "2026-05-22T01:23:00.000Z",
+        "slug": "ftc-take-it-down-act-enforcement-ai-deepfakes-2026",
+        "task": "New article published as draft: FTC Begins Enforcing the TAKE IT DOWN Act: What the AI Deepfake Removal Mandate Means for Platforms. Slug: ftc-take-it-down-act-enforcement-ai-deepfakes-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-033",
+        "created": "2026-05-23T06:00:00Z",
+        "slug": "ai-copyright-licensing-2026-publisher-deals",
+        "task": "New article published: AI Copyright Licensing in 2026: How Big Tech-Publisher Deals Are Reshaping the Industry. Slug: ai-copyright-licensing-2026-publisher-deals. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-034",
+        "created": "2026-05-23T23:04:00Z",
+        "slug": "ai-fabricated-quotes-future-of-truth-2026",
+        "task": "New article published: AI Fabricated Quotes in a Book About Truth \u2014 The Irony, the Fallout, and What It Means for Creators. Slug: ai-fabricated-quotes-future-of-truth-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-035",
+        "created": "2026-05-25T06:00:00Z",
+        "slug": "ai-remix-colorization-copyright-ansel-adams-2026",
+        "task": "New article published: AI Remixes, Colorizations & Copyright: Who Owns a Machine-Altered Masterpiece? Slug: ai-remix-colorization-copyright-ansel-adams-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-037",
+        "created": "2026-05-25T23:04:00Z",
+        "slug": "hobbs-stone-meta-zuckerberg-class-action-piracy-llama-2026",
+        "task": "New article published: Hobbs & Stone v. Meta: Authors File Class Action Naming Zuckerberg Personally. Slug: hobbs-stone-meta-zuckerberg-class-action-piracy-llama-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-038",
+        "created": "2026-05-26T23:02:00Z",
+        "slug": "ai-arbitrator-deciding-real-cases-copyright-justice-2026",
+        "task": "New article published: The AI Arbitrator Is Now Deciding Real Cases \u2014 What It Means for Copyright, Justice, and You. Slug: ai-arbitrator-deciding-real-cases-copyright-justice-2026. Monitor indexing after it goes live."
+      },
+      {
+        "id": "task-039",
+        "created": "2026-05-31T14:57:00Z",
+        "slug": "who-owns-ai-generated-code-copyright-2026",
+        "task": "New article published: Who Owns AI-Generated Code? Copyright, GitHub Copilot & the 2026 Legal Landscape. Slug: who-owns-ai-generated-code-copyright-2026. Status: published. Monitor indexing after it goes live."
+      }
+    ]
+  },
+  "indexing": {
+    "checked_as_of": "2026-05-25 audit",
+    "indexed_articles": 17,
+    "not_indexed_or_unknown": 8,
+    "indexing_rate_pct": 68.0,
+    "critical_issue": "GSC sitemap report showed 70 submitted, 0 indexed; individual inspection confirmed many indexed but 8 May articles at risk/not indexed or unknown to Google.",
+    "at_risk": [
+      "ai-copyright-lawsuit-tracker-2026",
+      "ai-copyright-licensing-2026-publisher-deals",
+      "ai-fabricated-quotes-future-of-truth-2026",
+      "hachette-macmillan-elsevier-turow-meta-llama-class-action-2026",
+      "california-ab-2013-ai-training-data-transparency-2026",
+      "tanzer-v-adobe-nvidia-nemotron-ai-training-2026",
+      "ftc-take-it-down-act-enforcement-ai-deepfakes-2026",
+      "ai-remix-colorization-copyright-ansel-adams-2026"
+    ]
+  },
+  "competitor_check": [
+    {
+      "competitor": "aicopyright.com",
+      "finding": "Homepage positioning is lead-gen/creator-intake focused with a free 2026 AI Copyright Guide, legal-help CTAs, and cluster pages for AI creation, legal framework, case studies, fair use, licensing, and legal help.",
+      "implication": "They are stronger on conversion funnel and evergreen hub structure; aicopyrightlegal.com should pair news velocity with clearer lead magnets/tools."
+    },
+    {
+      "competitor": "copyrightalliance.org",
+      "finding": "Broad authority site with policy, agency filings, amicus briefs, copyright law education, and advocacy navigation.",
+      "implication": "Hard to outrank on authority; use them as source/reference, and target practical long-tail explainers and case-specific updates."
+    },
+    {
+      "competitor": "copyright.gov/ai/",
+      "finding": "Official AI initiative page remains the canonical source for USCO AI reports; Part 3 pre-publication on generative AI training remains prominently linked.",
+      "implication": "Maintain freshness around USCO Part 3/final version and explain business/creator implications faster than official/legal blogs."
+    }
+  ],
+  "recommendations_next_month": {
+    "top_3": [
+      "Fix indexing pipeline first: request indexing for the 8 at-risk URLs, verify sitemap/index counts weekly, and consider static pre-rendered blog routes so Google can reliably crawl articles.",
+      "Double down on topics already showing demand: AI training data lawsuits/fair use, AI image generation legal updates, AI licensing/publisher deals, and case tracker pages.",
+      "Improve CTR and internal linking: rewrite titles/meta for ranking pages, add \u201clatest AI copyright lawsuits\u201d hub links, and replicate the Suryast page structure that produced the best CTR/clicks."
+    ],
+    "content_gaps": [
+      "AI video editor content rights policy",
+      "Artificial intelligence licensing in EU",
+      "AI case tracker / lawsuit timeline",
+      "TAKE IT DOWN Act + deepfake platform compliance",
+      "AI-generated code ownership and Copilot compliance"
+    ],
+    "process_improvements": [
+      "Resolve Google OAuth refresh token issue or switch to service account access for reliable reporting.",
+      "Create monthly keyword snapshot exports so gained/lost can be measured accurately.",
+      "Track publication status separately from draft notifications; queue currently mixes draft/published wording."
+    ]
+  }
+}

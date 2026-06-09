@@ -52,7 +52,7 @@
       "from": "researcher",
       "for": "writer",
       "priority": "high",
-      "status": "pending",
+      "status": "completed",
       "task": "Write article: How to Protect Your Content From AI Scraping in 2026 (Technical & Legal Guide). Target keyword: protect content from ai scraping. See content-plans/2026-05.json#article-2 for full brief.",
       "data": "content-plans/2026-05.json"
     },
@@ -62,7 +62,7 @@
       "from": "researcher",
       "for": "writer",
       "priority": "high",
-      "status": "pending",
+      "status": "completed",
       "task": "Write article: AI Copyright Compliance: The 2026 Survival Guide for Businesses. Target keyword: ai copyright guidelines for businesses. See content-plans/2026-05.json#article-3 for full brief.",
       "data": "content-plans/2026-05.json"
     },
@@ -82,7 +82,7 @@
       "from": "researcher",
       "for": "writer",
       "priority": "medium",
-      "status": "pending",
+      "status": "completed",
       "task": "Write article: Sora 2 and Voice Cloning: The Next Wave of AI Copyright Battles. Target keyword: sora 2 copyright issues. See content-plans/2026-05.json#article-5 for full brief.",
       "data": "content-plans/2026-05.json"
     },
@@ -92,7 +92,7 @@
       "from": "researcher",
       "for": "writer",
       "priority": "medium",
-      "status": "pending",
+      "status": "completed",
       "task": "Write article: 7 Real-World Examples of AI Copyright Infringement in 2026. Target keyword: ai copyright infringement examples. See content-plans/2026-05.json#article-6 for full brief.",
       "data": "content-plans/2026-05.json"
     },
@@ -102,7 +102,7 @@
       "from": "researcher",
       "for": "writer",
       "priority": "low",
-      "status": "pending",
+      "status": "completed",
       "task": "Write article: Is AI Training Fair Use? How Global Copyright Laws Are Evolving in 2026. Target keyword: ai training data copyright laws. See content-plans/2026-05.json#article-7 for full brief.",
       "data": "content-plans/2026-05.json"
     },
@@ -112,7 +112,7 @@
       "from": "researcher",
       "for": "writer",
       "priority": "low",
-      "status": "pending",
+      "status": "completed",
       "task": "Write article: How to Find an AI Copyright Attorney for Your Case (2026). Target keyword: ai copyright attorney near me. See content-plans/2026-05.json#article-8 for full brief.",
       "data": "content-plans/2026-05.json"
     },
@@ -134,6 +134,336 @@
       "priority": "high",
       "status": "pending",
       "task": "New article published as draft: Can You Copyright AI-Assisted Content? 2026 Registration Guide. Slug: can-you-copyright-ai-assisted-content. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-013",
+      "created": "2026-05-03T23:02:47.719Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "medium",
+      "status": "pending",
+      "task": "New article published as draft: 7 Real-World Examples of AI Copyright Infringement in 2026. Slug: ai-copyright-infringement-examples-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-014",
+      "created": "2026-05-04T23:24:44.113Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: How to Protect Your Content From AI Scraping in 2026 (Technical & Legal Guide). Slug: protect-content-from-ai-scraping-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-015",
+      "created": "2026-05-04T23:26:00.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: AI Copyright Compliance: The 2026 Survival Guide for Businesses. Slug: ai-copyright-compliance-business-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-016",
+      "created": "2026-05-05T23:02:36.800Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "medium",
+      "status": "pending",
+      "task": "New article published as draft: Sora 2 and Voice Cloning: The Next Wave of AI Copyright Battles. Slug: sora-2-voice-cloning-copyright-issues-new. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-017",
+      "created": "2026-05-06T23:04:00.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: Midjourney Copyright Lawsuit: Where We Stand in May 2026. Slug: midjourney-copyright-lawsuit-status-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-018",
+      "created": "2026-05-07T23:04:00.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: Breaking Down the EU AI Act: What Are the Copyright Transparency Requirements? Slug: eu-ai-act-copyright-transparency-requirements. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-019",
+      "created": "2026-05-08T23:05:43.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: Drafting a Corporate Policy for AI-Generated Content (2026 Template). Slug: corporate-policy-ai-generated-content-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-020",
+      "created": "2026-05-10T00:24:00.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "medium",
+      "status": "pending",
+      "task": "New article published as draft: New SAG-AFTRA Deal: What the 2026 AI Protections Mean for Creators. Slug: sag-aftra-ai-protections-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-021",
+      "created": "2026-05-10T23:02:34.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "low",
+      "status": "pending",
+      "task": "New article published as draft: Is AI Training Fair Use? How Global Copyright Laws Are Evolving in 2026. Slug: ai-training-fair-use-global-copyright-laws-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-022",
+      "created": "2026-05-11T23:02:41.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "low",
+      "status": "pending",
+      "task": "New article published as draft: How to Find an AI Copyright Attorney for Your Case (2026). Slug: find-ai-copyright-attorney-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-023",
+      "created": "2026-05-12T23:03:00.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: Summary: US Copyright Office AI Report Part 3 (Generative AI Training). Slug: us-copyright-office-ai-report-part-3-summary. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-024",
+      "created": "2026-05-14T16:52:00.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: Strike 3 Sues Meta for $359M: Adult Studios Allege Movie Gen AI Trained on Pirated Films. Slug: strike-3-meta-movie-gen-adult-films-lawsuit-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-025",
+      "created": "2026-05-14T23:02:30.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "medium",
+      "status": "pending",
+      "task": "New article published as draft: The Oscars & AI: Why Only Humans Can Win in 2026. Slug: oscars-ai-rules-2026-human-authorship. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-026",
+      "created": "2026-05-15T23:03:00.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: AI Music Copyright Lawsuits: Suno, Udio & the State of Music AI in 2026. Slug: ai-music-copyright-lawsuits-suno-udio-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-027",
+      "created": "2026-05-17T00:56:00.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "medium",
+      "status": "pending",
+      "task": "New article published as draft: YouTube Opens AI Likeness Detection to Everyone: What Creators Need to Know. Slug: youtube-likeness-detection-ai-deepfakes-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-028",
+      "created": "2026-05-17T23:03:00.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: 9 Class Actions Hit Big Tech Over AI Voiceprints: How BIPA Just Opened a New Front. Slug: bipa-voiceprint-class-actions-google-amazon-microsoft-ai-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-029",
+      "created": "2026-05-18T23:04:00.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: Hachette, Macmillan, Elsevier and Scott Turow Sue Meta Over Llama Training. Slug: hachette-macmillan-elsevier-turow-meta-llama-class-action-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-030",
+      "created": "2026-05-19T23:04:00.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: California's AB 2013 Is Now in Force: What the AI Training Data Transparency Law Means for Developers. Slug: california-ab-2013-ai-training-data-transparency-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-031",
+      "created": "2026-05-20T23:03:00.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: Tanzer v. Adobe: Author Sues Adobe Over Alleged Use of Books to Train NVIDIA Nemotron AI Models. Slug: tanzer-v-adobe-nvidia-nemotron-ai-training-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-032",
+      "created": "2026-05-22T01:23:00.000Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published as draft: FTC Begins Enforcing the TAKE IT DOWN Act: What the AI Deepfake Removal Mandate Means for Platforms. Slug: ftc-take-it-down-act-enforcement-ai-deepfakes-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-033",
+      "created": "2026-05-23T06:00:00Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published: AI Copyright Licensing in 2026: How Big Tech-Publisher Deals Are Reshaping the Industry. Slug: ai-copyright-licensing-2026-publisher-deals. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-034",
+      "created": "2026-05-23T23:04:00Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published: AI Fabricated Quotes in a Book About Truth \u2014 The Irony, the Fallout, and What It Means for Creators. Slug: ai-fabricated-quotes-future-of-truth-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-035",
+      "created": "2026-05-25T06:00:00Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published: AI Remixes, Colorizations & Copyright: Who Owns a Machine-Altered Masterpiece? Slug: ai-remix-colorization-copyright-ansel-adams-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-036",
+      "created": "2026-05-25T03:40:00Z",
+      "from": "monitor",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "URGENT: Indexing audit found 16 404s (all fixed with redirects) + 8 articles not indexed by Google. See reports/indexing-audit-2026-05-25.json. Also: rebuild + redeploy site for redirects to take effect.",
+      "output_to": "reports/indexing-audit-2026-05-25.json"
+    },
+    {
+      "id": "task-037",
+      "created": "2026-05-25T23:04:00Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published: Hobbs & Stone v. Meta: Authors File Class Action Naming Zuckerberg Personally. Slug: hobbs-stone-meta-zuckerberg-class-action-piracy-llama-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-038",
+      "created": "2026-05-26T23:02:00Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published: The AI Arbitrator Is Now Deciding Real Cases \u2014 What It Means for Copyright, Justice, and You. Slug: ai-arbitrator-deciding-real-cases-copyright-justice-2026. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-039",
+      "created": "2026-05-31T14:57:00Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published: Who Owns AI-Generated Code? Copyright, GitHub Copilot & the 2026 Legal Landscape. Slug: who-owns-ai-generated-code-copyright-2026. Status: published. Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-040",
+      "created": "2026-06-01T06:00:00+07:00",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published: AI Copyright Infringement Penalties in 2026: Fines, Damages & Consequences. Slug: ai-copyright-infringement-penalties-damages-2026. Status: published. Hero image: skipped (generator timed out). Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-041",
+      "created": "2026-06-02T06:10:23+07:00",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published: CNN Sues Perplexity AI: Copyright and Trademark Claims Target AI 'Answer Engine'. Slug: cnn-perplexity-ai-copyright-trademark-lawsuit-2026. Status: published. Hero image: skipped (generator timed out). Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-042",
+      "created": "2026-06-02T23:06:32Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published: When Your Character Gets an AI Makeover: The BuzzFeed Cuppy Controversy and What It Means for Creator Rights. Slug: buzzfeed-cuppy-ai-copyright-creator-rights-2026. Status: published. Hero image: skipped (generator timed out). Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-043",
+      "created": "2026-06-05T03:07:00Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published: The Great American AI Act: What the Obernolte-Trahan Draft Bill Means for Copyright, Innovation, and You. Slug: great-american-ai-act-obernolte-trahan-draft-bill-2026. Word count: 2015. Status: published. Hero image: skipped (generator timed out). Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-044",
+      "created": "2026-06-07T13:16:00Z",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published: Musicians' Union Sues Warner & Universal Over Secret AI Licensing Deals With Suno and Udio. Slug: musicians-union-sues-universal-warner-ai-licensing-suno-udio-2026. Word count: 2049. Status: published. Hero image: skipped (generator timed out). Monitor indexing after it goes live.",
+      "output_to": null
+    },
+    {
+      "id": "task-045",
+      "created": "2026-06-08T06:08:00+07:00",
+      "from": "writer",
+      "for": "site-owner",
+      "priority": "high",
+      "status": "pending",
+      "task": "New article published: The Creator's Guide to Proving Human Authorship in AI-Assisted Works (2026). Slug: prove-human-authorship-ai-assisted-works-2026. Word count: 2569. Status: published. Hero image: skipped (generator timed out). Monitor indexing after it goes live.",
       "output_to": null
     }
   ]

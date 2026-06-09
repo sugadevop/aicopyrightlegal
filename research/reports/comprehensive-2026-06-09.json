@@ -1,0 +1,104 @@
+{
+  "site": "aicopyrightlegal.com",
+  "report_type": "final_comprehensive",
+  "generated_at": "2026-06-09T02:28:22.038719+00:00",
+  "period": "2026-06-02 to 2026-06-08",
+  "gsc": {
+    "clicks": 2,
+    "impressions": 565,
+    "ctr_pct": 0.35,
+    "avg_position": 19.1,
+    "wow": {
+      "clicks_pct": -84.6,
+      "impressions_pct": -75.5,
+      "position_delta": -8.8
+    },
+    "pages_with_impressions": 50,
+    "blog_with_impressions": 33,
+    "striking_distance_fixed": 4,
+    "alert": "MAJOR DROP \u2014 possible algo update or indexing issue"
+  },
+  "ga4": {
+    "property_id": "535465969",
+    "users": 35,
+    "sessions": 38,
+    "pageviews": 34,
+    "wow": {
+      "users_pct": -50,
+      "sessions_pct": -51.9,
+      "pageviews_pct": -65.3
+    },
+    "engagement_rate": 21.1,
+    "avg_engagement_seconds": 504,
+    "bounce_rate": "~78%",
+    "top_sources": [
+      {
+        "source": "direct",
+        "sessions": 21
+      },
+      {
+        "source": "google",
+        "sessions": 11
+      },
+      {
+        "source": "chatgpt.com",
+        "sessions": 4
+      }
+    ],
+    "top_countries": [
+      "US (10)",
+      "South Korea (3)",
+      "UK (3)"
+    ]
+  },
+  "indexing": {
+    "published": 51,
+    "gsc_visible": 33,
+    "indexing_rate": "65%",
+    "searxng_serps": 9,
+    "sitemap_urls": 55,
+    "robots_txt": "FIXED \u2014 sitemap declared"
+  },
+  "ga4_top_pages": [
+    {
+      "path": "/",
+      "views": 4
+    },
+    {
+      "path": "/blog/midjourney-copyright-lawsuit-status-2026",
+      "views": 4,
+      "duration_avg": 37
+    },
+    {
+      "path": "/blog/suryast-copyright-office-lawsuit-ai-artwork-2026",
+      "views": 4,
+      "duration_avg": 213
+    },
+    {
+      "path": "/blog/ai-music-copyright-lawsuits-suno-udio-2026",
+      "views": 3,
+      "duration_avg": 315
+    },
+    {
+      "path": "/blog/who-owns-ai-generated-code-copyright-2026",
+      "views": 3
+    }
+  ],
+  "fixes_applied_today": [
+    "8 hero WebP images generated for articles with missing images",
+    "4 meta titles optimized for striking-distance pages",
+    "Daily Monitor cron \u2192 service account (no OAuth re-auth)",
+    "Weekly SEO cron \u2192 service account + fresh GSC script",
+    "4 cron models switched to opencode-go (avoid GEPETE downtime)",
+    "Image generation made optional in writer/scanner crons",
+    "SearXNG JSON format enabled + restarted",
+    "robots.txt fixed with sitemap declaration",
+    "CF Pages rebuild triggered (x2)"
+  ],
+  "remaining": [
+    "Fix GA4 property ID in cron jobs (was 488320392 \u2192 should be 535465969)",
+    "Monitor traffic recovery after meta optimizations",
+    "Investigate Google algo impact (65% PV drop WoW)",
+    "Consider adding Brave Search API for backup indexing checks"
+  ]
+}

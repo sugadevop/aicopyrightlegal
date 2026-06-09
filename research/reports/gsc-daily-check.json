@@ -1,0 +1,165 @@
+{
+  "report": "Daily Health Check — 2026-06-09",
+  "generated_at": "2026-06-09T01:33:00Z",
+  "generated_by": "monitor",
+  "site": "aicopyrightlegal.com",
+  "checks": {
+    "site_availability": {
+      "homepage": {
+        "url": "https://aicopyrightlegal.com",
+        "status": 200,
+        "title": "AI Copyright Legal — Navigate AI Copyright Law",
+        "verdict": "PASS"
+      },
+      "sitemap_index": {
+        "url": "https://aicopyrightlegal.com/sitemap-index.xml",
+        "status": 200,
+        "valid_xml": true,
+        "sitemaps": [
+          "sitemap-0.xml (static pages — 25 URLs)",
+          "sitemap-dynamic.xml (blog + cases — 55 URLs, +1 since yesterday)"
+        ],
+        "verdict": "PASS"
+      },
+      "sitemap_dynamic": {
+        "url": "https://aicopyrightlegal.com/sitemap-dynamic.xml",
+        "status": 200,
+        "valid_xml": true,
+        "total_urls": 55,
+        "most_recent_lastmod": "2026-06-09 (dreams-of-violets-tribeca-ai-film-copyright-2026)",
+        "sitemap_growth_since_yesterday": "+1 (54 → 55)",
+        "verdict": "PASS"
+      }
+    },
+    "indexing_status_3_most_recent": [
+      {
+        "slug": "dreams-of-violets-tribeca-ai-film-copyright-2026",
+        "title": "Dreams of Violets at Tribeca 2026: What the First AI-Generated Film at a Major Festival Means for Copyright Law",
+        "task_id": "N/A — not in queue (published outside task system)",
+        "published": "2026-06-09 (today, dated June 10 future)",
+        "live_status": "200 OK",
+        "in_sitemap": true,
+        "sitemap_lastmod": "2026-06-09",
+        "age_hours": "<1 hour",
+        "google_indexed": "UNKNOWN — just published",
+        "verdict": "JUST PUBLISHED — Too early"
+      },
+      {
+        "slug": "prove-human-authorship-ai-assisted-works-2026",
+        "title": "The Creator's Guide to Proving Human Authorship in AI-Assisted Works (2026)",
+        "task_id": "task-045",
+        "published": "2026-06-08T06:08:00+07:00",
+        "live_status": "200 OK",
+        "in_sitemap": true,
+        "sitemap_lastmod": "2026-06-08",
+        "age_hours": "~26 hours",
+        "google_indexed": "UNKNOWN — 1 day old, normal delay",
+        "verdict": "MONITORING — ~1 day old, in sitemap"
+      },
+      {
+        "slug": "musicians-union-sues-universal-warner-ai-licensing-suno-udio-2026",
+        "title": "Musicians' Union Sues Warner & Universal Over Secret AI Licensing Deals With Suno and Udio",
+        "task_id": "task-044",
+        "published": "2026-06-07T13:16:00Z",
+        "live_status": "200 OK",
+        "in_sitemap": true,
+        "sitemap_lastmod": "2026-06-07",
+        "age_days": "~1.5",
+        "google_indexed": "UNKNOWN — search tools still blocked",
+        "verdict": "MONITORING — <2 days old, in sitemap"
+      }
+    ],
+    "new_article_unexpected": {
+      "title": "Dreams of Violets at Tribeca 2026",
+      "slug": "dreams-of-violets-tribeca-ai-film-copyright-2026",
+      "note": "Published directly on site, not via task queue. Dated June 10, 2026 (future date — tomorrow). Sitemap lastmod: 2026-06-09. URL count in dynamic sitemap: 55 (was 54 yesterday)."
+    },
+    "articles_older_than_7_days_not_indexed_flag": [
+      {
+        "slug": "great-american-ai-act-obernolte-trahan-draft-bill-2026",
+        "title": "The Great American AI Act",
+        "task_id": "task-043",
+        "published": "2026-06-05",
+        "age_days": 4,
+        "in_sitemap": true,
+        "warning": "Will hit 7-day indexing deadline on June 12"
+      },
+      {
+        "slug": "buzzfeed-cuppy-ai-copyright-creator-rights-2026",
+        "title": "BuzzFeed Cuppy AI Controversy",
+        "task_id": "task-042",
+        "published": "2026-06-02",
+        "age_days": 7,
+        "in_sitemap": true,
+        "warning": "NOW at 7-day threshold. Must verify indexing."
+      },
+      {
+        "slug": "cnn-perplexity-ai-copyright-trademark-lawsuit-2026",
+        "title": "CNN Sues Perplexity AI",
+        "task_id": "task-041",
+        "published": "2026-06-02",
+        "age_days": 7,
+        "in_sitemap": true,
+        "warning": "NOW at 7-day threshold."
+      },
+      {
+        "slug": "ai-copyright-infringement-penalties-damages-2026",
+        "title": "AI Copyright Infringement Penalties 2026",
+        "task_id": "task-040",
+        "published": "2026-06-01",
+        "age_days": 8,
+        "in_sitemap": true,
+        "warning": "OVER 7 days. Needs verification."
+      },
+      {
+        "slug": "who-owns-ai-generated-code-copyright-2026",
+        "title": "Who Owns AI-Generated Code?",
+        "task_id": "task-039",
+        "published": "2026-05-31",
+        "age_days": 9,
+        "in_sitemap": true,
+        "warning": "OVER 7 days."
+      }
+    ],
+    "queue_summary": {
+      "total_tasks": 45,
+      "articles_published_total": 44,
+      "articles_published_june_so_far": 6,
+      "articles_live_on_site": "51 articles (per blog pagination)",
+      "sitemap_dynamic_url_count": 55,
+      "sitemap_url_count_change": "+1 since yesterday",
+      "new_article_not_in_queue": "dreams-of-violets-tribeca-ai-film-copyright-2026 (published June 9, dated June 10)"
+    },
+    "indexing_blind_spot": {
+      "status": "PERSISTENT — Day 11+ (since ~May 28)",
+      "cause": "All search engines (Google, Bing, DuckDuckGo) blocked by bot-detection/CAPTCHA. SearXNG not configured. web_search tool broken. GSC API data stale (last refresh May 31).",
+      "impact": "Cannot verify Google indexing for ANY article since ~May 28. 5 articles now past 7-day indexing deadline with no way to confirm status.",
+      "articles_at_risk": 5,
+      "action_needed": "URGENT: Fix search capability. Options: configure SearXNG/Brave Search API, or refresh GSC OAuth token via browser. Weekly report over 1 week late (was due June 8)."
+    },
+    "traffic_baseline": {
+      "source": "weekly-2026-06-01.json",
+      "period": "2026-05-25 to 2026-05-31",
+      "week_clicks": 13,
+      "week_impressions": 2308,
+      "ctr_pct": 0.56,
+      "avg_position": 10.32,
+      "wow_trend": "POSITIVE (+165% impressions, improved position)",
+      "no_new_data_since": "2026-05-31 (9 days)",
+      "next_weekly_report": "OVERDUE — was due Monday June 8. Now Tuesday June 9.",
+      "verdict": "STALE — Baseline is 9 days old. Cannot detect traffic changes."
+    },
+    "all_urls_live_check": {
+      "status": "PASS — all 55 dynamic sitemap URLs return 200",
+      "homepage_200": true,
+      "old_404s_fixed": "Confirmed — redirects in place since May 25 audit",
+      "blog_pagination": "6 pages, 51 articles listed"
+    }
+  },
+  "verdict": "🟡 WARNING — Site health: ALL PASS. Site up, sitemap valid and growing (+1 URL, 55 total). All articles live. BUT indexing blind spot is now 11+ days with 5 articles past 7-day indexing deadline. Weekly report is OVERDUE (was due June 8). GSC data 9 days stale. NO CRITICAL ALERTS — no site-down, no mass deindexing evidence, no traffic drop detected.",
+  "alerts": [
+    "INDEXING BLIND SPOT — 11+ days. 5 articles past 7-day deadline with unconfirmed indexing status.",
+    "WEEKLY REPORT OVERDUE — Monday June 8 report not generated. Needs fresh GSC data.",
+    "UNTRACKED ARTICLE — 'Dreams of Violets at Tribeca 2026' published outside task queue."
+  ]
+}

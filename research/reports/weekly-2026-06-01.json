@@ -1,0 +1,328 @@
+{
+  "site": "aicopyrightlegal.com",
+  "report_type": "weekly_seo",
+  "generated_at": "2026-06-01T03:31:39.022938Z",
+  "period": {
+    "start": "2026-05-25",
+    "end": "2026-05-31",
+    "days": 7
+  },
+  "previous_period": {
+    "start": "2026-05-18",
+    "end": "2026-05-24"
+  },
+  "status": "OK",
+  "totals": {
+    "clicks": 13,
+    "impressions": 2308,
+    "ctr": 0.0056,
+    "avg_position": 10.32
+  },
+  "wow_change": {
+    "clicks_pct": 18.2,
+    "impressions_pct": 165.3,
+    "ctr_delta": -0.007,
+    "position_delta": -4.78
+  },
+  "top_queries_by_impressions": [
+    {
+      "query": "us copyright office ai generated works policy 2026",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 10.36
+    },
+    {
+      "query": "blocking image scraping",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 64
+    },
+    {
+      "query": "ai image generation copyright 2026 news",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 10.33
+    },
+    {
+      "query": "ai image generation copyright news may 2026",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "query": "can ai be copyrighted",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 56.17
+    },
+    {
+      "query": "ai art copyright 2026 news",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 11.25
+    },
+    {
+      "query": "ai image generation legal news may 2026",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "ai voice cloning legal cases 2026 news",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "can you copyright ai",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 53.33
+    },
+    {
+      "query": "can you copyright ai generated content",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 39.33
+    }
+  ],
+  "top_pages_by_clicks": [
+    {
+      "page": "https://aicopyrightlegal.com/blog/suryast-copyright-office-lawsuit-ai-artwork-2026",
+      "clicks": 8,
+      "impressions": 48,
+      "ctr": 0.1667,
+      "position": 5.71
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/sag-aftra-ai-protections-2026",
+      "clicks": 2,
+      "impressions": 100,
+      "ctr": 0.02,
+      "position": 9.52
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/ai-copyright-infringement-examples-2026",
+      "clicks": 1,
+      "impressions": 214,
+      "ctr": 0.0047,
+      "position": 10.82
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/eu-ai-act-copyright-transparency-requirements",
+      "clicks": 1,
+      "impressions": 64,
+      "ctr": 0.0156,
+      "position": 13.17
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/protect-content-from-ai-scraping",
+      "clicks": 1,
+      "impressions": 16,
+      "ctr": 0.0625,
+      "position": 68.62
+    },
+    {
+      "page": "https://aicopyrightlegal.com/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 7.14
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/ai-art-copyright-2026-guide",
+      "clicks": 0,
+      "impressions": 271,
+      "ctr": 0,
+      "position": 9.31
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/ai-copyright-compliance-business-2026",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 6.5
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/ai-copyright-compliance-guide",
+      "clicks": 0,
+      "impressions": 23,
+      "ctr": 0,
+      "position": 7.17
+    }
+  ],
+  "top_pages_by_impressions": [
+    {
+      "page": "https://aicopyrightlegal.com/blog/ai-art-copyright-2026-guide",
+      "clicks": 0,
+      "impressions": 271,
+      "ctr": 0,
+      "position": 9.31
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/ai-training-fair-use-law-2026",
+      "clicks": 0,
+      "impressions": 246,
+      "ctr": 0,
+      "position": 9.45
+    },
+    {
+      "page": "https://aicopyrightlegal.com/cases/nyt-v-openai",
+      "clicks": 0,
+      "impressions": 244,
+      "ctr": 0,
+      "position": 10.38
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/ai-copyright-infringement-examples-2026",
+      "clicks": 1,
+      "impressions": 214,
+      "ctr": 0.0047,
+      "position": 10.82
+    },
+    {
+      "page": "https://aicopyrightlegal.com/laws/japan/",
+      "clicks": 0,
+      "impressions": 157,
+      "ctr": 0,
+      "position": 6.37
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/ai-music-copyright-lawsuits-suno-udio-2026",
+      "clicks": 0,
+      "impressions": 155,
+      "ctr": 0,
+      "position": 8.43
+    },
+    {
+      "page": "https://aicopyrightlegal.com/laws/indonesia/",
+      "clicks": 0,
+      "impressions": 113,
+      "ctr": 0,
+      "position": 7.23
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/sag-aftra-ai-protections-2026",
+      "clicks": 2,
+      "impressions": 100,
+      "ctr": 0.02,
+      "position": 9.52
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/midjourney-copyright-lawsuit-status-2026",
+      "clicks": 0,
+      "impressions": 86,
+      "ctr": 0,
+      "position": 5.19
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/eu-ai-act-copyright-transparency-requirements",
+      "clicks": 1,
+      "impressions": 64,
+      "ctr": 0.0156,
+      "position": 13.17
+    }
+  ],
+  "opportunities": {
+    "low_ctr_high_impression_queries": [],
+    "pages_near_page1": [
+      {
+        "page": "https://aicopyrightlegal.com/blog/ai-art-copyright-2026-guide",
+        "impressions": 271,
+        "position": 9.31,
+        "ctr": 0
+      },
+      {
+        "page": "https://aicopyrightlegal.com/blog/ai-training-fair-use-law-2026",
+        "impressions": 246,
+        "position": 9.45,
+        "ctr": 0
+      },
+      {
+        "page": "https://aicopyrightlegal.com/cases/nyt-v-openai",
+        "impressions": 244,
+        "position": 10.38,
+        "ctr": 0
+      },
+      {
+        "page": "https://aicopyrightlegal.com/blog/ai-copyright-infringement-examples-2026",
+        "impressions": 214,
+        "position": 10.82,
+        "ctr": 0.0047
+      },
+      {
+        "page": "https://aicopyrightlegal.com/blog/ai-music-copyright-lawsuits-suno-udio-2026",
+        "impressions": 155,
+        "position": 8.43,
+        "ctr": 0
+      }
+    ]
+  },
+  "issues_observations": [
+    "Impressions surged WoW (+165.3%) but CTR dropped to 0.56% \u2014 visibility growing faster than relevance/snippet quality.",
+    "Avg position improved by 4.78 ranks (now 10.32) \u2014 moving closer to page 1.",
+    "Top click-driver: SuryAst Copyright Office lawsuit page (8 clicks, 16.7% CTR, pos 5.7) \u2014 strong winner.",
+    "ai-copyright-infringement-examples-2026 has 214 impressions but only 1 click (0.47% CTR @ pos 10.8) \u2014 title/meta likely underperforming.",
+    "sag-aftra-ai-protections-2026 has 100 impressions, 2 clicks \u2014 page-1 candidate (pos 9.5)."
+  ],
+  "recommendations": {
+    "writer": [
+      {
+        "priority": "high",
+        "action": "Rewrite title + meta description for /blog/ai-copyright-infringement-examples-2026",
+        "why": "214 impressions, only 1 click (CTR 0.47%) at position 10.8. Title likely losing to competitors. Add specific year/case names, action-oriented hook."
+      },
+      {
+        "priority": "medium",
+        "action": "Optimize snippet for /blog/sag-aftra-ai-protections-2026",
+        "why": "Position 9.5, 100 impressions, only 2 clicks. Already near page 1 \u2014 better meta could push to top 5."
+      },
+      {
+        "priority": "medium",
+        "action": "Double down on lawsuit-tracking content like the SuryAst piece",
+        "why": "That format converts: 16.7% CTR vs site avg 0.56%. Pattern: specific case + year + outcome focus."
+      }
+    ],
+    "researcher": [
+      {
+        "priority": "high",
+        "action": "Investigate query 'ai art copyright 2026 news' family",
+        "why": "Multiple long-tail variants showing impressions at positions 8-12. Competitor analysis + content gap study could unlock page-1."
+      },
+      {
+        "priority": "medium",
+        "action": "Find more named-lawsuit / named-case angles (\u00e0 la SuryAst)",
+        "why": "Specific case studies outperform generic explainers in CTR. Build a backlog of pending/recent AI copyright lawsuits to cover."
+      },
+      {
+        "priority": "medium",
+        "action": "Audit /blog/protect-content-from-ai-scraping (pos 68)",
+        "why": "Ranking deep in page 7 despite topic relevance. Either consolidate or rebuild with stronger E-E-A-T signals."
+      }
+    ],
+    "ops": [
+      {
+        "priority": "info",
+        "action": "OAuth refresh token cycle confirmed working this week",
+        "why": "Last week's report failed due to token expiry; this week refreshed cleanly. Long-term fix still: move OAuth client out of testing mode in Google Cloud Console to avoid 7-day refresh-token rotation."
+      }
+    ]
+  }
+}

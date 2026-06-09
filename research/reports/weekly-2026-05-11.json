@@ -1,0 +1,19 @@
+{
+  "date": "2026-05-11",
+  "period": "2026-05-04 to 2026-05-10",
+  "status": "FAILED",
+  "error": {
+    "stage": "oauth_refresh",
+    "code": "invalid_grant",
+    "description": "Token has been expired or revoked.",
+    "access_token_check": "invalid_token / Invalid Value"
+  },
+  "action_required": [
+    "Re-run OAuth flow to get fresh refresh_token for https://www.googleapis.com/auth/webmasters.readonly",
+    "Save new tokens to ~/.openclaw/credentials/google-oauth-tokens.json",
+    "Set OAuth consent screen to 'In production' in Google Cloud Console to prevent 7-day refresh token expiry"
+  ],
+  "data": null,
+  "recommendations_for_writer": null,
+  "recommendations_for_researcher": null
+}

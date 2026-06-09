@@ -1,0 +1,37 @@
+{
+  "reportDate": "2026-05-04",
+  "dateRange": "2026-04-27 to 2026-05-03",
+  "totals": {
+    "clicks": 1,
+    "impressions": 5,
+    "ctr": 0.2,
+    "position": 1
+  },
+  "topQueries": [],
+  "topPages": [
+    {
+      "url": "https://aicopyrightlegal.com/",
+      "clicks": 1,
+      "impressions": 5,
+      "ctr": 0.2,
+      "position": 1
+    },
+    {
+      "url": "http://www.aicopyrightlegal.com/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    }
+  ],
+  "recommendations": {
+    "writer": [
+      "The site is currently lacking content that ranks for specific queries. Focus on generating long-form articles targeting long-tail keywords related to AI copyright law, fair use, and AI-generated art ownership.",
+      "Ensure all new pages have optimized meta titles and descriptions to encourage higher CTR once they start appearing in search results."
+    ],
+    "researcher": [
+      "Identify 10-15 low-competition, informational keywords related to recent AI copyright lawsuits or emerging legislation.",
+      "Analyze competitor sites to see what content is driving their traffic and outline a content calendar to fill those gaps."
+    ]
+  }
+}

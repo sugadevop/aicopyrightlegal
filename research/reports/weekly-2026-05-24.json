@@ -1,0 +1,248 @@
+{
+  "site": "aicopyrightlegal.com",
+  "report_type": "weekly_seo",
+  "generated_at": "2026-05-25T03:01:02.354015Z",
+  "period": {
+    "start": "2026-05-18",
+    "end": "2026-05-24",
+    "days": 7
+  },
+  "totals": {
+    "clicks": 10,
+    "impressions": 635,
+    "ctr_pct": 1.57,
+    "avg_position": 13.53
+  },
+  "daily_trend": [
+    {
+      "date": "2026-05-18",
+      "clicks": 0,
+      "impressions": 109,
+      "ctr": 0,
+      "position": 12.65
+    },
+    {
+      "date": "2026-05-19",
+      "clicks": 1,
+      "impressions": 91,
+      "ctr": 1.1,
+      "position": 10.87
+    },
+    {
+      "date": "2026-05-20",
+      "clicks": 4,
+      "impressions": 157,
+      "ctr": 2.55,
+      "position": 15.63
+    },
+    {
+      "date": "2026-05-21",
+      "clicks": 3,
+      "impressions": 131,
+      "ctr": 2.29,
+      "position": 12.67
+    },
+    {
+      "date": "2026-05-22",
+      "clicks": 2,
+      "impressions": 147,
+      "ctr": 1.36,
+      "position": 14.33
+    }
+  ],
+  "top_queries_by_impressions": [
+    {
+      "query": "ai training data copyright violation lawsuit 2026",
+      "impressions": 4,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 11.25
+    },
+    {
+      "query": "ai video editor content rights policy",
+      "impressions": 4,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 39.5
+    },
+    {
+      "query": "ai training fair use court cases 2025 2026",
+      "impressions": 3,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 20
+    },
+    {
+      "query": "ai case tracker",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 70.5
+    },
+    {
+      "query": "ai copyright lawsuits training data 2025 2026",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 17
+    },
+    {
+      "query": "ai image generation copyright news may 2026",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "query": "ai image generation legal news may 2026",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 11.5
+    },
+    {
+      "query": "artificial intelligence licensing eu",
+      "impressions": 2,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 69.5
+    },
+    {
+      "query": "ai copyright ruling",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "ai copyright training data lawsuit february 2026",
+      "impressions": 1,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 68
+    }
+  ],
+  "top_pages_by_clicks": [
+    {
+      "page": "https://aicopyrightlegal.com/blog/suryast-copyright-office-lawsuit-ai-artwork-2026",
+      "clicks": 4,
+      "impressions": 12,
+      "ctr": 33.33,
+      "position": 6.58
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/anthropic-settlement-approval-delayed-martinez-olguin-2026",
+      "clicks": 2,
+      "impressions": 7,
+      "ctr": 28.57,
+      "position": 11.71
+    },
+    {
+      "page": "https://www.aicopyrightlegal.com/laws",
+      "clicks": 2,
+      "impressions": 29,
+      "ctr": 6.9,
+      "position": 8.17
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/supreme-court-denies-ai-copyright-challenge",
+      "clicks": 1,
+      "impressions": 3,
+      "ctr": 33.33,
+      "position": 33
+    },
+    {
+      "page": "https://aicopyrightlegal.com/laws/united-kingdom/",
+      "clicks": 1,
+      "impressions": 3,
+      "ctr": 33.33,
+      "position": 38.67
+    },
+    {
+      "page": "https://aicopyrightlegal.com/",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 17.46
+    },
+    {
+      "page": "https://aicopyrightlegal.com/about/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 2.5
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 19.11
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/ai-art-copyright-2026-guide",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 15.96
+    },
+    {
+      "page": "https://aicopyrightlegal.com/blog/ai-copyright-compliance-business-2026",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 4.5
+    }
+  ],
+  "issues_observations": [
+    "Site-wide CTR is low at 1.57% \u2014 titles/meta descriptions likely under-optimized for SERP click-through.",
+    "Average position 13.5 (page 2) \u2014 most queries not yet on page 1."
+  ],
+  "recommendations": {
+    "writer": [
+      {
+        "priority": "high",
+        "action": "Refresh content for striking-distance queries (positions 11-20)",
+        "queries": [
+          "ai training data copyright violation lawsuit 2026",
+          "ai training fair use court cases 2025 2026"
+        ],
+        "why": "Small ranking improvements can move these to page 1 and unlock real clicks."
+      },
+      {
+        "priority": "medium",
+        "action": "Analyze top-performing page and replicate its structure",
+        "reference": "https://aicopyrightlegal.com/blog/suryast-copyright-office-lawsuit-ai-artwork-2026",
+        "metrics": "4 clicks, 33.3% CTR, pos 6.6",
+        "why": "Use this page as a template for new posts in similar verticals."
+      }
+    ],
+    "researcher": [
+      {
+        "priority": "high",
+        "action": "Deep-dive research on under-ranked but searched topics",
+        "topics": [
+          "ai video editor content rights policy",
+          "artificial intelligence licensing eu",
+          "ai case tracker"
+        ],
+        "why": "Users are searching these but we rank poorly \u2014 gather authoritative sources to write deeper coverage."
+      },
+      {
+        "priority": "medium",
+        "action": "Track ongoing AI copyright cases referenced in search queries",
+        "topics": [
+          "ai copyright lawsuits training data 2025 2026",
+          "ai copyright ruling",
+          "ai copyright training data lawsuit february 2026",
+          "ai generated content copyright",
+          "ai image copyright guidance 2026 news",
+          "ai image copyright law 2026 updates",
+          "ai image copyright lawsuits 2026 news",
+          "ai image copyright news may 2026"
+        ],
+        "why": "Users actively searching these \u2014 keep coverage fresh and chronological."
+      }
+    ]
+  }
+}
