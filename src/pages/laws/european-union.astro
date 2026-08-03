@@ -34,7 +34,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <li><strong>Respect for EU Copyright Law:</strong> GPAI providers must establish policies to comply with EU copyright law, specifically regarding the identification of and adherence to creator opt-outs.</li>
           <li><strong>Detailed Summaries of Training Data:</strong> Providers must draw up and make publicly available a sufficiently detailed summary of the content used for training the GPAI model. This aims to give rights holders the necessary information to determine if their works were used.</li>
         </ol>
-        <p>Failure to comply can result in severe fines, emphasizing that in the EU, copyright compliance is an ex-ante regulatory requirement, not just an ex-post litigation risk. For a deep dive into the AI Act's phased implementation, see our <a href="/blog/eu-ai-act-timeline">AI Act Timeline Breakdown</a>.</p>
+        <p>Failure to comply can result in severe fines, emphasizing that in the EU, copyright compliance is an ex-ante regulatory requirement, not just an ex-post litigation risk. For the rules, affected providers, and enforcement timeline, read our <a href="/blog/eu-ai-act-copyright-transparency-requirements">EU AI Act copyright transparency requirements guide</a>.</p>
 
         <h2>Training AI: The Text and Data Mining (TDM) Exception</h2>
         <p>In the EU, the legality of ingesting copyrighted works to train AI models revolves around the <strong>Directive on Copyright in the Digital Single Market (DSM Directive)</strong>, specifically Articles 3 and 4 regarding Text and Data Mining (TDM).</p>
@@ -73,7 +73,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <p>This creates a structured system: AI companies can scrape the open web by default, but creators have a defined legal mechanism to stop them. This contrasts sharply with the US, where "opt-outs" (like robots.txt) are often treated as mere requests rather than legally binding reservations of copyright under fair use arguments.</p>
 
         <h2>Authorship of AI-Generated Works</h2>
-        <p>Unlike the US, where the Supreme Court has definitively ruled out AI authorship, or the <a href="/laws/united-kingdom">UK</a>, which has specific legislation for computer-generated works, the EU currently lacks a fully harmonized rule on the copyrightability of AI-generated works.</p>
+        <p>Unlike the US, where the Copyright Office and federal courts require human authorship, or the <a href="/laws/united-kingdom">UK</a>, which has specific legislation for computer-generated works, the EU currently lacks a fully harmonized rule on the copyrightability of AI-generated works.</p>
 
         <h3>The "Author's Own Intellectual Creation" Standard</h3>
         <p>Under the EU's <em>Infopaq</em> standard, copyright applies only to works that are the "author's own intellectual creation." The Court of Justice of the European Union (CJEU) has historically interpreted this to require human intervention that reflects the author's personality and free, creative choices.</p>
@@ -89,6 +89,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <li><strong>For EU Creators:</strong> Utilize machine-readable opt-outs (like the `<meta name="robots" content="noai, noimageai">` tags or configured `robots.txt`) aggressively on your websites. The EU legal framework gives these technical signals teeth. Read our <a href="/tools/robots-txt-ai-blocker">Guide on Implementing Machine-Readable Opt-Outs</a>.</li>
           <li><strong>For Global AI Companies:</strong> If you offer your model in the EU market, you must comply with the AI Act's transparency requirements and respect Article 4 opt-outs, regardless of where your company is headquartered. You cannot simply rely on US fair use arguments when operating in Europe.</li>
           <li><strong>For Enterprises:</strong> When adopting AI tools, demand transparency from vendors regarding their compliance with EU TDM opt-outs and GDPR to mitigate downstream liability.</li>
+        </ul>
+
+        <h2>Further Reading</h2>
+        <ul>
+          <li><a href="/blog/eu-ai-act-copyright-transparency-requirements">EU AI Act copyright transparency requirements</a> — Article 53 duties, affected providers, deadlines, and penalties.</li>
         </ul>
       </div>
     </div>
